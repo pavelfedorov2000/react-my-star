@@ -1,0 +1,30 @@
+.sizes-list {
+    display: flex;
+
+    > div {
+        @extend %flex-col;
+
+        &:not(:last-child) {
+            position: relative;
+
+            &::after {
+                @extend %pos-center-y;
+                content: '';
+                position: absolute;
+                right: 0;
+                width: 0.1rem;
+                height: var(--offset-l);
+                background-color: var(--gray-ed);
+            }
+        }
+    }
+
+    dt {
+        color: var(--gray-c2);
+    }
+
+    dd {
+        font-weight: 500;
+        color: var(--dark-text);
+    }
+}

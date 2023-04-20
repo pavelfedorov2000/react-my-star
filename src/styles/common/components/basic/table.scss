@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+    text-align: center;
+    overflow-x: auto;
+
+    th {
+        font-weight: 400;
+        color: var(--gray-9b);
+        white-space: nowrap;
+        padding: var(--offset-m) 1.25rem 0;
+    }
+
+    tbody {
+        tr {
+            &:nth-child(even) {
+                background-color: #f4f4f6;
+            }
+
+            td {
+                @extend %text-13;
+                padding: 2.1rem 0;
+
+                b {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

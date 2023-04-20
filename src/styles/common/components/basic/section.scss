@@ -1,0 +1,42 @@
+.section {
+	padding: 16rem 0;
+
+	&:last-child {
+		padding-bottom: 0;
+	}
+
+	&--padding {
+		&_xs {
+			padding: 8rem 0;
+		}
+	}
+
+	@media (max-width: 1024px) {
+		padding: 8rem 0;
+	}
+
+	@media (max-width: 767px) {
+		padding: 5rem 0;
+	}
+
+	&__top {
+		@extend %flex-row-center;
+		flex-wrap: wrap;
+		gap: 3rem;
+		margin-bottom: var(--offset-xl);
+
+		&--margin-bottom {
+			&_m {
+				margin-bottom: var(--offset-m);
+			}
+		}
+
+		@media (max-width: 500px) {
+			margin-bottom: 2.5rem;
+		}
+	}
+
+	&+.section {
+		padding-top: 0;
+	}
+}

@@ -1,0 +1,14 @@
+.prices {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--offset-xs);
+}
+
+.old-price {
+    color: var(--gray-75);
+    text-decoration: line-through;
+}
+
+.articul {
+    color: var(--gray-75);
+}

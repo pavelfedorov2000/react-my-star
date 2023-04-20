@@ -1,0 +1,70 @@
+.tabs {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.tab {
+	@extend %text-16;
+	position: relative;
+	color: var(--gray-9e);
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--default);
+		}
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 0%;
+		height: 0.1rem;
+		background-color: var(--default);
+		transition: $transition width;
+	}
+
+	&.active {
+		font-weight: 600;
+		color: var(--default);
+
+		&:after {
+			width: 100%;
+		}
+	}
+}
+
+.tabs-content {
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}
+
+.nav-tabs {
+	padding-bottom: 3rem;
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem 5rem;
+
+		@media (max-width: 500px) {
+			column-gap: 3rem;
+		}
+	}
+
+	&__link {
+		@extend %text-16;
+		font-weight: 300;
+		transition: $transition color;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--accent);
+			}
+		}
+	}
+}

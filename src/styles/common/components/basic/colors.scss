@@ -1,0 +1,28 @@
+.colors {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.color {
+    display: block;
+    flex-shrink: 0;
+    cursor: pointer;
+
+    .radio-style {
+        @extend %bg-cover;
+        border-radius: 50%;
+    }
+
+    .radio-box:checked ~ .radio-style {
+        border: none;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: 0.3rem solid var(--blue);
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.player-btn {
+	@extend %pos-center-xy;
+	position: absolute;
+	width: 8rem;
+	height: 8rem;
+	border-radius: 50%;
+	border: 0.1rem solid rgba(#fff, 0.7);
+	transition: $transition background-color;
+
+	&::before {
+		@extend %pos-center-y;
+		content: '';
+		position: absolute;
+		left: calc(50% - 2.1rem / 2);
+		width: 2.1rem;
+		height: var(--icon-size);
+		background-color: #fff;
+		clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+		transition: $transition background-color;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #fff;
+
+			&::before {
+				background-color: var(--default);
+			}
+		}
+	}
+}
