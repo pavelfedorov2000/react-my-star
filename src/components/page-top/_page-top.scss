@@ -1,0 +1,6 @@
+.page-top {
+    @extend %flex-row-center;
+	flex-wrap: wrap;
+	gap: var(--offset-ms);
+	padding-bottom: 3rem;
+}

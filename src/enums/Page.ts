@@ -7,6 +7,9 @@ enum Page {
     Cart = 'Cart',
     Profile = 'Profile',
     Shops = 'Shops',
+    Guarantee = 'Guarantee',
+    Delivery = 'Delivery',
+    Sale = 'Sale',
     NotFound = 'NotFound',
 }
 
@@ -47,9 +50,21 @@ export const Pages = {
         title: 'Магазины',
         path: '/shops'
     },
+    [Page.Guarantee]: {
+        title: 'Гарантия',
+        path: '/guarantee'
+    },
+    [Page.Delivery]: {
+        title: 'Доставка и оплата',
+        path: '/delivery'
+    },
     [Page.Profile]: {
-        title: 'Профиль',
+        title: 'Гарантия',
         path: '/profile'
+    },
+    [Page.Sale]: {
+        title: 'Акции',
+        path: '/sale'
     },
     [Page.NotFound]: {
         title: 'Похоже, мы не можем найти нужную вам страницу',

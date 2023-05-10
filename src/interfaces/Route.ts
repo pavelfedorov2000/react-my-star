@@ -1,7 +1,7 @@
 //import { EmptyBlock } from "./EmptyBlock";
 
 export interface Page {
-    title?: string;
+    title: string;
     subtitle?: string;
     emptyBlock?: any;
 }

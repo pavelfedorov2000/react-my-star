@@ -9,11 +9,4 @@
 	@media (max-width: 767px) {
 		padding-bottom: 5rem;
 	}
-
-	&__top {
-		@extend %flex-row-center;
-		flex-wrap: wrap;
-		gap: var(--offset-ms);
-		margin-bottom: 3rem;
-	}
 }

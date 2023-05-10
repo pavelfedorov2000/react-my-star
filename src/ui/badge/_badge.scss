@@ -1,0 +1,30 @@
+.badge {
+    @extend %text-10;
+    display: inline-block;
+    border-radius: $brs;
+    padding: var(--offset-xxxxs) var(--offset-xxxs);
+    color: #fff;
+    text-transform: uppercase;
+
+    &--style {
+        &_bg {
+            &-red {
+                background-color: var(--accent);
+            }
+
+            &-blue {
+                background-color: var(--blue);
+            }
+
+            &-pink {
+                background-color: var(--pink);
+            }
+        }
+
+        &_brs {
+            &-50 {
+                border-radius: 50%;
+            }
+        }
+    }
+}

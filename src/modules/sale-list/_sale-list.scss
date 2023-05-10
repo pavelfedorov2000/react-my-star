@@ -1,0 +1,7 @@
+.sale-list {
+	@include row-gap(10rem);
+
+	@media (max-width: 767px) {
+		row-gap: 5rem;
+	}
+}
