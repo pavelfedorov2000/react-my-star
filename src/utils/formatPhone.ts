@@ -1,3 +1,8 @@
 export const formatPhone = (phone: string) => {
-    return phone.split(' ').join('');
+    let hrefPhone = '';
+    const phoneArr = phone.split(' ');
+    phoneArr.forEach((el) => {
+        hrefPhone += el.split('').filter((elem) => elem !== '(' && elem !== ')' && elem !== '-').join('');
+    });
+    return hrefPhone;
 }

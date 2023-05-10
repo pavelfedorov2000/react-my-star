@@ -1,6 +1,6 @@
 enum Page {
-    CatalogHome = 'CatalogHome',
     Home = 'Home',
+    About = 'About',
     Catalog = 'Catalog',
     Favorite = 'Favorite',
     ProductCard = 'ProductCard',
@@ -22,16 +22,14 @@ enum SubPage {
 }
 
 export const Pages = {
-    [Page.CatalogHome]: {
-        path: '/'
-    },
     [Page.Home]: {
-        path: '/home'
+        path: '/'
     },
     [Page.Catalog]: {
         title: 'Каталог',
         path: '/catalog',
-        empty: 'Нет актуальных товаров'
+        empty: 'Нет актуальных товаров',
+        inHeader: true,
     },
     [Page.Favorite]: {
         title: 'Избранные товары',
@@ -46,25 +44,35 @@ export const Pages = {
         path: '/cart',
         empty: 'Ваша корзина пуста'
     },
+    [Page.Sale]: {
+        title: 'Акции',
+        path: '/sale',
+        inHeader: true,
+    },
+    [Page.About]: {
+        title: 'О нас',
+        path: '/about',
+        inHeader: true,
+    },
     [Page.Shops]: {
         title: 'Магазины',
-        path: '/shops'
+        path: '/shops',
+        inHeader: true,
     },
     [Page.Guarantee]: {
         title: 'Гарантия',
-        path: '/guarantee'
+        path: '/guarantee',
+        inHeader: true,
     },
     [Page.Delivery]: {
         title: 'Доставка и оплата',
-        path: '/delivery'
+        path: '/delivery',
+        inHeader: true,
     },
     [Page.Profile]: {
         title: 'Гарантия',
-        path: '/profile'
-    },
-    [Page.Sale]: {
-        title: 'Акции',
-        path: '/sale'
+        path: '/guarantee',
+        inHeader: true,
     },
     [Page.NotFound]: {
         title: 'Похоже, мы не можем найти нужную вам страницу',

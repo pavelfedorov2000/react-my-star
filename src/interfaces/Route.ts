@@ -4,6 +4,7 @@ export interface Page {
     title: string;
     subtitle?: string;
     emptyBlock?: any;
+    inHeader?: boolean;
 }
 
 export interface Route extends Page {

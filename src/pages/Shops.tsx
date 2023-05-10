@@ -1,12 +1,12 @@
 import { ShopsList } from "../modules";
-import { Map, Placemark } from "@pbe/react-yandex-maps";
-import { collection, getDocs } from "firebase/firestore"; 
+import { Map, Placemark } from "@pbe/react-yandex-maps"; 
 import { useEffect, useState } from "react";
-import { db } from "../firebase/firebase";
 import { Shop } from "../interfaces/Shop";
 import pinIcon from "../assets/images/icons/pin.png";
 import { PageTop } from "../components";
 import { Page } from "../interfaces/Route";
+import { getCollectionItems } from "../utils/getCollectionItems";
+import { Collection } from "../enums/Collection";
 
 const Shops = ({ title }: Page) => {
     //const [center, setCenter] = useState<number[]>([]);
@@ -14,28 +14,7 @@ const Shops = ({ title }: Page) => {
     const [shops, setShops] = useState<Shop[]>([]);
 
     useEffect(() => {
-        const getShops = async () => {
-            const colRef = collection(db, "shops");
-            const docsSnap = await getDocs(colRef) as any;
-            docsSnap.forEach((doc: any) => {
-                setShops((prev) => {
-                    if (prev.findIndex((item) => item.id === doc.id) !== -1) {
-                        return [
-                            ...prev
-                        ]
-                    }
-                    
-                    return [
-                        ...prev,
-                        {
-                            id: doc.id,
-                            ...doc.data()
-                        }
-                    ]
-                });
-            });
-        }
-        getShops();
+        getCollectionItems(Collection.Shops, setShops);
 
         /* if (shops.length > 0) {
             setCenter(shops.filter((shop) => shop.city === 'Минск')[0].coordinates);

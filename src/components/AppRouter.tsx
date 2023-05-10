@@ -1,10 +1,10 @@
 import { Route, Redirect, Switch } from 'react-router-dom';
-import { routes } from '../constants/routes';
+import { ROUTES } from '../constants/routes';
 
 const AppRouter = () => {
     return (
         <Switch>
-            {routes.map((route) => (
+            {ROUTES.map((route) => (
                 <Route
                     key={route.id}
                     exact={route.exact === true ? true : false}
@@ -12,7 +12,7 @@ const AppRouter = () => {
                     render={() => <route.component {...route} />}
                 />
             ))}
-            <Redirect to={routes[routes.length - 1].path} />
+            <Redirect to={ROUTES[ROUTES.length - 1].path} />
         </Switch>
     );
 }
