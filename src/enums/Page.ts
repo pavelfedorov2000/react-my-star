@@ -23,6 +23,7 @@ enum SubPage {
 
 export const Pages = {
     [Page.Home]: {
+        title: 'Главная',
         path: '/'
     },
     [Page.Catalog]: {

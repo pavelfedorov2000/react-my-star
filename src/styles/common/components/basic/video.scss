@@ -1,7 +1,7 @@
 .video {
     position: relative;
 
-    lite-youtube {
+    iframe {
         max-width: 100%;
         @extend %cover;
     }
@@ -21,14 +21,5 @@
         bottom: 0;
         left: 0;
         @extend %cover;
-    }
-}
-
-.lty-playbtn {
-    @media (max-width: 767px) {
-        width: var(--icon-size-xxl);
-        height: 2.8rem;
-        background-position: center;
-        background-repeat: no-repeat;
     }
 }

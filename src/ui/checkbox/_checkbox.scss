@@ -1,60 +1,60 @@
-.check {
-	$this: &;
+.checkbox {
+    $this: &;
 
-	&-box {
-		width: 1px;
-		height: 1px;
-		overflow: hidden;
-		position: absolute;
-		clip: rect(0 0 0 0);
+    &__input {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        clip: rect(0 0 0 0);
 
-		&:checked~#{$this}-style {
-			background-color: var(--blue);
-			border-color: var(--blue);
+        &:checked ~ #{$this}__style {
+            background-color: var(--blue);
+            border-color: var(--blue);
 
-			&:before {
-				@extend %pos-center-xy;
-				@extend %bg-contain;
-				content: '';
-				width: 1.1rem;
-				height: var(--offset-xs);
-				position: absolute;
-				//background-image: url(../images/icons/check.svg);
-			}
-		}
+            &:before {
+                @extend %pos-center-xy;
+                @extend %bg-contain;
+                content: '';
+                width: 1.1rem;
+                height: var(--offset-xs);
+                position: absolute;
+                //background-image: url(../images/icons/check.svg);
+            }
+        }
 
-		&.error~#{$this}-style {
-			border-color: var(--accent);
-		}
-	}
+        &.error ~ #{$this}__style {
+            border-color: var(--accent);
+        }
+    }
 
-	&-style {
-		position: relative;
-		display: inline-block;
-		width: 2rem;
-		height: 2rem;
-		flex-shrink: 0;
-		border: 0.1rem solid var(--gray-c2);
-		border-radius: $brs;
-	}
+    &__style {
+        position: relative;
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        flex-shrink: 0;
+        border: 0.1rem solid var(--gray-c2);
+        border-radius: $brs;
+    }
 
-	&-text {
-		@extend %text-12;
-		margin-left: var(--offset-xs);
+    &__text {
+        @extend %text-12;
+        margin-left: var(--offset-xs);
 
-		a {
-			text-decoration: underline;
-		}
-	}
+        a {
+            text-decoration: underline;
+        }
+    }
 
-	&-color {
-		width: var(--icon-size-s);
-		height: var(--icon-size-s);
-		border-radius: 50%;
-		margin-left: var(--offset-x);
+    &__color {
+        width: var(--icon-size-s);
+        height: var(--icon-size-s);
+        border-radius: 50%;
+        margin-left: var(--offset-x);
 
-		&+#{$this}-text {
-			margin-left: 0.5rem;
-		}
-	}
+        & + #{$this}__text {
+            margin-left: 0.5rem;
+        }
+    }
 }

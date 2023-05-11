@@ -5,3 +5,4 @@ export { default as Checkbox } from './checkbox/Checkbox';
 export { default as RadioButton } from './radiobutton/RadioButton';
 export { default as Modal } from './modal/Modal';
 export { default as Badge } from './badge/Badge';
+export { default as DateTime } from './datetime/DateTime';

@@ -1,8 +1,8 @@
-import { ShopsList } from "../modules";
+import { Contacts, Feedback, ShopsList } from "../modules";
 import { Map, Placemark } from "@pbe/react-yandex-maps"; 
 import { useEffect, useState } from "react";
 import { Shop } from "../interfaces/Shop";
-import pinIcon from "../assets/images/icons/pin.png";
+import pinIcon from "../assets/images/icons/pin.svg";
 import { PageTop } from "../components";
 import { Page } from "../interfaces/Route";
 import { getCollectionItems } from "../utils/getCollectionItems";
@@ -61,6 +61,8 @@ const Shops = ({ title }: Page) => {
                             <ShopsList shops={shops} />
                         </div>
                     </section>
+                    <Contacts />
+                    <Feedback />
                 </div>
             </div>
         </div>

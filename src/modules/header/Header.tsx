@@ -1,11 +1,10 @@
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { useAppSelector } from '../../app/hooks';
 import { Menu } from '../../components';
 import Logo from '../../components/logo/Logo';
 import { Button } from '../../ui';
 import { formatPhone } from '../../utils/formatPhone';
 
 const Header = () => {
-    const dispatch = useAppDispatch();
     const { email, phones } = useAppSelector((state) => state.contactsReducer.data);
 
     return (
@@ -24,7 +23,7 @@ const Header = () => {
             <div className="header__main">
                 <div className="container">
                     <div className="header__main-inner">
-                        <Logo />
+                        <Logo className="header__logo" />
                         <Menu className="header__menu" />
                         <div className="header__actions">
                             <button className="header__action mob-search-btn" type="button" aria-label="Открыть поиск"

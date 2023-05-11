@@ -1,39 +1,37 @@
 import { Route } from '../interfaces/Route';
-import { Shops, Delivery, Guarantee, NotFound, Sale, Catalog, About } from '../pages';
+import { Home, Shops, Delivery, Guarantee, NotFound, Sale, Catalog, About } from '../pages';
 import { Pages } from '../enums/Page';
 
 export const ROUTES: Route[] = [{
     id: 0,
-    ...Pages.Sale,
-    component: Sale,
-    exact: true
+    ...Pages.Home,
+    component: Home,
 }, {
     id: 1,
-    ...Pages.Catalog,
-    component: Catalog,
-    exact: true
+    ...Pages.Sale,
+    component: Sale,
 }, {
     id: 2,
-    ...Pages.About,
-    component: About,
-    exact: true
+    ...Pages.Catalog,
+    component: Catalog,
 }, {
     id: 3,
-    ...Pages.Shops,
-    component: Shops,
-    exact: true
+    ...Pages.About,
+    component: About,
 }, {
     id: 4,
-    ...Pages.Delivery,
-    component: Delivery,
-    exact: true
+    ...Pages.Shops,
+    component: Shops,
 }, {
     id: 5,
+    ...Pages.Delivery,
+    component: Delivery,
+}, {
+    id: 6,
     ...Pages.Guarantee,
     component: Guarantee,
-    exact: true
 }, {
-    id: 17,
+    id: 7,
     ...Pages.NotFound,
     component: NotFound
 }];

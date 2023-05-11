@@ -1,0 +1,14 @@
+.slider-arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -5.6rem;
+    right: -5.6rem;
+    z-index: 30;
+    @extend %flex-row;
+
+    @media (max-width: 1440px) {
+        left: 0;
+        right: 0;
+    }
+}

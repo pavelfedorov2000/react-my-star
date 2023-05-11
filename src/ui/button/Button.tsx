@@ -1,5 +1,9 @@
+import { ReactNode } from "react";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
+import { ButtonStyle } from "../../enums/ButtonStyle";
+import { MoreIcon } from "../icons";
+import { ButtonType } from "../../enums/ButtonType";
 
 interface Props {
     href?: string;
@@ -7,18 +11,24 @@ interface Props {
     style?: string;
     text?: string;
     transparent?: boolean;
-    icon?: boolean;
-    type?: 'submit' | 'reset' | 'button';
+    icon?: ReactNode;
+    icon_position_right?: boolean;
+    type?: ButtonType.Submit | ButtonType.Reset;
     contact?: boolean;
+    blank?: boolean;
+    onClick?: () => void;
 }
 
-const Button = ({ href, className, style, text, transparent, type, contact }: Props) => {
+const Button = ({ href, className, style, text, transparent, type, contact, icon, icon_position_right, blank, onClick }: Props) => {
     const content = <>
-        { text && 
+        {icon && !icon_position_right && icon}
+        {text && 
             <span className="btn__text">
                 {text}
             </span>
         }
+        {icon_position_right && icon}
+        {style === ButtonStyle.More && <MoreIcon />}
     </>
 
     return (
@@ -26,7 +36,7 @@ const Button = ({ href, className, style, text, transparent, type, contact }: Pr
             {
                 href ?
                     contact ? 
-                        <a href={href} className={classNames('btn', className, style && `btn--style_${style}`, {
+                        <a href={href} target={blank ? '_blank': undefined} className={classNames('btn', className, style && `btn--style_${style}`, {
                             'btn--transparent': transparent
                         })}>
                             {content}
@@ -38,7 +48,7 @@ const Button = ({ href, className, style, text, transparent, type, contact }: Pr
                             {content}
                         </Link>
                     :
-                    <button className={classNames('btn', className, style && `btn--style_${style}`, {
+                    <button onClick={onClick} className={classNames('btn', className, style && `btn--style_${style}`, {
                         'btn--transparent': transparent
                     })} type={type || 'button'}>
                         {content}

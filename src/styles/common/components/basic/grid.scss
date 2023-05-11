@@ -1,157 +1,159 @@
 .row {
-	display: grid;
-	gap: var(--offset-ms);
+    display: grid;
+    gap: var(--offset-ms);
 
-	@media (min-width: 1025px) {
-		grid-template-columns: repeat(12, 1fr);
-	}
+    @media (min-width: 1025px) {
+        grid-template-columns: repeat(12, 1fr);
+    }
 
-	&--2 {
-		grid-template-columns: repeat(2, 1fr);
-	}
+    &--2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-	&--4 {
-		grid-template-columns: repeat(4, 1fr);
-	}
+    &--4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
 
-	&--7 {
-		@media (min-width: 768px) {
-			grid-template-columns: repeat(12, 1fr);
-		}
+    &--7 {
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(12, 1fr);
+        }
 
-		@media (min-width: 1025px) {
-			grid-template-columns: repeat(7, 1fr);
-		}
+        @media (min-width: 1025px) {
+            grid-template-columns: repeat(7, 1fr);
+        }
 
-		.col-3,
-		.col-4 {
-			@media (min-width: 768px) and (max-width: 1024px) {
-				grid-column: span 6;
-			}
-		}
+        .col-3,
+        .col-4 {
+            @media (min-width: 768px) and (max-width: 1024px) {
+                grid-column: span 6;
+            }
+        }
 
-		p {
-			grid-column: span 7;
-			color: var(--dark-text);
+        p {
+            grid-column: span 7;
+            color: var(--dark-text);
 
-			@media (max-width: 1024px) {
-				grid-column: span 12;
-			}
-		}
-	}
+            @media (max-width: 1024px) {
+                grid-column: span 12;
+            }
+        }
+    }
 
-	&--8 {
-		@media (min-width: 1025px) {
-			grid-template-columns: repeat(8, 1fr);
-		}
-	}
+    &--8 {
+        @media (min-width: 1025px) {
+            grid-template-columns: repeat(8, 1fr);
+        }
+    }
 }
 
 .col-3 {
-	&:nth-child(odd) {
-		@media (min-width: 1025px) {
-			grid-column: span 3;
-		}
-	}
+    &:nth-child(odd) {
+        @media (min-width: 1025px) {
+            grid-column: span 3;
+        }
+    }
 
-	&:nth-child(even) {
-		@media (min-width: 768px) {
-			grid-column: span 6;
-		}
+    &:nth-child(even) {
+        @media (min-width: 768px) {
+            grid-column: span 6;
+        }
 
-		@media (min-width: 1025px) {
-			grid-column: 5 / span 3;
-		}
-	}
+        @media (min-width: 1025px) {
+            grid-column: 5 / span 3;
+        }
+    }
 
-	img {
-		width: 100%;
-	}
+    img {
+        width: 100%;
+    }
 
-	p {
-		color: var(--gray-61);
-	}
+    p {
+        color: var(--gray-61);
+    }
 }
 
 .col-4 {
-	@media (min-width: 1025px) {
-		grid-column: span 4;
-	}
+    @media (min-width: 1025px) {
+        grid-column: span 4;
+    }
 
-	img {
-		width: 100%;
-	}
+    img {
+        width: 100%;
+    }
 }
 
 .col-8 {
-	display: grid;
-	gap: 3rem var(--offset-ms);
-	justify-items: start;
+    display: grid;
+    gap: 3rem var(--offset-ms);
+    justify-items: start;
 
-	@media (max-width: 1024px) {
-		row-gap: var(--offset-ms);
-	}
+    @media (max-width: 1024px) {
+        row-gap: var(--offset-ms);
+    }
 
-	@media (min-width: 1025px) {
-		grid-template-columns: repeat(8, 1fr);
-		grid-column: 5 / span 8;
-	}
+    @media (min-width: 1025px) {
+        grid-template-columns: repeat(8, 1fr);
+        grid-column: 5 / span 8;
+    }
 
-	picture {
-		@media (min-width: 1025px) {
-			justify-self: stretch;
-			grid-column: span 8;
-		}
-	}
+    picture {
+        @media (min-width: 1025px) {
+            justify-self: stretch;
+            grid-column: span 8;
+        }
+    }
 
-	img {
-		@extend %cover;
-	}
+    img {
+        @extend %cover;
+    }
 
-	p {
-		font-weight: 300;
-	}
+    p {
+        font-weight: 300;
+    }
 
-	>p {
-		&:first-child {
-			@extend %text-20-34;
+    > p {
+        &:first-child {
+            @extend %text-20-34;
 
-			@media (max-width: 1024px) {
-				font-size: 1.6rem;
-			}
+            @media (max-width: 1024px) {
+                font-size: 1.6rem;
+            }
 
-			@media (max-width: 767px) {
-				font-size: 1.4rem;
-			}
-		}
-	}
+            @media (max-width: 767px) {
+                font-size: 1.4rem;
+            }
+        }
+    }
 
-	section {
-		@include padding-y(var(--offset-x));
+    section {
+        @include padding-y(var(--offset-x));
 
-		&:first-child {
-			padding-top: 0;
-			padding-bottom: var(--offset-xl);
-		}
+        &:first-child {
+            padding-top: 0;
+            padding-bottom: var(--offset-xl);
+        }
 
-		&:not(:last-child) {
-			border-bottom: 0.1rem solid var(--gray-ed);
-		}
+        &:not(:last-child) {
+            border-bottom: 0.1rem solid var(--gray-ed);
+        }
 
-		&:last-child {
-			padding-bottom: 0;
-		}
-	}
-}
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
 
-#benefits .col-8 section {
-	padding: 5rem 0;
+    > div {
+        section {
+            padding: 5rem 0;
 
-	@media (max-width: 1024px) {
-		padding: 3rem 0;
-	}
+            @media (max-width: 1024px) {
+                padding: 3rem 0;
+            }
 
-	&:last-child {
-		padding-bottom: 0;
-	}
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
 }

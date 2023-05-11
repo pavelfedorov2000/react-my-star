@@ -3,6 +3,7 @@ export interface Section {
     title: string;
     content: {
         items: any[];
+        span?: string;
     };
     items?: any[];
     order: number;

@@ -1,89 +1,73 @@
 .input {
-	@extend %text-14;
-	width: 100%;
-	padding-bottom: 0.7rem;
-	font-weight: 300;
-	border: none;
-	font-family: inherit;
-	border-bottom: 0.1rem solid var(--gray-e0);
+    @extend %text-14;
+    width: 100%;
+    padding-bottom: 0.7rem;
+    font-weight: 300;
+    border: none;
+    font-family: inherit;
+    border-bottom: 0.1rem solid var(--gray-e0);
 
-	@include input-placeholder {
-		color: var(--gray-9e);
-	}
+    @include input-placeholder {
+        color: var(--gray-9e);
+    }
 
-	@include input-placeholder-focus {
-		opacity: 0;
-	}
+    @include input-placeholder-focus {
+        opacity: 0;
+    }
 
-	&:focus {
-		border-bottom-color: var(--default);
-	}
+    &:focus {
+        border-bottom-color: var(--default);
+    }
 }
 
 .form-item {
-	position: relative;
-	height: 5.2rem;
-	display: flex;
-	align-items: flex-end;
+    position: relative;
+    height: 5.2rem;
+    display: flex;
+    align-items: flex-end;
 
-	input {
-		&::placeholder {
-			opacity: 0;
-		}
+    input {
+        &::placeholder {
+            opacity: 0;
+        }
 
-		&:focus,
-		&:not(:placeholder-shown),
-		&:-webkit-autofill {
-			&~.form-label {
-				top: 0;
-				transform: none;
-				font-size: 1.2rem;
-				color: var(--gray-61);
-			}
-		}
-	}
+        &:focus,
+        &:not(:placeholder-shown),
+        &:-webkit-autofill {
+            & ~ .form-label {
+                top: 0;
+                transform: none;
+                font-size: 1.2rem;
+                color: var(--gray-61);
+            }
+        }
+    }
 }
 
 .form-label {
-	@extend %pos-center-y;
-	@extend %text-14;
-	position: absolute;
-	font-weight: 300;
-	color: var(--gray-9e);
-	transition: $transition all;
-}
-
-.form-agree {
-	display: flex;
-	font-weight: 300;
-	cursor: pointer;
-
-	.check-text {
-		font-size: 1.4rem;
-		line-height: 2.2rem;
-	}
-
-	a {
-		text-decoration: underline;
-		font-weight: 500;
-	}
+    @extend %pos-center-y;
+    @extend %text-14;
+    position: absolute;
+    font-weight: 300;
+    color: var(--gray-9e);
+    transition: $transition all;
 }
 
 input[type='number'] {
-	&::-webkit-inner-spin-button {
-		-webkit-appearance: none;
-	}
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
 
-	&::-webkit-outer-spin-button {
-		-webkit-appearance: none;
-	}
+    &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
 }
 
 input[type='number'] {
-	-moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
 input[type='number']:hover,
 input[type='number']:focus {
-	-moz-appearance: number-input;
+    -moz-appearance: number-input;
 }

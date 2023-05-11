@@ -1,0 +1,15 @@
+.form-agree {
+    display: flex;
+    font-weight: 300;
+    cursor: pointer;
+
+    .check-text {
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+    }
+
+    a {
+        text-decoration: underline;
+        font-weight: 500;
+    }
+}

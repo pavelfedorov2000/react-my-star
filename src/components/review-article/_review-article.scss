@@ -1,0 +1,49 @@
+.reviews-slider {
+    width: 100%;
+
+    @media (max-width: 1024px) {
+        width: calc(100vw - var(--container-padding) * 2);
+    }
+
+    .col-4 {
+        grid-column: 5 / span 4;
+    }
+}
+
+.review-article {
+
+    .col-3,
+    .col-4 {
+        @media (max-width: 1024px) {
+            grid-column: span 8;
+        }
+    }
+
+    // .review-article__name
+
+    &__name {
+        @extend %text-20-34;
+
+        &:not(:last-child) {
+            margin-bottom: var(--offset-ms);
+        }
+    }
+
+    // .review-article__text
+
+    &__text {
+        font-weight: 300;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+
+        &:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__video {
+        height: 30rem;
+    }
+}
