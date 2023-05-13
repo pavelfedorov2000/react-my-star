@@ -11,7 +11,7 @@ const PopularCategory = ({ href, img, title, index, count }: Props) => {
     return (
         <Link to={`/catalog/${href}/`} className="popular-category">
             <figure>
-                <Img className="popular-category__img" {...img} width={(index % count === 0 || index % count === 5) ? 676 : 328} height={400} cover />
+                <Img className="popular-category__img" src={img?.src} width={(index % count === 0 || index % count === 5) ? 676 : 328} height={400} cover />
             </figure>
             <span className="popular-category__title">
                 {title}

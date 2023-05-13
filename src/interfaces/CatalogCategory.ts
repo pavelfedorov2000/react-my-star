@@ -1,9 +1,14 @@
-export interface CatalogCategory {
+export interface CatalogSubcategory {
+    href?: string;
+    title: string;
+    subcategories?: CatalogSubcategory[];
+}
+
+export interface CatalogCategory extends CatalogSubcategory {
     id?: string;
     order: number;
-    href?: string;
-    img: {
+    img?: {
         src: string;
     };
-    title: string;
 }
+

@@ -16,13 +16,14 @@ interface Props {
     type?: ButtonType.Submit | ButtonType.Reset;
     contact?: boolean;
     blank?: boolean;
-    onClick?: () => void;
+    onClick?: any;
+    city?: string;
 }
 
-const Button = ({ href, className, style, text, transparent, type, contact, icon, icon_position_right, blank, onClick }: Props) => {
+const Button = ({ href, className, style, text, transparent, type, contact, icon, icon_position_right, blank, city, onClick }: Props) => {
     const content = <>
         {icon && !icon_position_right && icon}
-        {text && 
+        {text &&
             <span className="btn__text">
                 {text}
             </span>
@@ -35,8 +36,8 @@ const Button = ({ href, className, style, text, transparent, type, contact, icon
         <>
             {
                 href ?
-                    contact ? 
-                        <a href={href} target={blank ? '_blank': undefined} className={classNames('btn', className, style && `btn--style_${style}`, {
+                    contact ?
+                        <a href={href} target={blank ? '_blank' : undefined} className={classNames('btn', className, style && `btn--style_${style}`, {
                             'btn--transparent': transparent
                         })}>
                             {content}
@@ -48,7 +49,7 @@ const Button = ({ href, className, style, text, transparent, type, contact, icon
                             {content}
                         </Link>
                     :
-                    <button onClick={onClick} className={classNames('btn', className, style && `btn--style_${style}`, {
+                    <button onClick={onClick} data-city={city ?? null} className={classNames('btn', className, style && `btn--style_${style}`, {
                         'btn--transparent': transparent
                     })} type={type || 'button'}>
                         {content}

@@ -9,3 +9,4 @@ export { default as Feedback } from './feedback/Feedback';
 export { default as ShopsList } from './shops-list/ShopsList';
 export { default as ClientReviews } from './client-reviews/ClientReviews';
 export { default as AboutCompany } from './about-company/AboutCompany';
+export { default as SalePoints } from './sale-points/SalePoints';

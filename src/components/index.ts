@@ -10,3 +10,5 @@ export { default as BannerNews } from './banner-news/BannerNews';
 export { default as PopularCategory } from './popular-category/PopularCategory';
 export { default as CollectionPreview } from './collection-preview/CollectionPreview';
 export { default as AboutNumbers } from './about-numbers/AboutNumbers';
+export { default as Banner } from './banner/Banner';
+export { default as Map } from './map/Map';

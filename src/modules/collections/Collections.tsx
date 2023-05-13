@@ -30,7 +30,7 @@ const Collections = () => {
             <ul className="row collections__grid row--2">
                 {visibleCollections.map((collection, index) => (
                     <li key={collection.id}>
-                        <CollectionPreview {...collection} index={index} count={6} />
+                        <CollectionPreview {...collection} index={index + 1} count={6} />
                     </li>
                 ))}
             </ul>

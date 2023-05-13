@@ -1,6 +1,7 @@
 const More = () => {
     return (
         <svg className="btn__icon"
+            fill="none"
             viewBox="0 0 7 12"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true">

@@ -1,0 +1,72 @@
+.banner {
+    position: relative;
+    background-position: 0 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+
+    // .installment__content
+
+    &__row {
+        padding: 6rem 0;
+
+        @media(max-width: 767px) {
+            grid-template-columns: 1fr;
+            @include padding-x(var(--offset-s));
+        }
+
+        @media(max-width: 500px) {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+
+    &__content {
+        @extend %flex-col;
+        align-items: flex-start;
+
+        @media(min-width: 768px) {
+            grid-column: -2 / -1;
+            padding-right: var(--offset-ms);
+        }
+
+        >* {
+            &:not(:last-child) {
+                margin-bottom: var(--offset-m);
+            }
+        }
+    }
+
+    // .installment__title
+
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: var(--offset-s);
+        }
+    }
+
+    // .installment__subtitle
+
+    &__subtitle {
+        @extend %text-20;
+
+        @media(max-width: 767px) {
+            font-size: 1.4rem;
+            line-height: 2.2rem;
+        }
+    }
+
+    &__btn {
+        padding: 1.9rem var(--offset-xl);
+
+        @media(max-width: 767px) {
+            padding: 1.25rem 3rem;
+        }
+    }
+}

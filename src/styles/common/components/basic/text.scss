@@ -120,7 +120,7 @@
             }
         }
 
-        > div {
+        >div {
             @include row-gap(var(--offset-x));
             align-content: start;
         }
@@ -133,7 +133,7 @@
         dd {
             @extend %text-16;
 
-            > * {
+            >* {
                 display: block;
 
                 &:not(:last-child) {
@@ -198,8 +198,8 @@
     }
 
     &__body {
-        > * {
-            &:first-child {
+        >* {
+            &:first-child:not(.map) {
                 @include padding-y(6rem);
 
                 @media (max-width: 500px) {
@@ -208,7 +208,7 @@
             }
         }
 
-        > section {
+        >section {
             padding: 10rem 0;
             border-bottom: 0.1rem solid var(--gray-ed);
 
@@ -220,7 +220,7 @@
                 padding: 3rem 0;
             }
 
-            > section {
+            >section {
                 padding: 10rem 0;
 
                 @media (max-width: 1024px) {
@@ -243,7 +243,7 @@
                     border-bottom: 0.1rem solid var(--gray-ed);
                 }
 
-                > * {
+                >* {
                     &:not(:last-child) {
                         margin-bottom: 5rem;
 
@@ -259,8 +259,8 @@
                 border-bottom: none;
             }
 
-            > .col-3 {
-                > * {
+            >.col-3 {
+                >* {
                     &:not(:last-child) {
                         margin-bottom: 2.5rem;
                     }
@@ -282,7 +282,7 @@
                     grid-column: 5 / span 7;
                 }
 
-                > p {
+                >p {
                     &:first-child {
                         @extend %text-20;
 
@@ -302,7 +302,7 @@
                         }
                     }
 
-                    > * {
+                    >* {
                         &:not(:last-child) {
                             margin-bottom: 1.2rem;
                         }
@@ -327,7 +327,7 @@
                     }
                 }
 
-                > * {
+                >* {
                     &:not(:last-child) {
                         margin-bottom: 5rem;
 
@@ -338,13 +338,13 @@
                 }
             }
 
-            > h2 {
+            >h2 {
                 margin-bottom: 5rem;
             }
         }
     }
 
-    .row + .row {
+    .row+.row {
         margin-top: 6rem;
 
         @media (max-width: 1024px) {
@@ -353,14 +353,14 @@
     }
 
     .col-8 {
-        > * {
+        >* {
             @media (min-width: 1025px) {
                 grid-column: span 8;
             }
         }
 
-        > section {
-            > * {
+        >section {
+            >* {
                 &:not(:last-child) {
                     margin-bottom: var(--offset-xl);
 
@@ -388,9 +388,9 @@
                 }
             }
 
-            > * {
+            >* {
 
-                > p,
+                >p,
                 h4,
                 h5,
                 h6 {
@@ -408,7 +408,7 @@
                     }
                 }
 
-                > div {
+                >div {
                     &:not(:last-child) {
                         margin-bottom: var(--offset-x);
                     }

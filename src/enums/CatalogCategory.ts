@@ -4,5 +4,9 @@ export enum CatalogCategory {
     Tumby = 'tumby',
     Stellazhi = 'stellazhi',
     Komody = 'komody',
+    Polki = 'polki',
     Stoly = 'stoly',
+    Matrasy = 'matrasy',
+    Zerkala = 'zerkala',
+    Drugoe = 'drugoe',
 }

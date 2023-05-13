@@ -4,9 +4,7 @@ import { db } from "../firebase/firebase";
 export const getCollectionItems = async (collectionName: string, setFunction: (prev: any) => void, single?: boolean) => {
     const colRef = collection(db, collectionName);
     const docsSnap = await getDocs(colRef) as any;
-    console.log(docsSnap.length);
     docsSnap.forEach((doc: any) => {
-        console.log(doc.data());
         if (single !== undefined && single) {
             setFunction({
                 ...doc.data()
@@ -18,7 +16,7 @@ export const getCollectionItems = async (collectionName: string, setFunction: (p
                         ...prev
                     ]
                 }
-                
+
                 return [
                     ...prev,
                     {

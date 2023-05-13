@@ -1,14 +1,9 @@
-import { collection, getDocs } from "firebase/firestore"; 
-import { useEffect, useState } from "react";
+import { useAppSelector } from "../../app/hooks";
 import { ShopItem } from "../../components";
-import { Shop } from "../../interfaces/Shop";
-import { db } from "../../firebase/firebase";
 
-interface Props {
-    shops: Shop[];
-}
+const ShopsList = () => {
+    const { shops } = useAppSelector((state) => state.shopsReducer);
 
-const ShopsList = ({ shops }: Props) => {
     return (
         <ul className="shops-list">
             {shops.map((shop) => (

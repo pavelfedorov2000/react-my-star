@@ -3,7 +3,7 @@
 # Stack:
 - module architecture
 - React + TypeScript
-- Redux Tooltit
+- Redux Toolkit
 - Firebase (auth, db)
 - classnames
 - scss

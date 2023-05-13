@@ -6,6 +6,7 @@ export const ROUTES: Route[] = [{
     id: 0,
     ...Pages.Home,
     component: Home,
+    exact: true
 }, {
     id: 1,
     ...Pages.Sale,

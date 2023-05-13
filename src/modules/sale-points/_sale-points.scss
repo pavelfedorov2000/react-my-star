@@ -1,0 +1,107 @@
+.sale-points {
+    // .sale-points__grid
+
+    &__grid {
+        @media (min-width: 1025px) {
+            row-gap: 0;
+            grid-template-rows: max-content var(--offset-xl) max-content 8rem max-content var(--offset-l) auto;
+        }
+
+        @media (max-width: 1024px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // .sale-points__title
+
+    &__title {
+        @media (min-width: 1025px) {
+            grid-row: 1 / span 3;
+            grid-column: 1 / span 3;
+        }
+    }
+
+    // .sale-points__text
+
+    &__text {
+        @extend %text-20-34;
+        -webkit-line-clamp: 3;
+
+        @media (min-width: 1025px) {
+            grid-column: 7 / -1;
+            grid-row: 1 / 2;
+        }
+    }
+
+    // .sale-points__more
+
+    &__more {
+        @media (min-width: 1025px) {
+            grid-column: 7 / -1;
+            grid-row: 3 / 4;
+            justify-self: start;
+        }
+    }
+
+    // .sale-points__tabs
+
+    &__tabs {
+        margin: calc(var(--offset-xs) * (-1)) calc(var(--offset-s) * (-1));
+
+        @media (min-width: 1025px) {
+            grid-row: -4 / -3;
+            grid-column: 1 / -1;
+            justify-content: center;
+        }
+    }
+
+    // .sale-points__map
+
+    &__map {
+        background-color: var(--gray-61);
+        height: 57rem;
+
+        @media (max-width: 1024px) {
+            height: 40rem;
+        }
+
+        @media (max-width: 500px) {
+            height: 25rem;
+        }
+
+        @media (min-width: 1025px) {
+            grid-column: 1 / -1;
+            grid-row: -2 / -1;
+        }
+    }
+}
+
+.filter-tab {
+    position: relative;
+    @extend %text-20-34;
+    padding: var(--offset-xs) var(--offset-s);
+    background-color: transparent;
+    color: var(--default);
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: transparent;
+            color: var(--accent);
+        }
+    }
+
+    &:not(:last-child) {
+        &:after {
+            content: '/';
+            position: absolute;
+            @extend %pos-center-y;
+            right: 0;
+            @extend %text-20-34;
+        }
+    }
+
+    &.active {
+        color: var(--accent);
+        font-weight: 400;
+    }
+}
