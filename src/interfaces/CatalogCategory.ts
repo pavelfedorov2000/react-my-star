@@ -1,7 +1,10 @@
+import { ReactNode } from "react";
+
 export interface CatalogSubcategory {
-    href?: string;
+    href: string;
     title: string;
     subcategories?: CatalogSubcategory[];
+    icon?: ReactNode;
 }
 
 export interface CatalogCategory extends CatalogSubcategory {

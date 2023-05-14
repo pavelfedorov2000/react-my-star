@@ -1,0 +1,372 @@
+.categories-menu {
+	$this: &;
+
+	padding-left: 0;
+	padding-right: 0;
+
+	@media (min-width: 1025px) {
+		min-height: var(--header-bottom-height);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-top: 0.1rem solid var(--gray-ed);
+		border-bottom: 0.1rem solid var(--gray-ed);
+	}
+
+	@media (max-width: 1024px) {
+		display: none;
+		flex-grow: 1;
+	}
+
+	// .categories-menu__item
+
+	&__item {
+		padding: 0 2.3rem;
+
+		@media (min-width: 1025px) {
+			position: relative;
+		}
+
+		@media (max-width: 1024px) {
+			width: 100%;
+			padding: var(--offset-x) 0;
+		}
+
+		&:first-child {
+			@media (min-width: 1025px) {
+				padding-left: 0;
+			}
+
+			@media (max-width: 1024px) {
+				padding-top: 0;
+			}
+		}
+
+		&:last-child {
+			@media (min-width: 1025px) {
+				padding-right: 0;
+			}
+
+			.categories-menu-drop {
+				left: auto;
+				right: 0;
+
+				&__list {
+					@media (min-width: 1025px) {
+						grid-template-columns: unset;
+					}
+				}
+			}
+		}
+
+		&:not(:last-child) {
+			@media (max-width: 1024px) {
+				border-bottom: 0.1rem solid var(--gray-ed);
+			}
+
+			@media (min-width: 1025px) {
+				position: relative;
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					right: 0;
+					width: 0.1rem;
+					height: var(--icon-size-l);
+					background-color: var(--gray-ed);
+				}
+			}
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				.categories-menu-drop {
+					opacity: 1;
+					visibility: visible;
+					pointer-events: all;
+				}
+			}
+		}
+	}
+
+	// .categories-menu__link
+
+	&__link {
+		@extend %vertical-align;
+
+		&.active {
+			padding: 0 0 var(--offset-x) 0;
+
+			#{$this} {
+				&__back-btn {
+					display: block;
+
+					&+a {
+						margin-left: 0;
+					}
+				}
+
+				&__drop-btn {
+					display: none;
+				}
+			}
+		}
+
+		a,
+		span {
+			@media (max-width: 1024px) {
+				margin-left: var(--offset-xxl);
+			}
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				a {
+					color: var(--accent);
+				}
+
+				#{$this}__icon {
+					fill: var(--accent);
+				}
+			}
+		}
+	}
+
+	&__back-btn,
+	&__drop-btn {
+		display: none;
+		width: var(--icon-size);
+		height: var(--icon-size);
+		flex-shrink: 0;
+		@extend %bg-contain;
+
+		@media (max-width: 1024px) {
+			display: block;
+		}
+	}
+
+	&__drop-btn {
+		flex-shrink: 0;
+		margin-left: auto;
+		//background-image: url(../images/icons/drop-menu-arr.svg);
+	}
+
+	&__back-btn {
+		//background-image: url(../images/icons/drop-menu-back.svg);
+		margin-right: var(--offset-ms);
+		flex-shrink: 0;
+	}
+
+	// .categories-menu__icon
+
+	&__icon {
+		width: var(--icon-size-xl);
+		height: var(--icon-size-xl);
+		cursor: pointer;
+		flex-shrink: 0;
+
+		&:not(.stroke) {
+			fill: var(--default);
+			transition: $transition fill;
+		}
+
+		&.stroke {
+			stroke: var(--default);
+			transition: $transition stroke;
+		}
+	}
+
+	&__icon+a,
+	&__icon+span {
+		margin-left: var(--offset-xxs);
+
+		@media (max-width: 1024px) {
+			flex-grow: 1;
+			margin-left: 0;
+			@include padding-x(var(--offset-xs));
+		}
+	}
+}
+
+.categories-menu-drop {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 102;
+	transition: $transition all;
+	background-color: #fff;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+
+	@media (min-width: 1025px) {
+		box-shadow: 0 1.4rem 1.6rem rgba(49, 49, 49, 0.06);
+		padding: var(--offset-l);
+	}
+
+	@media (max-width: 1024px) {
+		position: fixed;
+		width: 100%;
+		top: calc(var(--offset-xxxxl) + 7.5rem);
+		bottom: 0;
+		padding: 0 var(--offset-s) 9.5rem;
+		overflow-y: auto;
+		transform: translateX(100%);
+		transition: $transition all;
+	}
+
+	&.active {
+		@media (max-width: 1024px) {
+			transform: translateX(0);
+			opacity: 1;
+			visibility: visible;
+			pointer-events: all;
+		}
+	}
+
+	&__top {
+		@extend %vertical-align;
+		border-bottom: 0.1rem solid var(--gray-ed);
+		padding-bottom: var(--offset-x);
+
+		@media (min-width: 1025px) {
+			display: none;
+		}
+	}
+
+	// .categories-menu-drop__list
+
+	&__list {
+		@media (min-width: 1025px) {
+			display: grid;
+			grid-template-columns: repeat(2, max-content);
+			gap: 3rem var(--offset-xl);
+		}
+
+		&--col-3 {
+			@media (min-width: 1025px) {
+				grid-template-columns: repeat(3, max-content);
+			}
+		}
+	}
+
+	&__item {
+		@media (max-width: 1024px) {
+			padding: var(--offset-x) 0;
+		}
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+
+		&:not(:last-child) {
+			@media (max-width: 1024px) {
+				border-bottom: 0.1rem solid var(--gray-ed);
+			}
+		}
+	}
+
+	&__link {
+		@extend %vertical-align;
+
+		@media (min-width: 1025px) {
+			white-space: nowrap;
+		}
+
+		@media (max-width: 1024px) {
+			width: 100%;
+			padding-left: var(--offset-xl);
+		}
+
+		span {
+			transition: $transition color;
+			margin-left: var(--offset-xxl);
+
+			&:not(:first-child) {
+				margin-left: var(--offset-xs);
+			}
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				span {
+					color: var(--accent);
+				}
+
+				.categories-menu__icon:not(.stroke) {
+					fill: var(--accent);
+				}
+
+				.categories-menu__icon.stroke {
+					stroke: var(--accent);
+				}
+			}
+		}
+	}
+
+	&__btn {
+		width: var(--icon-size);
+		height: var(--icon-size);
+		@extend %flex-center;
+		flex-shrink: 0;
+		margin-left: var(--offset-xxxs);
+		transition: $transition transform;
+
+		&.active {
+			transform: rotate(180deg);
+		}
+
+		@media (max-width: 1024px) {
+			margin-left: auto;
+		}
+
+		svg {
+			width: var(--icon-size);
+			height: var(--icon-size);
+			transition: $transition stroke;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--accent);
+
+				svg {
+					stroke: var(--accent);
+				}
+			}
+		}
+	}
+
+	&__sublist {
+		display: none;
+		padding-top: var(--offset-xxxs);
+		padding-left: var(--offset-xxl);
+
+		@media (max-width: 1024px) {
+			padding-top: var(--offset-xxxxs);
+			padding-left: calc(var(--offset-xxl) + 4.4rem);
+		}
+	}
+
+	&__sublink {
+		display: flex;
+		@include padding-y(var(--offset-xxs));
+		font-weight: 300;
+
+		@media(max-width: 1024px) {
+			@include padding-y(var(--offset-xs));
+		}
+	}
+}
+
+.burger-menu {
+	.categories-menu {
+		display: none;
+
+		@media (max-width: 1024px) {
+			display: block;
+		}
+	}
+}

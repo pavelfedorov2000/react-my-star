@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { Link } from "react-router-dom";
-import logo from '../../assets/images/logo/logo.svg';
+//import logo from '../../assets/images/logo/logo.svg';
 import { Img } from "../../ui";
 
 interface Props {
@@ -10,9 +10,11 @@ interface Props {
 const Logo = ({ className }: Props) => {
     return (
         <Link to="/" className={classNames('logo', className)}>
-            <Img className="logo__img" src={logo} alt={'logo'} width={128} height={35} />
+            Logo
         </Link>
     );
 };
 
 export default Logo;
+
+//<Img className="logo__img" src={logo} alt={'logo'} width={128} height={35} />

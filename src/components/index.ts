@@ -12,3 +12,4 @@ export { default as CollectionPreview } from './collection-preview/CollectionPre
 export { default as AboutNumbers } from './about-numbers/AboutNumbers';
 export { default as Banner } from './banner/Banner';
 export { default as Map } from './map/Map';
+export { default as CategoriesMenu } from './categories-menu/CategoriesMenu';

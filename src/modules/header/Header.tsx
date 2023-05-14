@@ -1,5 +1,5 @@
 import { useAppSelector } from '../../app/hooks';
-import { Menu } from '../../components';
+import { CategoriesMenu, Menu } from '../../components';
 import Logo from '../../components/logo/Logo';
 import { Button } from '../../ui';
 import { formatPhone } from '../../utils/formatPhone';
@@ -32,6 +32,7 @@ const Header = () => {
                             </button>
                         </div>
                     </div>
+                    <CategoriesMenu />
                 </div>
             </div>
         </header>

@@ -37,7 +37,7 @@ const Button = ({ href, className, style, text, transparent, type, contact, icon
             {
                 href ?
                     contact ?
-                        <a href={href} target={blank ? '_blank' : undefined} className={classNames('btn', className, style && `btn--style_${style}`, {
+                        <a href={href} target={blank ? '_blank' : undefined} rel="noreferrer" className={classNames('btn', className, style && `btn--style_${style}`, {
                             'btn--transparent': transparent
                         })}>
                             {content}
