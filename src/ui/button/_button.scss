@@ -423,6 +423,23 @@
                 }
             }
         }
+
+        &_burger {
+            svg {
+                width: 2.8rem;
+                height: 2.8rem;
+                stroke: var(--default);
+                transition: $transition stroke;
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    svg {
+                        stroke: var(--accent);
+                    }
+                }
+            }
+        }
     }
 
     /* &--with {
@@ -453,6 +470,12 @@
 
     &--transparent {
         background-color: transparent;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: transparent;
+            }
+        }
     }
 
     &--disabled {
@@ -642,6 +665,8 @@ span {
 }
 
 .close-btn {
+    padding: var(--offset-xs);
+
     svg {
         width: var(--icon-size-ls);
         height: var(--icon-size-ls);

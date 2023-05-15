@@ -2,6 +2,15 @@ export { default as MoreIcon } from './More';
 export { default as SearchIcon } from './Search';
 export { default as ArrowLeftIcon } from './ArrowLeft';
 export { default as ArrowRightIcon } from './ArrowRight';
+export { default as CloseIcon } from './Close';
+export { default as DownloadIcon } from './Download';
+export { default as BackIcon } from './Back';
+
+export { default as BurgerIcon } from './Burger';
+export { default as CartIcon } from './Cart';
+export { default as FavoriteIcon } from './Favorite';
+export { default as UserIcon } from './User';
+export { default as CompareIcon } from './Compare';
 
 export { default as BedIcon } from './Bed';
 export { default as DoubleBedIcon } from './DoubleBed';
@@ -32,3 +41,12 @@ export { default as ToiletTableIcon } from './ToiletTable';
 export { default as LunchTableIcon } from './LunchTable';
 export { default as ComputerTableIcon } from './ComputerTable';
 export { default as CoffeeTableIcon } from './CoffeeTable';
+
+export { default as GoogleIcon } from './Google';
+export { default as InstagramIcon } from './Instagram';
+export { default as FacebookIcon } from './Facebook';
+export { default as OdnoklassnikiIcon } from './Odnoklassniki';
+export { default as VkIcon } from './Vk';
+
+export { default as PasswordHiddenIcon } from './PasswordHidden';
+export { default as PasswordVisibleIcon } from './PasswordVisible';

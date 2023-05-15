@@ -20,39 +20,6 @@
     }
 }
 
-.form-item {
-    position: relative;
-    height: 5.2rem;
-    display: flex;
-    align-items: flex-end;
-
-    input {
-        &::placeholder {
-            opacity: 0;
-        }
-
-        &:focus,
-        &:not(:placeholder-shown),
-        &:-webkit-autofill {
-            & ~ .form-label {
-                top: 0;
-                transform: none;
-                font-size: 1.2rem;
-                color: var(--gray-61);
-            }
-        }
-    }
-}
-
-.form-label {
-    @extend %pos-center-y;
-    @extend %text-14;
-    position: absolute;
-    font-weight: 300;
-    color: var(--gray-9e);
-    transition: $transition all;
-}
-
 input[type='number'] {
     &::-webkit-inner-spin-button {
         -webkit-appearance: none;

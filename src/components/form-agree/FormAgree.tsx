@@ -1,14 +1,23 @@
 import classNames from "classnames";
+import { Checkbox } from "../../ui";
 
 interface Props {
     className?: string;
+    text?: string;
+    check?: boolean;
 }
 
-const FormAgree = ({ className }: Props) => {
+const FormAgree = ({ className, text, check }: Props) => {
     return (
-        <div className={classNames('form-agree', className)}>
-            * Нажимая кнопку отправить я даю свое согласие на обработку персональных данных
-        </div>
+        <>
+            {check ?
+                <Checkbox className="form-agree" name="agree" label={text} />
+                :
+                <div className={classNames('form-agree', className)}>
+                    {text ?? '* Нажимая кнопку отправить я даю свое согласие на обработку персональных данных'}
+                </div>
+            }
+        </>
     );
 };
 

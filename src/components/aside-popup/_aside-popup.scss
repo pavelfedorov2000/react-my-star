@@ -1,0 +1,231 @@
+#phone-enter {
+    display: none;
+}
+
+#register {
+    .form-agree {
+        align-items: flex-start;
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+}
+
+.aside-popup {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    right: 0;
+    z-index: 101;
+    //opacity: 0;
+    //visibility: hidden;
+    bottom: 0;
+    overflow-y: auto;
+    width: 50.7rem;
+    padding: var(--offset-xxxxl) 8rem 10rem;
+    background-color: #fff;
+    transition: $transition all;
+
+    &.active {
+        right: 0;
+        opacity: 1;
+        visibility: visible;
+
+        @media (max-width: 767px) {
+            right: 0;
+        }
+    }
+
+    @media (max-width: 767px) {
+        width: 100%;
+        right: -100%;
+        padding: 3rem 3rem 5rem;
+    }
+
+    // .aside-popup__close
+
+    &__close {
+        position: absolute;
+        top: var(--offset-ms);
+        right: var(--offset-ms);
+        z-index: 20;
+        width: var(--icon-size-ls);
+        height: var(--icon-size-ls);
+
+        svg {
+            fill: #505661;
+            transition: $transition fill;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                svg {
+                    fill: var(--dark-text);
+                }
+            }
+        }
+    }
+
+    &__logo {
+        display: block;
+
+        &:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+    }
+
+    // .aside-popup__title
+
+    &__title {
+        @extend %text-24;
+        font-weight: 300;
+
+        &:not(:last-child) {
+            margin-bottom: var(--offset-ms);
+        }
+    }
+
+    &__back-btn {
+        @extend %vertical-align;
+        font-weight: 300;
+        color: var(--gray-75);
+        transition: $transition color;
+
+        svg {
+            width: var(--icon-size);
+            height: var(--icon-size);
+            margin-right: var(--offset-xxs);
+            transition: $transition stroke;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 2.6rem;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: var(--default);
+
+                svg {
+                    stroke: var(--default);
+                }
+            }
+        }
+    }
+
+    // .aside-popup__text
+
+    &__text {
+        font-weight: 300;
+        color: var(--gray-61);
+
+        &:not(:last-child) {
+            margin-bottom: 4.5rem;
+        }
+    }
+
+    // .aside-popup__tabs
+
+    &__tabs {
+        margin-bottom: var(--offset-m);
+    }
+
+    // .aside-popup__tab
+
+    &__tab {
+        @extend %text-16;
+        @include padding-x(var(--offset-m));
+        color: var(--gray-9e);
+        border-radius: 0;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &.active {
+            color: var(--default);
+
+            &:after {
+                display: none;
+            }
+        }
+
+        &:not(:last-child) {
+            border-right: 0.1rem solid var(--gray-e0);
+        }
+    }
+
+    &__content {
+        @extend %flex-col;
+
+        &:not(:last-child) {
+            margin-bottom: var(--offset-ls);
+        }
+    }
+
+    // .aside-popup__form
+
+    &__form {
+        &:not(:last-child) {
+            margin-bottom: var(--offset-xl);
+        }
+
+        > * {
+            &:not(:last-child) {
+                margin-bottom: 3rem;
+            }
+        }
+    }
+
+    &__form-inputs {
+        display: grid;
+        gap: var(--offset-s);
+
+        &:not(:last-child) {
+            margin-bottom: var(--offset-ms);
+        }
+    }
+
+    &__form-wrap {
+        @extend %flex-row-center;
+
+        .form-agree {
+            align-items: center;
+        }
+
+        .checkbox__text {
+            margin-left: var(--offset-xs);
+        }
+    }
+
+    &__form-btn {
+        padding: var(--offset-s);
+        width: 100%;
+        justify-content: center;
+    }
+
+    &__form-success {
+        margin-top: 3rem;
+    }
+
+    // .aside-popup__link-btn
+
+    &__link-btn {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    &__phone-code,
+    &__phone-auth {
+        > * {
+            &:not(:last-child) {
+                margin-bottom: 3rem;
+            }
+        }
+    }
+
+    &__phone-code {
+        display: none;
+    }
+}

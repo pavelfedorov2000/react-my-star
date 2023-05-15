@@ -1,5 +1,8 @@
+export { default as Logo } from './logo/Logo';
 export { default as PageTop } from './page-top/PageTop';
 export { default as Menu } from './menu/Menu';
+export { default as BurgerMenu } from './burger-menu/BurgerMenu';
+export { default as AsidePopup } from './aside-popup/AsidePopup';
 export { default as ShopItem } from './shop-item/ShopItem';
 export { default as FeedbackForm } from './feedback-form/FeedbackForm';
 export { default as FormAgree } from './form-agree/FormAgree';
@@ -13,3 +16,6 @@ export { default as AboutNumbers } from './about-numbers/AboutNumbers';
 export { default as Banner } from './banner/Banner';
 export { default as Map } from './map/Map';
 export { default as CategoriesMenu } from './categories-menu/CategoriesMenu';
+export { default as SearchBlock } from './search-block/SearchBlock';
+export { default as FormItem } from './form-item/FormItem';
+export { default as Social } from './social/Social';

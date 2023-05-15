@@ -23,7 +23,7 @@ const CategoriesMenu = () => {
                             </div>
                             <ul className="categories-menu-drop__list">
                                 {category.subcategories.map((subcategory) => (
-                                    <li className="categories-menu-drop__item">
+                                    <li key={subcategory.href.toString()} className="categories-menu-drop__item">
                                         <Link to={`/catalog/${subcategory.href}`} className="categories-menu-drop__link">
                                             {subcategory.icon}
                                             <span>{subcategory.title}</span>

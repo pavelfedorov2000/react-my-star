@@ -1,0 +1,23 @@
+.form-item {
+    position: relative;
+    height: 5.2rem;
+    display: flex;
+    align-items: flex-end;
+
+    input {
+        &::placeholder {
+            opacity: 0;
+        }
+
+        &:focus,
+        &:not(:placeholder-shown),
+        &:-webkit-autofill {
+            & ~ .form-label {
+                top: 0;
+                transform: none;
+                font-size: 1.2rem;
+                color: var(--gray-61);
+            }
+        }
+    }
+}

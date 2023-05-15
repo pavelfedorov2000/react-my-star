@@ -1,18 +1,20 @@
 import classNames from "classnames";
-import { ROUTES } from "../../constants/routes";
 import { Button } from "../../ui";
+import { Route } from "../../interfaces/Route";
+import { Pages } from "../../enums/Page";
 
 interface Props {
     className?: string;
+    items: Route[];
 }
 
-const Menu = ({ className }: Props) => {
+const Menu = ({ className, items }: Props) => {
     return (
         <nav className={classNames('menu', className)}>
-            <ul className="header__menu-list">
-                {ROUTES.filter((route) => route.inHeader).map((route, index) => (
+            <ul className={`${className}-list`}>
+                {items.map((route) => (
                     <li key={route.path.toString()}>
-                        <Button href={route.path} className="header__menu-link" text={`${index === 0 ? '% ' : ''}${route.title}`} style="link-2" />
+                        <Button href={route.path} className={`${className}-link`} text={`${route.path === Pages.Sale.path ? '% ' : ''}${route.title}`} style="link-2" />
                     </li>
                 ))}
             </ul>

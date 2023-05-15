@@ -7,10 +7,12 @@ import { ButtonType } from "../../enums/ButtonType";
 
 interface Props {
     href?: string;
+    id?: string;
     className?: string;
     style?: string;
-    text?: string;
     transparent?: boolean;
+    count?: number;
+    text?: string;
     icon?: ReactNode;
     icon_position_right?: boolean;
     type?: ButtonType.Submit | ButtonType.Reset;
@@ -18,17 +20,24 @@ interface Props {
     blank?: boolean;
     onClick?: any;
     city?: string;
+    ariaLabel?: string;
+    ariaControls?: string;
+    expanded?: boolean;
+    selected?: boolean;
+    role?: string;
+    tabIndex?: number;
 }
 
-const Button = ({ href, className, style, text, transparent, type, contact, icon, icon_position_right, blank, city, onClick }: Props) => {
+const Button = ({ href, id, className, style, text, transparent, type, contact, icon, icon_position_right, blank, city, onClick, ariaLabel, ariaControls, expanded, selected, role, count, tabIndex }: Props) => {
     const content = <>
-        {icon && !icon_position_right && icon}
+        {count ? <span>{count}</span> : null}
+        {icon && !icon_position_right ? icon : null}
         {text &&
             <span className="btn__text">
                 {text}
             </span>
         }
-        {icon_position_right && icon}
+        {icon_position_right ? icon : null}
         {style === ButtonStyle.More && <MoreIcon />}
     </>
 
@@ -49,9 +58,9 @@ const Button = ({ href, className, style, text, transparent, type, contact, icon
                             {content}
                         </Link>
                     :
-                    <button onClick={onClick} data-city={city ?? null} className={classNames('btn', className, style && `btn--style_${style}`, {
+                    <button id={id} onClick={onClick} data-city={city} className={classNames('btn', className, style && `btn--style_${style}`, {
                         'btn--transparent': transparent
-                    })} type={type || 'button'}>
+                    })} type={type || 'button'} aria-label={ariaLabel} aria-expanded={expanded} aria-selected={selected} aria-controls={ariaControls} role={role} tabIndex={tabIndex}>
                         {content}
                     </button>
             }

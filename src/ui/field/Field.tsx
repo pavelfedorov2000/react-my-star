@@ -6,21 +6,20 @@ interface Props extends FieldType {
     className?: string;
 }
 
-const Field = ({ className, name, fieldType, label, placeholder }: Props) => {
+const Field = ({ className, name, fieldType, placeholder }: Props) => {
     return (
-        <label className={classNames('form-item', className)}>
+        <>
             {fieldType === FieldTypeEnum.Textarea ?
                 <textarea className="input" name={name} placeholder={placeholder}></textarea>
                 :
                 <>
-                    <input className="input feedback-form__input"
+                    <input className={classNames('input', className && `${className}__input`)}
                         name={name}
                         type={fieldType || 'text'}
                         placeholder={placeholder} />
-                    {label && <span className="form-label">{label}</span>}
                 </>
             }
-        </label>
+        </>
     );
 };
 

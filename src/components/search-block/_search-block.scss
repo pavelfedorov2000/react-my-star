@@ -1,0 +1,110 @@
+.search-block {
+    $this: &;
+
+    position: relative;
+    transition: $transition all;
+
+    @media (max-width: 767px) {
+        display: none;
+        position: absolute;
+        top: 6rem;
+        width: 100vw;
+        left: 0;
+        right: 0;
+        z-index: 200;
+    }
+
+    &.active {
+        flex-grow: 1;
+    }
+
+    &__form {
+        position: relative;
+    }
+
+    // .search-block__input
+
+    &__input {
+        @extend %text-14;
+        position: relative;
+        z-index: 10;
+        width: var(--icon-size);
+        cursor: pointer;
+        opacity: 0;
+        padding-top: 0.9rem;
+        padding-bottom: 0.9rem;
+        transition: $transition all;
+
+        @media (max-width: 767px) {
+            width: 100%;
+            padding: var(--offset-ms) calc(var(--icon-size) + 0.7rem + var(--offset-x)) var(--offset-ms) var(--offset-x);
+            background-color: var(--gray-f7);
+            border: 0.1rem solid var(--gray-ed);
+            opacity: 1;
+        }
+
+        &:focus {
+            @media (min-width: 768px) {
+                width: 100%;
+                padding-right: calc(var(--icon-size) + 0.7rem + var(--offset-x));
+                padding-left: var(--offset-x);
+                background-color: var(--gray-f7);
+                border: 0.1rem solid var(--gray-ed);
+                opacity: 1;
+            }
+        }
+    }
+
+    &__placeholder {
+        display: none;
+        @extend %pos-center-y;
+
+        @media (min-width: 1025px) {
+            display: inline-block;
+            position: absolute;
+            left: var(--offset-sm);
+            z-index: 20;
+            color: var(--gray-c2);
+            opacity: 0;
+            transition: $transition opacity;
+
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__form-btn {
+        position: absolute;
+        @extend %pos-center-y;
+        right: 0.7rem;
+        z-index: 9;
+
+        @media (max-width: 767px) {
+            z-index: 20;
+        }
+
+        svg {
+            fill: var(--gray-61);
+            width: var(--icon-size);
+            height: var(--icon-size);
+            transition: $transition fill;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                svg {
+                    fill: var(--accent);
+                }
+            }
+        }
+    }
+
+    &.active {
+        #{$this} {
+            &__form-btn {
+                z-index: 11;
+            }
+        }
+    }
+}

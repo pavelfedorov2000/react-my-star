@@ -1,0 +1,34 @@
+.social {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        @extend %vertical-align;
+    }
+
+    &__link {
+        width: 100%;
+        height: 100%;
+        @extend %flex-center;
+
+        svg {
+            fill: var(--default);
+            transition: $transition fill;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                svg {
+                    fill: var(--accent);
+                }
+            }
+        }
+
+        &:focus,
+        &:active {
+            svg {
+                fill: #d2290b;
+            }
+        }
+    }
+}

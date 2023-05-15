@@ -1,10 +1,12 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import contactsReducer from './reducers/ContactsSlice';
 import shopsReducer from './reducers/ShopsSlice';
+import modalsReducer from './reducers/ModalsSlice';
 
 const rootReducer = combineReducers({
     contactsReducer,
-    shopsReducer
+    shopsReducer,
+    modalsReducer,
 });
 
 export const setupStore = () => {
