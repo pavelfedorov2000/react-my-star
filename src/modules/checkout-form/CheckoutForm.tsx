@@ -1,14 +1,20 @@
 import { FormItem } from "../../components";
+import { DELIVERY_OPTIONS } from "../../constants/delivery-options";
+import { PAYMENT_OPTIONS } from "../../constants/payment-options";
+import { PERSONAL_DATA } from "../../constants/personal-data";
 
 const CHECKOUT_FIELDS = [{
-    title: '',
-    inputs: [],
+    title: 'Персональные данные',
+    type: 'inputs',
+    items: [...PERSONAL_DATA],
 }, {
-    title: '',
-    radios: [],
+    title: 'Условия доставки',
+    type: 'grid-radios',
+    items: [...DELIVERY_OPTIONS]
 }, {
-    title: '',
-    radios: [],
+    title: 'Способы оплаты',
+    type: 'row-radios',
+    items: [...PAYMENT_OPTIONS],
 }];
 
 const CheckoutForm = () => {
