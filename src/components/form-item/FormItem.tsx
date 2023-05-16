@@ -6,11 +6,11 @@ interface Props extends FieldType {
     className?: string;
 }
 
-const FormItem = ({ className, name, fieldType, label, placeholder }: Props) => {
+const FormItem = ({ className, name, fieldType, label, placeholder, required }: Props) => {
     return (
         <label className={classNames('form-item', className)}>
             <Field name={name} fieldType={fieldType} placeholder={placeholder} />
-            {label && <span className="form-label">{label}</span>}
+            {label && <span className="form-label">{label}{required && '*'}</span>}
         </label>
     );
 };

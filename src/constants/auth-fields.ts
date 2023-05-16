@@ -16,32 +16,44 @@ export const LOGIN_FIELDS: Field[] = [{
 
 export const REGISTER_FIELDS: Field[] = [{
     name: RegisterName.Name,
-    placeholder: "Имя*",
+    placeholder: "Имя",
+    label: "Имя",
+    required: true
 }, {
     name: RegisterName.Surname,
-    placeholder: "Фамилия*",
+    placeholder: "Фамилия",
+    label: "Фамилия",
+    required: true
 }, {
     name: RegisterName.Phone,
-    placeholder: "Ваш телефон*",
+    placeholder: "Ваш телефон",
+    label: "Ваш телефон",
+    required: true
 }, {
     name: RegisterName.Email,
-    placeholder: "Ваш e-mail*",
+    placeholder: "Ваш e-mail",
+    label: "Ваш e-mail",
+    required: true
 }, {
     name: RegisterName.Password,
-    placeholder: "Придумайте пароль*",
+    placeholder: "Придумайте пароль",
+    label: "Придумайте пароль",
     fieldType: FieldType.Password,
+    required: true
 }, {
     name: RegisterName.RepeatPassword,
-    placeholder: "Повторите пароль*",
+    placeholder: "Повторите пароль",
+    label: "Повторите пароль",
     fieldType: FieldType.Password,
+    required: true
 }];
 
 export const AUTH_TABS: AuthTab[] = [{
     name: Auth.Enter,
     title: 'Вход',
-    fields: LOGIN_FIELDS
+    fields: LOGIN_FIELDS,
 }, {
     name: Auth.Register,
     title: 'Регистрация',
-    fields: REGISTER_FIELDS
+    fields: REGISTER_FIELDS,
 }];

@@ -4,12 +4,12 @@ import Logo from "../logo/Logo";
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { modalsSlice } from "../../redux/reducers/ModalsSlice";
-import { ENTER_OPTIONS, EnterOption } from "../../enums/Auth";
+import { Auth, ENTER_OPTIONS, EnterOption } from "../../enums/Auth";
 import FormAgree from "../form-agree/FormAgree";
 import { ButtonType } from "../../enums/ButtonType";
 import { AsidePopup as AsidePopupType } from "../../interfaces/AsidePopup";
 import { FieldType } from "../../enums/FieldType";
-import { BackIcon } from "../../ui/icons";
+import { BackIcon, CloseIcon } from "../../ui/icons";
 import FormItem from "../form-item/FormItem";
 import { AUTH_TABS } from "../../constants/auth-fields";
 
@@ -32,18 +32,23 @@ const AsidePopup = ({ className, id, title, text, active }: Props) => {
         document.body.classList.remove('_lock');
     }
 
-    /* const handleSubmit = () => {
-        
-    } */
+    const handleBack = () => {
+        dispatch(modalsSlice.actions.closePasswordRecovery());
+        //document.body.classList.remove('_lock');
+    }
+
+    const handleSubmit = () => {
+        handleClose();
+    }
 
     return (
         <div id={id} className={classNames('aside-popup', className, {
             'active': active
         })}>
-            <Button onClick={handleClose} className="aside-popup__close close-btn" ariaLabel="Закрыть окно авторизации" transparent />
-            <Logo className="aside-popup__logo" />
+            <Button onClick={handleClose} className="aside-popup__close close-btn" icon={<CloseIcon />} ariaLabel="Закрыть окно авторизации" transparent />
+            {!isPasswordRecoveryOpen && <Logo className="aside-popup__logo" />}
             <div className="aside-popup__title">{title}</div>
-            {isPasswordRecoveryOpen && <Button className="aside-popup__back-btn" text="Назад" icon={<BackIcon />} transparent />}
+            {isPasswordRecoveryOpen && <Button onClick={handleBack} className="aside-popup__back-btn" text="Назад" icon={<BackIcon />} transparent />}
             <p className="aside-popup__text">{text}</p>
             <div className="tabs aside-popup__tabs" role="tablist">
                 {AUTH_TABS.map((tab, index) => (
@@ -51,7 +56,7 @@ const AsidePopup = ({ className, id, title, text, active }: Props) => {
                         'active': authOption === index
                     })} role="tab" id={`${tab.name}_tab`} ariaControls={tab.name} selected={authOption === index ? true : false} tabIndex={0} text={tab.title} transparent />
                 ))}
-            </div> 
+            </div>
             <>
                 {AUTH_TABS.map((tab, index) => (
                     <div key={tab.name} id={tab.name} className={classNames('tabs-content', {
@@ -59,7 +64,7 @@ const AsidePopup = ({ className, id, title, text, active }: Props) => {
                     })} role="tabpanel" aria-labelledby={`${tab.name}_tab`}>
                         <div className="aside-popup__content" id={`${enterOption}_enter`}>
                             <form action="#" className="aside-popup__form">
-                                <div className="aside-popup__phone-auth">
+                                <>
                                     <div className="aside-popup__form-inputs">
                                         {tab.fields.map((field) => (
                                             <FormItem key={field.name} className="aside-popup__form-input" {...field} />
@@ -68,18 +73,22 @@ const AsidePopup = ({ className, id, title, text, active }: Props) => {
                                     </div>
                                     {enterOption.name === EnterOption.Login &&
                                         <div className="aside-popup__form-wrap">
-                                            <FormAgree text="Запомнить меня" check />
-                                            <Button style="link-gray" text="Забыли пароль?" />
+                                            <FormAgree text={tab.name === Auth.Enter ? 'Запомнить меня' : <>`Подтверждаю согласие с <a href="#">Политикой конфиденциальности</a>, а также даю согласие на обработку <a href="#" > персональных данных</ a>`</>} check />
+                                            {tab.name === Auth.Enter &&
+                                                <Button style="link-gray" text="Забыли пароль?" />
+                                            }
                                         </div>
                                     }
-                                </div>
-                                <div className="aside-popup__phone-code">
-                                    <FormItem className="aside-popup__form-input" name="phone_code" placeholder="Введите код" label="Введите код" />
-                                    <Button style="link-gray" text="Отправить код повторно" />
-                                </div>
+                                </>
+                                {tab.name === Auth.Enter &&
+                                    <div className="aside-popup__phone-code">
+                                        <FormItem className="aside-popup__form-input" name="phone_code" placeholder="Введите код" label="Введите код" />
+                                        <Button style="link-gray" text="Отправить код повторно" />
+                                    </div>
+                                }
                                 <Button className="aside-popup__form-btn" text="Войти" type={ButtonType.Submit} />
                             </form>
-                            <Button onClick={handleChangeEnterOption} className="aside-popup__link-btn" style="link" text={enterOption.text} />
+                            {tab.name === Auth.Enter && <Button onClick={handleChangeEnterOption} className="aside-popup__link-btn" style="link" text={enterOption.text} />}
                         </div>
                     </div>
                 ))}

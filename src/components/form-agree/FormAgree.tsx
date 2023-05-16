@@ -1,9 +1,10 @@
+import { ReactNode } from "react";
 import classNames from "classnames";
 import { Checkbox } from "../../ui";
 
 interface Props {
     className?: string;
-    text?: string;
+    text?: string | ReactNode;
     check?: boolean;
 }
 
