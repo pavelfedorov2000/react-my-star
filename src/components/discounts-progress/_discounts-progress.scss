@@ -1,0 +1,21 @@
+.discounts-progress {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--offset-ms);
+
+    &__item {
+        @extend %flex-center;
+        @extend %text-20-34;
+        @extend %bg-cover;
+        width: 9.6rem;
+        height: 9.4rem;
+        flex-shrink: 0;
+        color: var(--accent);
+        position: relative;
+
+        &.completed {
+            background-color: #ffeeef;
+            background-size: 0;
+        }
+    }
+}

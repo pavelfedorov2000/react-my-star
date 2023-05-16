@@ -1,0 +1,21 @@
+.discounts {
+    &:not(:last-child) {
+        padding-bottom: 5rem;
+    }
+
+    > * {
+        &:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__list {
+        list-style-type: decimal;
+        margin-left: 1.5rem;
+
+        li {
+            list-style-type: decimal;
+            color: var(--dark-text);
+        }
+    }
+}

@@ -1,0 +1,60 @@
+.pay-period {
+    // .pay-period__title
+
+    &__title {
+        @extend %text-16;
+
+        &:not(:last-child) {
+            margin-bottom: var(--offset-ms);
+        }
+    }
+
+    // .pay-period__list
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    // .pay-period__item
+
+    &__item {
+        padding: 0 5rem;
+
+        @media (max-width: 767px) {
+            padding: 0 1.5rem;
+        }
+
+        > * {
+            &:not(:last-child) {
+                margin-bottom: var(--offset-xxxxs);
+            }
+        }
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+        &:not(:last-child) {
+            border-right: 0.1rem solid var(--gray-ed);
+        }
+    }
+
+    // .pay-period__item-price
+
+    &__item-price {
+        @extend %text-12;
+        font-weight: 300;
+        color: var(--gray-75);
+    }
+
+    // .pay-period__item-month
+
+    &__item-month {
+        @extend %text-20;
+    }
+}

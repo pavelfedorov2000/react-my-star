@@ -2,11 +2,11 @@ import { Contacts, Feedback, ShopsList } from "../modules";
 import { Map, PageTop } from "../components";
 import { Page } from "../interfaces/Route";
 
-const Shops = ({ title }: Page) => {
+const Shops = ({ path, title }: Page) => {
     return (
         <div className="text-page">
             <div className="container">
-                <PageTop title={title} />
+                <PageTop path={path} title={title} />
                 <div className="text-page__body">
                     <Map className="text-page__map" />
                     <section className="row">

@@ -9,8 +9,18 @@ import { formatPhone } from "../../utils/formatPhone";
 import Menu from "../menu/Menu";
 import { ROUTES } from "../../constants/routes";
 import { FilterParam } from "../../enums/Social";
-import { CloseIcon } from "../../ui/icons";
+import { CloseIcon, DownloadIcon } from "../../ui/icons";
 import { modalsSlice } from "../../redux/reducers/ModalsSlice";
+import { generateEmailHref } from "../../utils/generateEmailHref";
+
+const menuList = [
+    {
+        icon: <DownloadIcon />,
+        href: '#',
+        title: 'Каталог'
+    },
+    ...MENU_LIST
+];
 
 const BurgerMenu = () => {
     const dispatch = useAppDispatch();
@@ -33,7 +43,7 @@ const BurgerMenu = () => {
             </div>
             <CategoriesMenu />
             <ul className="burger-menu__list">
-                {MENU_LIST.map((item, index) => (
+                {menuList.map((item, index) => (
                     <li key={index} className="burger-menu__list-item">
                         <Button className={classNames('burger-menu__link', {
                             'burger-menu__link--download': index === 0
@@ -50,7 +60,7 @@ const BurgerMenu = () => {
                 </div> 
                 <Button className="burger-menu__callback" style="link-accent" text="Заказать звонок" transparent />
             </div>
-            <Button className="burger-menu__email" href={`mailto:${email}`} text={email} contact transparent />
+            <Button className="burger-menu__email" href={generateEmailHref(email)} text={email} contact transparent />
             <Social className="burger-menu" filterParam={FilterParam.Auth} />
         </div>
     );

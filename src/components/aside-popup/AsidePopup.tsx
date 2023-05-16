@@ -41,6 +41,10 @@ const AsidePopup = ({ className, id, title, text, active }: Props) => {
         handleClose();
     }
 
+    /* const checkIsValid = (fields: Field[]) => {
+        fields.every((field) => field.value !== '');
+    } */
+
     return (
         <div id={id} className={classNames('aside-popup', className, {
             'active': active

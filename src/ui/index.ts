@@ -7,3 +7,4 @@ export { default as Modal } from './modal/Modal';
 export { default as Badge } from './badge/Badge';
 export { default as DateTime } from './datetime/DateTime';
 export { default as Label } from './label/Label';
+export { default as Select } from './select/Select';

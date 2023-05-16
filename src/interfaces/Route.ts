@@ -1,18 +1,23 @@
-//import { EmptyBlock } from "./EmptyBlock";
+import { EmptyBlock } from "./EmptyBlock";
 
 export interface Page {
+    path: string;
     title: string;
     subtitle?: string;
-    emptyBlock?: any;
+    emptyBlock?: EmptyBlock;
     inHeader?: boolean;
+    SubPage?: any;
+    profile?: boolean;
 }
 
 export interface Route extends Page {
     id: number;
-    path: string;
     exact?: boolean;
-    before?: string;
-    profile?: boolean;
     component: any;
-    SubPage?: any;
+}
+
+type PageTopType = Pick<Page, "path" | "title" | "profile">;
+
+export interface PageTop extends PageTopType {
+    divTitle?: boolean;
 }

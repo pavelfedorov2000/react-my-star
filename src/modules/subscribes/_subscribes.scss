@@ -1,0 +1,12 @@
+.subscribes {
+    display: grid;
+    gap: var(--offset-ms);
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1025px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -1,0 +1,36 @@
+.empty-block {
+    @include row-gap(5rem);
+    place-items: center;
+    text-align: center;
+    padding-top: 17rem;
+
+    @media (max-width: 1024px) {
+        padding-top: 7rem;
+        row-gap: 3rem;
+    }
+
+    @media (max-width: 767px) {
+        padding-top: 3rem;
+    }
+
+    &__text {
+        @extend %text-36;
+        font-weight: 300;
+        color: var(--gray-9e);
+
+        @media (max-width: 1024px) {
+            font-size: 2.4rem;
+        }
+    }
+
+    // .empty-page__btn
+
+    &__btn {
+        padding: var(--offset-s) 6.35rem;
+
+        @media (max-width: 767px) {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+    }
+}

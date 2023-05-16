@@ -1,0 +1,52 @@
+.label-box {
+    @extend %text-12;
+    padding: var(--offset-ms);
+    border-radius: $brs;
+
+    > * {
+        &:not(:last-child) {
+            margin-bottom: var(--offset-sm);
+        }
+    }
+
+    b {
+        @extend %text-14;
+        font-weight: 500;
+    }
+
+    &__link-btn {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        font-weight: 500;
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &--style {
+        &_bg {
+            &-red {
+                background-color: #ffeeef;
+                color: var(--accent);
+            }
+
+            &-blue {
+                background-color: var(--sky-blue);
+                color: var(--blue);
+            }
+        }
+    }
+
+    &__row {
+        @extend %flex-row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    &__title {
+        display: inline;
+    }
+}

@@ -1,12 +1,87 @@
 .page {
-	position: relative;
-	padding-bottom: 16rem;
+    position: relative;
+    padding-bottom: 16rem;
 
-	@media (max-width: 1024px) {
-		padding-bottom: 10rem;
-	}
+    @media (max-width: 1024px) {
+        padding-bottom: 10rem;
+    }
 
-	@media (max-width: 767px) {
-		padding-bottom: 5rem;
-	}
+    @media (max-width: 767px) {
+        padding-bottom: 5rem;
+    }
+}
+
+.profile-page {
+    padding-bottom: 12rem;
+
+    @media (max-width: 1024px) {
+        padding-bottom: 8rem;
+    }
+
+    @media (max-width: 767px) {
+        padding-bottom: 5rem;
+    }
+
+    &__top {
+        @media (min-width: 1025px) {
+            margin-bottom: 4.6rem;
+        }
+    }
+
+    &__nav {
+        @media (min-width: 1025px) {
+            grid-column: span 3;
+            width: 27rem;
+        }
+    }
+
+    &__inner {
+        @media (max-width: 1024px) {
+            grid-template-columns: 1fr;
+            row-gap: 5rem;
+        }
+
+        @media (max-width: 500px) {
+            row-gap: 3rem;
+        }
+    }
+
+    &__body {
+        @media (min-width: 1025px) {
+            grid-column: span 9;
+        }
+    }
+
+    &__title {
+        @extend %text-24;
+        font-weight: 300;
+        margin-bottom: var(--offset-xl);
+
+        @media (max-width: 767px) {
+            font-size: 2rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 500px) {
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__empty {
+        @include padding-y(8rem);
+        row-gap: var(--offset-xl);
+
+        @media (max-width: 767px) {
+            @include padding-y(var(--offset-xl));
+            row-gap: 3rem;
+        }
+    }
+
+    &__empty-text {
+        font-size: 2.4rem;
+
+        @media (max-width: 500px) {
+            font-size: 2rem;
+        }
+    }
 }

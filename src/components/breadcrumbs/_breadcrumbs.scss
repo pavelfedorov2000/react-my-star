@@ -1,0 +1,39 @@
+.breadcrumbs {
+    padding: 3rem 0 3.8rem;
+
+    @media (max-width: 500px) {
+        padding: 2.5rem 0;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.15rem;
+    }
+
+    &__item {
+        span {
+            color: var(--gray-9e);
+        }
+    }
+
+    &__link {
+        padding-right: 1.65rem;
+        background-position: right center;
+        background-size: 0.5rem 0.7rem;
+        background-repeat: no-repeat;
+        font-weight: 300;
+        transition: $transition color;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: var(--accent);
+            }
+        }
+    }
+}
+
+.catalog,
+.product-card .breadcrumbs {
+    padding-bottom: var(--offset-ms);
+}

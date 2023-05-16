@@ -8,9 +8,7 @@ import { Collection } from "../../enums/Collection";
 interface AboutSection {
     title: string;
     text: string;
-    numbers: {
-        items: Leader[];
-    };
+    numbers: Leader;
 }
 
 const AboutCompany = () => {

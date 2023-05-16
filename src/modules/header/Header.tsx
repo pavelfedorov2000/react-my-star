@@ -9,6 +9,7 @@ import { FilterParam } from '../../enums/Social';
 import { ROUTES } from '../../constants/routes';
 import { modalsSlice } from '../../redux/reducers/ModalsSlice';
 import classNames from 'classnames';
+import { generateEmailHref } from '../../utils/generateEmailHref';
 
 const Header = () => {
     const dispatch = useAppDispatch();
@@ -30,10 +31,10 @@ const Header = () => {
                 </div>
                 <div className="container header__top-inner">
                     <Social className="header" filterParam={FilterParam.Auth} />
-                    <Button className="header__email" href={`mailto:${email}`} text={email} contact transparent />
+                    <Button className="header__email" href={generateEmailHref(email)} text={email} contact transparent />
                     <div className="header__phones">
                         {phones.map((phone, index) => (
-                            <Button key={index} className="phone" href={`tel:${formatPhone(phone)}`} text={phone} contact transparent />
+                            <Button key={index} className="header__phone" href={`tel:${formatPhone(phone)}`} text={phone} contact transparent />
                         ))}
                     </div>
                     <Button className="header__callback" style="link-accent" text="Заказать звонок" transparent />

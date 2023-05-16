@@ -1,7 +1,49 @@
 import Logo from "../../components/logo/Logo";
 import payment from "../../assets/images/payment.png";
+import { Social } from "../../components";
+import { FilterParam } from "../../enums/Social";
+import { useAppSelector } from "../../app/hooks";
+import { Button, Img } from "../../ui";
+import { formatPhone } from "../../utils/formatPhone";
+import { generateEmailHref } from "../../utils/generateEmailHref";
+import { MENU_LIST } from "../../constants/menu-list";
+import { Pages } from "../../enums/Page";
+
+const footerMenu = [{
+    title: 'Каталог',
+    list: {
+        items: [...MENU_LIST]
+    }
+}, {
+    title: 'Интернет-магазин',
+    list: {
+        items: [{
+            href: Pages.Delivery.path,
+            title: Pages.Delivery.title
+        }, {
+            href: Pages.Guarantee.path,
+            title: Pages.Guarantee.title
+        }, {
+            href: Pages.Sale.path,
+            title: Pages.Sale.title
+        }]
+    }
+}, {
+    title: 'О нас',
+    list: {
+        items: [{
+            href: Pages.About.path,
+            title: 'О компании'
+        }, {
+            href: Pages.Shops.path,
+            title: Pages.Shops.title
+        }]
+    }
+}];
 
 const Footer = () => {
+    const { email, phones } = useAppSelector((state) => state.contactsReducer.data);
+
     return (
         <footer className="footer">
             <div className="footer__top">
@@ -11,14 +53,13 @@ const Footer = () => {
                             <Logo />
                         </div>
                         <div className="footer__contacts">
-                            <a className="phone footer__contact" href="tel:+375339915229">+375 (33) 991-52-29</a>
-                            <a className="phone footer__contact" href="tel:+375295481272">+375 (29) 548-12-72</a>
-                            <a className="email footer__contact" href="mailto:sales@mystar.by">sales@mystar.by</a>
-                            <a href="#callback"
-                                className="btn footer__contact footer__contact--callback btn--style_link-accent">
-                                <span className="btn__text">Заказать звонок</span>
-                            </a>
+                            {phones.map((phone, index) => (
+                                <Button key={index} className="footer__phone" href={`tel:${formatPhone(phone)}`} text={phone} contact transparent />
+                            ))}
+                            <Button className="footer__email" href={generateEmailHref(email)} text={email} contact transparent />
+                            <Button className="footer__callback" style="link-accent" text="Заказать звонок" transparent />
                         </div>
+                        <Social className="footer" filterParam={FilterParam.Auth} />
                     </div>
                 </div>
             </div>
@@ -26,44 +67,25 @@ const Footer = () => {
                 <div className="container">
                     <div className="row footer__main-inner">
                         <div className="footer__menu">
-                            <div className="footer__menu-col">
-                                <div className="footer__menu-title">Каталог</div>
-                                <ul className="footer__menu-list">
-                                    <li><a href="#" className="footer__menu-link">Модули и модульная
-                                            мебель</a></li>
-                                    <li><a href="#" className="footer__menu-link">Мебель для гостинной</a>
-                                    </li>
-                                    <li><a href="#" className="footer__menu-link">Мебель для спальни</a>
-                                    </li>
-                                    <li><a href="#" className="footer__menu-link">Мебель для прихожей</a>
-                                    </li>
-                                    <li><a href="#" className="footer__menu-link">Мебель для детской и
-                                            матрасы</a></li>
-                                </ul>
-                            </div>
-                            <div className="footer__menu-col">
-                                <div className="footer__menu-title">Интернет-магазин</div>
-                                <ul className="footer__menu-list">
-                                    <li><a href="#" className="footer__menu-link">Оплата и доставка</a>
-                                    </li>
-                                    <li><a href="#" className="footer__menu-link">Гарантии</a></li>
-                                    <li><a href="#" className="footer__menu-link">Акции</a></li>
-                                </ul>
-                            </div>
-                            <div className="footer__menu-col">
-                                <div className="footer__menu-title">О нас</div>
-                                <ul className="footer__menu-list">
-                                    <li><a href="#" className="footer__menu-link">О компании</a></li>
-                                    <li><a href="#" className="footer__menu-link">Магазины</a></li>
-                                </ul>
-                            </div>
+                            {footerMenu.map((col, index) => (
+                                <div key={index} className="footer__menu-col">
+                                    <div className="footer__menu-title">{col.title}</div>
+                                    <ul className="footer__menu-list">
+                                        {col.list.items.map((item) => (
+                                            <li key={item.href.toString()}>
+                                                <Button href={item.href} className="footer__menu-link" text={item.title} transparent />
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
                         </div>
                         <div className="footer__info">
                             <div className="footer__copy">©2022 ОАО «Ивацевичдрев»</div>
                             <address className="footer__address">225 295, Беларусь, Брестская&nbsp;обл., г.&nbsp;Ивацевичи,
                                 ул.&nbsp;Загородная,&nbsp;2
                             </address>
-                            <a href="#" className="footer__politics">Политика конфеденциальности</a>
+                            <a href="https://mystar.by/politika-konfidencialnosti/" target="_blank" className="footer__politics">Политика конфеденциальности</a>
                         </div>
                     </div>
                 </div>
@@ -72,7 +94,7 @@ const Footer = () => {
                 <div className="container">
                     <div className="row footer__bottom-inner">
                         <div className="footer__payment">
-                            <img src={payment} alt="платежные системы" width="296" height="20" loading="lazy" />
+                            <Img src={payment} alt="платежные системы" width={296} height={20} />
                         </div>
                         <div className="footer__evidence">
                             Свидетельство о государственной регистрации организации №&nbsp;200100328, выдано Брестским областным
@@ -83,7 +105,7 @@ const Footer = () => {
                         </div>
                         <div className="footer__developer">
                             <span>Дизайн и разработка:</span>
-                            <a href="#" className="footer__developer-link">
+                            <a href="https://www.imedia.by/" target="_blank" className="footer__developer-link">
                                 <svg className="footer__developer-logo" viewBox="0 0 72 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M4.00453 0V13.9211H0V0H4.00453Z" fill="#616161" />
                                     <path

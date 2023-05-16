@@ -1,51 +1,53 @@
-.radio {
-	$this: &;
+.radiobutton {
+    $this: &;
 
-	&-box {
-		width: 1px;
-		height: 1px;
-		overflow: hidden;
-		position: absolute;
-		clip: rect(0 0 0 0);
+    &__box {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        clip: rect(0 0 0 0);
 
-		&:checked~#{$this}-style {
-			border-width: 0.2rem;
-			border-color: var(--blue);
+        &:checked ~ #{$this} {
+            &__style {
+                border-width: 0.2rem;
+                border-color: var(--blue);
 
-			&::before {
-				@extend %pos-center-xy;
-				content: '';
-				position: absolute;
-				width: var(--offset-xs);
-				height: var(--offset-xs);
-				border-radius: 50%;
-				background-color: var(--blue);
-			}
-		}
-	}
+                &::before {
+                    @extend %pos-center-xy;
+                    content: '';
+                    position: absolute;
+                    width: var(--offset-xs);
+                    height: var(--offset-xs);
+                    border-radius: 50%;
+                    background-color: var(--blue);
+                }
+            }
+        }
+    }
 
-	&-inner {
-		position: relative;
-		border: 0.1rem solid var(--gray-e0);
+    &__inner {
+        position: relative;
+        border: 0.1rem solid var(--gray-e0);
 
-		&:after {
-			transition: $transition all;
-		}
-	}
+        &:after {
+            transition: $transition all;
+        }
+    }
 
-	&-title {
-		cursor: pointer;
-		margin-left: var(--offset-x);
-	}
+    &__title {
+        cursor: pointer;
+        margin-left: var(--offset-x);
+    }
 
-	&-style {
-		display: block;
-		position: relative;
-		border-radius: 50%;
-		width: 2rem;
-		height: 2rem;
-		flex-shrink: 0;
-		border: 0.1rem solid var(--gray-c2);
-		transition: $transition all;
-	}
+    &__style {
+        display: block;
+        position: relative;
+        border-radius: 50%;
+        width: 2rem;
+        height: 2rem;
+        flex-shrink: 0;
+        border: 0.1rem solid var(--gray-c2);
+        transition: $transition all;
+    }
 }

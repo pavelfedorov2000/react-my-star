@@ -11,16 +11,9 @@
         &:checked ~ #{$this}__style {
             background-color: var(--blue);
             border-color: var(--blue);
-
-            &:before {
-                @extend %pos-center-xy;
-                @extend %bg-contain;
-                content: '';
-                width: 1.1rem;
-                height: var(--offset-xs);
-                position: absolute;
-                //background-image: url(../images/icons/check.svg);
-            }
+            background-position: center;
+            background-size: 1.1rem 0.8rem;
+            background-repeat: no-repeat;
         }
 
         &.error ~ #{$this}__style {

@@ -6,12 +6,14 @@ import { Field } from "../interfaces/Field";
 export const LOGIN_FIELDS: Field[] = [{
     name: LoginName.Email,
     placeholder: "Ваш e-mail",
-    label: "Ваш e-mail"
+    label: "Ваш e-mail",
+    required: true
 }, {
     name: LoginName.Password,
     placeholder: "Пароль",
     label: "Пароль",
     fieldType: FieldType.Password,
+    required: true
 }];
 
 export const REGISTER_FIELDS: Field[] = [{

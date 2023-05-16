@@ -1,0 +1,12 @@
+.cart-table {
+    &__item {
+        &:not(:last-child) {
+            padding-bottom: var(--offset-xl);
+            border-bottom: 0.1rem solid var(--gray-ed);
+        }
+
+        &:not(:first-child) {
+            padding-top: var(--offset-xl);
+        }
+    }
+}

@@ -5,6 +5,8 @@ export { default as ArrowRightIcon } from './ArrowRight';
 export { default as CloseIcon } from './Close';
 export { default as DownloadIcon } from './Download';
 export { default as BackIcon } from './Back';
+export { default as SubmitArrowIcon } from './SubmitArrow';
+export { default as CreditCardIcon } from './CreditCard';
 
 export { default as BurgerIcon } from './Burger';
 export { default as CartIcon } from './Cart';

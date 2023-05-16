@@ -1,0 +1,23 @@
+.cart-page {
+    &__row {
+        @media (max-width: 1024px) {
+            row-gap: 10rem;
+        }
+
+        @media (max-width: 767px) {
+            row-gap: 5rem;
+        }
+    }
+
+    &__content {
+        @media (min-width: 1025px) {
+            grid-column: span 6;
+        }
+    }
+
+    &__aside {
+        @media (min-width: 1025px) {
+            grid-column: 9 / -1;
+        }
+    }
+}

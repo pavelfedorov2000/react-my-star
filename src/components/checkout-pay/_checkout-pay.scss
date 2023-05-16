@@ -1,0 +1,50 @@
+.checkout-pay {
+    > * {
+        &:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+    }
+
+    // .checkout-pay__title
+
+    &__title {
+        @extend %text-20-34;
+        font-weight: 300;
+
+        &:not(:last-child) {
+            margin-bottom: var(--offset-x);
+        }
+    }
+
+    // .checkout-pay__subtitle
+
+    &__subtitle {
+        font-weight: 300;
+    }
+
+    // .checkout-pay__period
+
+    &__period {
+        &:not(:last-child) {
+            margin-bottom: var(--offset-ss);
+        }
+    }
+
+    &__label {
+        padding: var(--offset-xxs) var(--offset-x);
+        margin: 0 0 3rem 0;
+    }
+
+    &__text {
+        font-weight: 300;
+
+        ul {
+            margin: 3rem;
+            list-style-type: disc;
+
+            li {
+                list-style-type: disc;
+            }
+        }
+    }
+}

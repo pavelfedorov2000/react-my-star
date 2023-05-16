@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { setupStore } from './redux/store';
 import App from './App';
 import './styles/app.scss';
+import ScrollToTop from './ScrollToTop';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -11,6 +12,7 @@ const store = setupStore();
 
 root.render(
     <Router>
+        <ScrollToTop />
         <Provider store={store}>
             <App />
         </Provider>

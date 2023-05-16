@@ -1,0 +1,217 @@
+.checkout-form {
+    display: grid;
+    row-gap: 6rem;
+
+    @media (max-width: 767px) {
+        row-gap: 3rem;
+    }
+
+    // .checkout-form__item
+
+    &__item {
+        > * {
+            &:not(:last-child) {
+                margin-bottom: 3rem;
+
+                @media (max-width: 767px) {
+                    margin-bottom: var(--offset-ms);
+                }
+            }
+        }
+    }
+
+    // .checkout-form__legend
+
+    &__legend {
+        @extend %text-16;
+        font-weight: 300;
+    }
+
+    // .checkout-form__inputs
+
+    &__inputs {
+        display: grid;
+        gap: var(--offset-ms);
+
+        @media (min-width: 501px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    // .checkout-form__input
+
+    &__input {
+        position: relative;
+
+        &:last-child {
+            @media (min-width: 768px) {
+                grid-column: span 2;
+            }
+        }
+    }
+
+    // .checkout-form__grid-radios
+
+    &__grid-radios {
+        display: grid;
+
+        &--col-2 {
+            gap: var(--offset-ms);
+
+            @media (min-width: 768px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        &--col-3 {
+            @media (min-width: 501px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media (min-width: 768px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            gap: 1.1rem;
+        }
+    }
+
+    // .checkout-form__radio
+
+    &__radio {
+        @extend %vertical-align;
+        cursor: pointer;
+
+        .radio-inner {
+            width: 100%;
+            height: 100%;
+        }
+
+        .radio-box:checked + .radio-inner {
+            border-color: #fff;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+                border: var(--offset-xxxxs) solid var(--blue);
+            }
+
+            .radio-style {
+                border-width: var(--offset-xxxxs);
+                border-color: var(--blue);
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    @extend %pos-center-xy;
+                    width: var(--offset-xs);
+                    height: var(--offset-xs);
+                    border-radius: 50%;
+                    background-color: var(--blue);
+                }
+            }
+        }
+    }
+
+    // .checkout-form__radio-content
+
+    &__radio-content {
+        padding: var(--offset-m);
+
+        > * {
+            &:not(:last-child) {
+                margin-bottom: var(--offset-m);
+            }
+        }
+
+        p {
+            font-weight: 300;
+            color: var(--dark-text);
+        }
+    }
+
+    // .checkout-form__radio-top
+
+    &__radio-top {
+        @extend %vertical-align;
+    }
+
+    // .checkout-form__radio-list
+
+    &__radio-list {
+        @include row-gap(var(--offset-xs));
+
+        li {
+            font-weight: 300;
+            color: var(--dark-text);
+
+            b {
+                font-weight: 400;
+                color: var(--default);
+            }
+        }
+    }
+
+    // .checkout-form__row-radios
+
+    &__row-radios {
+        display: grid;
+        row-gap: var(--offset-ms);
+    }
+
+    // .checkout-form__pay-radio
+
+    &__pay-radio {
+        cursor: pointer;
+        min-height: 8rem;
+
+        .radio-box:checked + .radio-inner {
+            border-color: #fff;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                border: var(--offset-xxxxs) solid var(--blue);
+            }
+        }
+
+        .radio-inner {
+            min-height: 100%;
+            padding: 1.8rem 3.5rem;
+            text-align: center;
+            @extend %flex-center;
+        }
+    }
+
+    // .checkout-form__hidden
+
+    &__hidden {
+        display: none;
+    }
+
+    // .checkout-form__textarea
+
+    &__textarea {
+        position: relative;
+    }
+}
+
+.pay-link {
+    display: block;
+    line-height: 2rem;
+    color: var(--blue);
+    text-decoration: underline;
+}

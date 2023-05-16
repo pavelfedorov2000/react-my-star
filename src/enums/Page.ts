@@ -5,6 +5,7 @@ enum Page {
     Favorite = 'Favorite',
     ProductCard = 'ProductCard',
     Cart = 'Cart',
+    Checkout = 'Checkout',
     Profile = 'Profile',
     Shops = 'Shops',
     Guarantee = 'Guarantee',
@@ -14,8 +15,8 @@ enum Page {
 }
 
 enum SubPage {
-    Orders = 'Orders',
-    OrderDetail = 'OrderDetail',
+    CurrentOrders = 'CurrentOrders',
+    OrdersHistory = 'OrdersHistory',
     Discounts = 'Discounts',
     Subscribes = 'Subscribes',
     Personal = 'Personal',
@@ -29,26 +30,31 @@ export const Pages = {
     [Page.Catalog]: {
         title: 'Каталог',
         path: '/catalog',
-        empty: 'Нет актуальных товаров',
         inHeader: true,
+        empty: 'Нет актуальных товаров',
     },
     [Page.Favorite]: {
-        title: 'Избранные товары',
+        title: 'Избранное',
         path: '/favorite',
-        empty: 'Нет актуальных товаров'
+        empty: 'Нет товаров, добавленных в избранное'
     },
     [Page.ProductCard]: {
         path: '/product-card/:id'
     },
     [Page.Cart]: {
-        title: 'Ваша корзина',
+        title: 'Корзина',
         path: '/cart',
-        empty: 'Ваша корзина пуста'
+        empty: 'Ваша корзина пока пуста'
+    },
+    [Page.Checkout]: {
+        title: 'Оформить заказ',
+        path: '/checkout',
     },
     [Page.Sale]: {
         title: 'Акции',
         path: '/sale',
         inHeader: true,
+        empty: 'Список акций пока пуст'
     },
     [Page.About]: {
         title: 'О нас',
@@ -82,25 +88,27 @@ export const Pages = {
 }
 
 export const SubPages = {
-    [SubPage.Orders]: {
-        title: 'Мои заказы',
-        path: '/orders',
-        empty: 'Нет актуальных товаров'
+    [SubPage.CurrentOrders]: {
+        title: 'Действующие заказы',
+        path: '/profile/orders',
+        empty: 'Список действующих товаров пока пуст'
     },
-    [SubPage.OrderDetail]: {
-        title: 'Заказ №',
-        path: '/orders/:index'
+    [SubPage.OrdersHistory]: {
+        title: 'История заказов',
+        path: '/profile/orders-history',
+        empty: 'История заказов пока пуста'
     },
     [SubPage.Discounts]: {
         title: 'Скидки',
-        path: '/discounts'
+        path: '/profile/discounts'
     },
     [SubPage.Subscribes]: {
-        title: 'Управление подписками',
-        path: '/subscribes'
+        title: 'Подписки',
+        path: '/profile/subscribes',
+        empty: 'Список подписок пока пуст'
     },
     [SubPage.Personal]: {
         title: 'Персональные данные',
-        path: '/personal'
+        path: '/profile/personal'
     }
 }

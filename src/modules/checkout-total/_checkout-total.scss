@@ -1,0 +1,41 @@
+.checkout-total {
+    // .checkout-total__inner
+
+    &__inner {
+        > * {
+            &:not(:last-child) {
+                margin-bottom: 3rem;
+            }
+        }
+    }
+
+    // .checkout-total__title
+
+    &__title {
+        @extend %text-20;
+        font-weight: 400;
+
+        &:not(:last-child) {
+            margin-bottom: var(--offset-ms);
+        }
+    }
+
+    // .checkout-total__btn
+
+    &__btn {
+        width: 100%;
+        padding: var(--offset-s);
+    }
+
+    &__boxes {
+        @include row-gap(var(--offset-s));
+    }
+
+    // .checkout-total__line-label
+
+    &__line-label {
+        &:not(:last-child) {
+            margin-bottom: var(--offset-xl);
+        }
+    }
+}

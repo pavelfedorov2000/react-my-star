@@ -1,9 +1,9 @@
 import classNames from "classnames";
-import { Leader } from "../../interfaces/Leader";
+import { LeaderItem } from "../../interfaces/Leader";
 
 interface Props {
     className?: string;
-    items?: Leader[];
+    items?: LeaderItem[];
 }
 
 const AboutNumbers = ({ className, items }: Props) => {

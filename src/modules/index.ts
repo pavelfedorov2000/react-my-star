@@ -10,3 +10,13 @@ export { default as ShopsList } from './shops-list/ShopsList';
 export { default as ClientReviews } from './client-reviews/ClientReviews';
 export { default as AboutCompany } from './about-company/AboutCompany';
 export { default as SalePoints } from './sale-points/SalePoints';
+
+export { default as Discounts } from './discounts/Discounts';
+export { default as Subscribes } from './subscribes/Subscribes';
+export { default as Personal } from './personal/Personal';
+export { default as Orders } from './orders/Orders';
+
+export { default as CartLayout } from './cart-layout/CartLayout';
+export { default as CartTable } from './cart-table/CartTable';
+export { default as CheckoutTotal } from './checkout-total/CheckoutTotal';
+export { default as CheckoutForm } from './checkout-form/CheckoutForm';

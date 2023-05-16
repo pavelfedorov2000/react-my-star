@@ -1,12 +1,7 @@
 import { Pages } from "../enums/Page";
 import { CatalogSubcategory } from "../interfaces/CatalogCategory";
-import { DownloadIcon } from "../ui/icons";
 
 export const MENU_LIST: CatalogSubcategory[] = [{
-    icon: <DownloadIcon />,
-    href: '#',
-    title: 'Каталог'
-}, {
     href: Pages.Catalog.path,
     title: 'Мебель для гостиной'
 }, {

@@ -1,0 +1,35 @@
+.promocode-form {
+    @extend %vertical-align;
+    border-bottom: 0.1rem solid var(--gray-e0);
+    // .promocode-form__input
+
+    &__input {
+        flex-grow: 1;
+        border-bottom: none;
+        padding: var(--offset-s) var(--offset-s) var(--offset-s) 0;
+    }
+
+    &__status {
+        @extend %text-12;
+
+        margin-right: var(--offset-s);
+        white-space: nowrap;
+
+        &.success {
+            color: var(--dark-green);
+        }
+
+        &.error {
+            color: var(--accent);
+        }
+    }
+
+    // .promocode-form__btn
+
+    &__btn {
+        svg {
+            width: var(--icon-size);
+            height: var(--icon-size);
+        }
+    }
+}

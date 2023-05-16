@@ -1,0 +1,52 @@
+.subscribe-card {
+    @extend %flex-col;
+    padding: 3rem;
+    position: relative;
+    align-items: flex-start;
+    row-gap: var(--offset-ms);
+    min-height: 35rem;
+    background-color: #fff;
+    border: 0.1rem solid var(--gray-ed);
+    background-size: 14rem 14rem;
+    background-repeat: no-repeat;
+    background-position: 100% 10rem;
+
+    > * {
+        &:not(:last-child) {
+            margin-bottom: var(--offset-ms);
+        }
+    }
+
+    // .subscribe-card__title
+
+    &__title {
+        @extend %text-16;
+        font-weight: 400;
+        margin-bottom: 3rem;
+    }
+
+    // .subscribe-card__list
+
+    &__list {
+        @include row-gap(var(--offset-xs));
+        align-content: start;
+
+        li {
+            font-weight: 300;
+            color: var(--gray-75);
+        }
+    }
+
+    &__link-btn {
+        margin-top: 0;
+        margin-bottom: auto;
+    }
+
+    // .subscribe-card__btn
+
+    &__btn {
+        padding: var(--offset-s);
+        min-width: 20rem;
+        margin-top: auto;
+    }
+}

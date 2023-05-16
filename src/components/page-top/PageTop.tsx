@@ -1,14 +1,22 @@
-interface Props {
-    title: string;
-}
+import { PageTop as PageTopType } from "../../interfaces/Route";
+import Breadcrumbs from "../breadcrumbs/Breadcrumbs";
 
-const PageTop = ({ title }: Props) => {
+const PageTop = ({ path, title, profile, divTitle }: PageTopType) => {
     return (
-        <div className="page-top">
-            <h1 className="section-title">
-                {title}
-            </h1>
-        </div>
+        <>
+            <Breadcrumbs currentPage={{ href: path, title: title }} profile={profile} />
+            <div className="page-top">
+                {!divTitle ?
+                    <div className="section-title">
+                        {title}
+                    </div>
+                    :
+                    <h1 className="section-title">
+                        {title}
+                    </h1>
+                }
+            </div>
+        </>
     );
 };
 
