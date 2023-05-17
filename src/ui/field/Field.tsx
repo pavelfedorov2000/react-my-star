@@ -4,9 +4,10 @@ import { FieldType as FieldTypeEnum } from "../../enums/FieldType";
 
 interface Props extends FieldType {
     className?: string;
+    checked?: boolean;
 }
 
-const Field = ({ className, name, fieldType, placeholder }: Props) => {
+const Field = ({ className, name, fieldType, placeholder, value, checked }: Props) => {
     return (
         <>
             {fieldType === FieldTypeEnum.Textarea ?
@@ -16,7 +17,10 @@ const Field = ({ className, name, fieldType, placeholder }: Props) => {
                     <input className={classNames('input', className && `${className}__input`)}
                         name={name}
                         type={fieldType || 'text'}
-                        placeholder={placeholder} />
+                        placeholder={placeholder}
+                        value={!checked && value ? value : undefined}
+                        checked={checked ?? undefined}
+                    />
                 </>
             }
         </>

@@ -15,10 +15,13 @@ body {
     font-style: normal;
     font-weight: 400;
     color: var(--default);
-    overflow-x: hidden;
     font-size: 1.4rem;
     line-height: calc(22 / 14 * 100%);
     transition: $transition padding-top;
+
+    @media(max-width: 1024px) {
+        overflow-x: hidden;
+    }
 
     &._lock {
         overflow-y: hidden;
@@ -31,10 +34,13 @@ dt {
 
 .wrapper {
     position: relative;
-    overflow-x: hidden;
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
+
+    @media(max-width: 1024px) {
+        overflow-x: hidden;
+    }
 }
 
 .container {

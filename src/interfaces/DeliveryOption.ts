@@ -1,6 +1,10 @@
 import { Leader } from "./Leader";
 
 export interface DeliveryOption {
-    title: string;
-    leader: Leader;
+    name: string;
+    label: string;
+    list: Leader;
+    btn?: {
+        text: string;
+    }
 }

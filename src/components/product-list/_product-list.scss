@@ -1,0 +1,11 @@
+.product-list {
+    grid-area: dl;
+    display: grid;
+    align-content: start;
+
+    > div {
+        display: flex;
+        gap: var(--offset-xxxs);
+        color: var(--gray-9e);
+    }
+}

@@ -1,4 +1,7 @@
 .checkout-total {
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
     // .checkout-total__inner
 
     &__inner {
@@ -24,6 +27,7 @@
 
     &__btn {
         width: 100%;
+        justify-content: center;
         padding: var(--offset-s);
     }
 

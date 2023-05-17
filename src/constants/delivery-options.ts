@@ -1,25 +1,30 @@
 import { DeliveryOption } from "../interfaces/DeliveryOption";
 
 export const DELIVERY_OPTIONS: DeliveryOption[] = [{
-    title: 'Доставка',
-    leader: {
+    name: 'DELIVERY',
+    label: 'Доставка',
+    list: {
         items: [{
-            property: 'Стоимость доставки: ',
+            property: 'Стоимость доставки',
             value: '15 руб'
         }, {
-            property: 'Доставка в течении: ',
+            property: 'Доставка в течении',
             value: '4 дней'
         }]
     }
 }, {
-    title: 'Самовывоз',
-    leader: {
+    name: 'DELIVERY',
+    label: 'Самовывоз',
+    list: {
         items: [{
-            property: 'Стоимость доставки: ',
+            property: 'Стоимость доставки',
             value: '0 руб'
         }, {
-            property: 'Доставка в течении: ',
+            property: 'Доставка в течении',
             value: '1 дня'
         }]
+    },
+    btn: {
+        text: 'Выберите пункт выдачи'
     }
 }];

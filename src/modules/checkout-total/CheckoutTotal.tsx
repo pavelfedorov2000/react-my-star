@@ -1,6 +1,7 @@
 import { CheckoutTable, LabelBox, Timetable } from "../../components";
 import { LabelBox as LabelBoxType, LabelBoxBgColor } from "../../interfaces/LabelBox";
 import { Button } from "../../ui";
+import { CreditCardIcon } from "../../ui/icons";
 
 const labelBoxes: LabelBoxType[] = [{
     bg: LabelBoxBgColor.Red,
@@ -27,7 +28,7 @@ const CheckoutTotal = () => {
                 <div className="checkout-total__title">Сумма заказа</div>
                 <CheckoutTable />
                 <Button href="/" className="checkout-total__btn" text="Перейти к оформлению" />
-                <Button text="Можно купить в рассрочку" style="link-3" />
+                <Button text="Можно купить в рассрочку" style="link-3" icon={<CreditCardIcon />} />
                 <div className="checkout-total__boxes">
                     {labelBoxes.map((box, index) => (
                         <LabelBox key={index} {...box} />

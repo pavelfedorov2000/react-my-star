@@ -1,7 +1,7 @@
 import { PersonalData } from "../enums/PersonalData";
-import { PersonalData as PersonalDataType } from "../interfaces/PersonalData";
+import { Field } from "../interfaces/Field";
 
-export const PERSONAL_DATA: PersonalDataType[] = [{
+export const PERSONAL_DATA: Field[] = [{
     name: PersonalData.ORDER_SURNAME,
     placeholder: "Фамилия",
     label: "Фамилия",
@@ -29,6 +29,10 @@ export const PERSONAL_DATA: PersonalDataType[] = [{
     name: PersonalData.ORDER_EMAIL,
     placeholder: "E-mail",
     label: "E-mail",
+}, {
+    name: PersonalData.ORDER_CITY,
+    placeholder: "Город",
+    label: "Город",
 }, {
     name: PersonalData.ORDER_ADDRESS,
     placeholder: "Адрес доставки",

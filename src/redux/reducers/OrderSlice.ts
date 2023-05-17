@@ -9,6 +9,7 @@ interface OrderState {
         [PersonalData.ORDER_OWNERSHIP]: string;
         [PersonalData.ORDER_PHONE]: string;
         [PersonalData.ORDER_EMAIL]: string;
+        [PersonalData.ORDER_CITY]: string;
         [PersonalData.ORDER_ADDRESS]: string;
     },
     DELIVERY: string;
@@ -24,6 +25,7 @@ const initialState: OrderState = {
         [PersonalData.ORDER_OWNERSHIP]: '',
         [PersonalData.ORDER_PHONE]: '',
         [PersonalData.ORDER_EMAIL]: '',
+        [PersonalData.ORDER_CITY]: '',
         [PersonalData.ORDER_ADDRESS]: '',
     },
     DELIVERY: '',

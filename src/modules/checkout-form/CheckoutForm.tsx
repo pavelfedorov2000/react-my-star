@@ -1,27 +1,29 @@
-import { FormItem } from "../../components";
-import { DELIVERY_OPTIONS } from "../../constants/delivery-options";
-import { PAYMENT_OPTIONS } from "../../constants/payment-options";
-import { PERSONAL_DATA } from "../../constants/personal-data";
+import { CheckoutFieldset, FormItem } from "../../components";
+import { CheckoutFieldType } from "../../enums/CheckoutFieldType";
 
-const CHECKOUT_FIELDS = [{
+/* const CHECKOUT_FIELDS: CheckoutFieldsetType[] = [{
     title: 'Персональные данные',
-    type: 'inputs',
+    type: CheckoutFieldType.Inputs,
     items: [...PERSONAL_DATA],
 }, {
     title: 'Условия доставки',
-    type: 'grid-radios',
+    type: CheckoutFieldType.GridRadios,
     items: [...DELIVERY_OPTIONS]
 }, {
     title: 'Способы оплаты',
-    type: 'row-radios',
-    items: [...PAYMENT_OPTIONS],
-}];
+    type: CheckoutFieldType.RowRadios,
+    items: [...PAYMENT_ITEMS],
+}]; */
+
+//console.log(CHECKOUT_FIELDS);
 
 const CheckoutForm = () => {
     return (
         <div className="checkout__form checkout-form">
-            
-            <FormItem className="checkout-form__textarea" name="order_comment" placeholder="Комментарий к заказу" label="Комментарий к заказу" />
+            <CheckoutFieldset title="Персональные данные" type={CheckoutFieldType.Inputs} />
+            <CheckoutFieldset title="Условия доставки" type={CheckoutFieldType.GridRadios} />
+            <CheckoutFieldset title="Способы оплаты" type={CheckoutFieldType.RowRadios} />
+            <FormItem className="checkout-form__textarea" name="ORDER_COMMENT" placeholder="Комментарий к заказу" label="Комментарий к заказу" />
         </div>
     );
 };

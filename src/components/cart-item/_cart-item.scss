@@ -1,0 +1,98 @@
+.cart-item {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: max-content var(--offset-xxxs) max-content var(--offset-ms) 1fr var(--offset-ms) auto;
+    grid-template-areas:
+        'img img title title prices prices'
+        'img img . . prices prices'
+        'img img articul articul prices prices'
+        'img img . . . .'
+        'img img dl dl dl .'
+        'img img . . . .'
+        'img img counter counter actions actions';
+    column-gap: var(--offset-ms);
+
+    @media (max-width: 767px) {
+        grid-template-rows: max-content var(--offset-xxxs) var(--offset-ms) max-content max-content var(--offset-ms) 1fr var(--offset-ms) auto;
+        grid-template-areas:
+            'img img title title title title'
+            'img img . . . .'
+            'img img articul articul articul articul'
+            'img img . . . .'
+            'img img prices prices prices prices'
+            '. . . . . .'
+            'dl dl dl dl dl dl'
+            '. . . . . .'
+            'counter counter counter actions actions actions';
+    }
+
+    // .cart-item __img-wrap
+
+    &__img-wrap {
+        grid-area: img;
+    }
+
+    // .cart-item __img
+
+    &__img {
+        @extend %cover;
+    }
+
+    // .cart-item __title
+
+    &__title {
+        @extend %text-20-34;
+        grid-area: title;
+    }
+
+    // .cart-item __prices
+
+    &__prices {
+        grid-area: prices;
+
+        @media (min-width: 768px) {
+            text-align: right;
+            flex-direction: column;
+        }
+
+        > * {
+            &:not(:last-child) {
+                @media (max-width: 767px) {
+                    margin-right: var(--offset-xxxs);
+                }
+            }
+        }
+    }
+
+    &__price {
+        @extend %text-20;
+    }
+
+    // .cart-item __articul
+
+    &__articul {
+        grid-area: articul;
+        color: var(--gray-75);
+    }
+
+    // .cart-item __list
+
+    &__list {
+        row-gap: var(--offset-xxxs);
+    }
+
+    // .cart-item __counter
+
+    &__counter {
+        grid-area: counter;
+    }
+
+    // .cart-item __actions
+
+    &__actions {
+        display: flex;
+        grid-area: actions;
+        gap: var(--offset-s);
+        justify-self: end;
+    }
+}

@@ -1,10 +1,14 @@
-export const PAYMENT_OPTIONS = [{
-    text: 'Оплата при получении',
+import { PaymentItem } from "../interfaces/PaymentItem";
+
+export const PAYMENT_ITEMS: PaymentItem[] = [{
+    name: 'ORDER_PAYMENT',
+    title: 'Оплата при получении',
 }, {
-    text: 'Картой онлайн',
+    name: 'ORDER_PAYMENT',
+    title: 'Картой онлайн',
     content: {
         items: [{
-            text: 'Онлайн оплата',
+            label: 'Онлайн оплата',
             content: {
                 title: 'Онлайн оплата',
                 subtitle: 'Информация об онлайн оплате',
@@ -13,7 +17,7 @@ export const PAYMENT_OPTIONS = [{
                 }]
             }
         }, {
-            text: 'Перевод через ЕРИП',
+            label: 'Перевод через ЕРИП',
             content: {
                 title: 'Оплата переводом через ЕРИП',
                 subtitle: 'Информация о переводе через ЕРИП',
@@ -22,7 +26,7 @@ export const PAYMENT_OPTIONS = [{
                 }]
             }
         }, {
-            text: 'Карта рассрочки «Халва»',
+            label: 'Карта рассрочки «Халва»',
             content: {
                 title: 'Оплата картой рассрочки «Халва»',
                 subtitle: 'Информация об оплате через карту рассрочки',
@@ -52,7 +56,7 @@ export const PAYMENT_OPTIONS = [{
                 }]
             }
         }, {
-            text: 'Карта рассрочки «Красная карта»',
+            label: 'Карта рассрочки «Красная карта»',
             content: {
                 title: 'Оплата картой рассрочки «Красная карта»',
                 subtitle: 'Информация об оплате через карту рассрочки',
@@ -61,7 +65,7 @@ export const PAYMENT_OPTIONS = [{
                 }]
             }
         }, {
-            text: 'Кредит Альфабанк',
+            label: 'Кредит Альфабанк',
             content: {
                 title: 'Кредит Альфабанк',
                 subtitle: 'Информация о кредите Альфабанка',

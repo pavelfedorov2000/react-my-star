@@ -26,23 +26,12 @@
     // .checkout-total__item--drop
 
     &__item-top--drop {
+        @extend %vertical-align;
         position: relative;
-        padding-right: var(--offset-l);
         width: 100%;
+        gap: var(--offset-xs);
+        text-align: left;
         cursor: pointer;
-
-        span {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: var(--offset-s);
-            height: var(--offset-s);
-            background-size: contain;
-            background-position: 100% 0;
-            background-repeat: no-repeat;
-            transition: $transition transform;
-        }
 
         &[aria-expanded="true"] {
             span {
@@ -51,9 +40,17 @@
         }
     }
 
+    &__item-arrow {
+        width: var(--icon-size);
+        height: var(--icon-size);
+        stroke: var(--gray-9e);
+        transition: $transition transform;
+    }
+
     // .checkout-total__item-name
 
     &__item-name {
+        flex-grow: 1;
         font-weight: 300;
     }
 

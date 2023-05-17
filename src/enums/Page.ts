@@ -31,12 +31,16 @@ export const Pages = {
         title: 'Каталог',
         path: '/catalog',
         inHeader: true,
-        empty: 'Нет актуальных товаров',
+        emptyBlock: {
+            text: 'Нет актуальных товаров'
+        },
     },
     [Page.Favorite]: {
         title: 'Избранное',
         path: '/favorite',
-        empty: 'Нет товаров, добавленных в избранное'
+        emptyBlock: {
+            text: 'Нет товаров, добавленных в избранное'
+        }
     },
     [Page.ProductCard]: {
         path: '/product-card/:id'
@@ -44,7 +48,9 @@ export const Pages = {
     [Page.Cart]: {
         title: 'Корзина',
         path: '/cart',
-        empty: 'Ваша корзина пока пуста'
+        emptyBlock: {
+            text: 'Ваша корзина пока пуста'
+        }
     },
     [Page.Checkout]: {
         title: 'Оформить заказ',
@@ -54,7 +60,9 @@ export const Pages = {
         title: 'Акции',
         path: '/sale',
         inHeader: true,
-        empty: 'Список акций пока пуст'
+        emptyBlock: {
+            text: 'Список акций пока пуст'
+        }
     },
     [Page.About]: {
         title: 'О нас',
@@ -91,12 +99,16 @@ export const SubPages = {
     [SubPage.CurrentOrders]: {
         title: 'Действующие заказы',
         path: '/profile/orders',
-        empty: 'Список действующих товаров пока пуст'
+        emptyBlock: {
+            text: 'Список действующих товаров пока пуст'
+        }
     },
     [SubPage.OrdersHistory]: {
         title: 'История заказов',
         path: '/profile/orders-history',
-        empty: 'История заказов пока пуста'
+        emptyBlock: {
+            text: 'История заказов пока пуста'
+        }
     },
     [SubPage.Discounts]: {
         title: 'Скидки',
@@ -105,7 +117,9 @@ export const SubPages = {
     [SubPage.Subscribes]: {
         title: 'Подписки',
         path: '/profile/subscribes',
-        empty: 'Список подписок пока пуст'
+        emptyBlock: {
+            text: 'Список подписок пока пуст'
+        }
     },
     [SubPage.Personal]: {
         title: 'Персональные данные',

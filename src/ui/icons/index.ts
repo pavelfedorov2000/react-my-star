@@ -5,14 +5,19 @@ export { default as ArrowRightIcon } from './ArrowRight';
 export { default as CloseIcon } from './Close';
 export { default as DownloadIcon } from './Download';
 export { default as BackIcon } from './Back';
+export { default as DropArrowIcon } from './DropArrow';
 export { default as SubmitArrowIcon } from './SubmitArrow';
 export { default as CreditCardIcon } from './CreditCard';
+export { default as MinusIcon } from './Minus';
+export { default as PlusIcon } from './Plus';
+export { default as PinIcon } from './Pin';
 
 export { default as BurgerIcon } from './Burger';
 export { default as CartIcon } from './Cart';
 export { default as FavoriteIcon } from './Favorite';
 export { default as UserIcon } from './User';
 export { default as CompareIcon } from './Compare';
+export { default as TrashIcon } from './Trash';
 
 export { default as BedIcon } from './Bed';
 export { default as DoubleBedIcon } from './DoubleBed';

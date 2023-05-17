@@ -42,18 +42,12 @@ export const ROUTES: Route[] = [{
     ...SubPages.CurrentOrders,
     component: Profile,
     SubPage: Orders,
-    emptyBlock: {
-        text: SubPages.CurrentOrders.empty
-    }
 }, {
     id: 8,
     profile: true,
     ...SubPages.OrdersHistory,
     component: Profile,
     SubPage: Orders,
-    emptyBlock: {
-        text: SubPages.OrdersHistory.empty
-    }
 }, {
     id: 9,
     profile: true,

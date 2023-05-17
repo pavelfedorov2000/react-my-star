@@ -1,4 +1,5 @@
 import { PromocodeStatus } from "../../enums/PromocodeStatus";
+import { DropArrowIcon } from "../../ui/icons";
 import PromocodeForm from "../promocode-form/PromocodeForm";
 
 const CheckoutTable = () => {
@@ -25,6 +26,9 @@ const CheckoutTable = () => {
                         <div className="checkout-table__item-value">
                             <span>- 10 руб.</span>
                         </div>
+                        <span className="checkout-table__item-arrow">
+                            <DropArrowIcon />
+                        </span>
                     </button>
                     <div className="checkout-table__sublist checkout-table__hidden">
                         <div className="checkout-table__sublist-item">
@@ -42,6 +46,9 @@ const CheckoutTable = () => {
                             type="button"
                             aria-expanded="false">
                         <div className="checkout-table__item-name">Использовать промокод:</div>
+                        <span className="checkout-table__item-arrow">
+                            <DropArrowIcon />
+                        </span>
                     </button>
                     <div className="checkout-table__hidden">
                         <PromocodeForm status={PromocodeStatus.Error} />

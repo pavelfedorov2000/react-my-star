@@ -16,8 +16,8 @@ const Select = ({ name, options }: Props) => {
 			<div className="select__content">
                 {options.map((option ,index) => (
                     <div key={index} className="select__option">
-                        <input id="face0" className="select__input" type="radio" name={name} checked={option.selected ? true : false} />
-                        <label htmlFor="face0" tabIndex={0} className="select__label">{option.text}</label>
+                        <input id={`${name}${index}`} className="select__input" type="radio" name={name} checked={option.selected ? true : false} />
+                        <label htmlFor={`${name}${index}`} tabIndex={0} className="select__label">{option.text}</label>
                     </div>
                 ))}
 			</div>

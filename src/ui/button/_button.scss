@@ -502,11 +502,10 @@ span {
 .action-btn {
     $this: &;
 
-    @extend %flex-center;
+    justify-content: center;
     width: var(--icon-size-l);
     height: var(--icon-size-l);
     border-radius: 50%;
-    transition: $transition all;
     background-color: var(--gray-f7);
 
     #{$this} {
@@ -514,6 +513,16 @@ span {
             width: var(--icon-size-s);
             height: var(--icon-size-s);
             fill: var(--gray-9e);
+        }
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            #{$this} {
+                &__icon {
+                    fill: var(--white);
+                }
+            }
         }
     }
 

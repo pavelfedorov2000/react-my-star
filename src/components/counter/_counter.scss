@@ -1,0 +1,72 @@
+.counter {
+    @extend %vertical-align;
+    // .counter__btn
+
+    &__btn {
+        @extend %flex-center;
+        flex-shrink: 0;
+        position: relative;
+        width: var(--icon-size-l);
+        height: var(--icon-size-l);
+        stroke: var(--default);
+
+        svg {
+            transition: $transition stroke;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: var(--accent);
+
+                svg {
+                    stroke: #fff;
+                }
+            }
+        }
+
+        &:focus {
+            svg {
+                stroke: #fff;
+            }
+        }
+
+        svg {
+            width: 1.4rem;
+        }
+
+        &--minus {
+            svg {
+                height: 0.2rem;
+            }
+        }
+
+        &--plus {
+            svg {
+                height: 1.4rem;
+            }
+        }
+
+        /* @media (any-hover: hover) {
+            &:hover {
+                svg line {
+                    stroke: var(--green);
+                }
+            }
+        } */
+    }
+
+    // .counter__input
+
+    &__input {
+        @extend %flex-center;
+        @extend %text-14;
+        @include margin-x(var(--offset-xs));
+        font-family: inherit;
+        text-align: center;
+        width: 6rem;
+        padding: var(--offset-xxs);
+        border: 0.1rem solid #ebebeb;
+        font-weight: 500;
+        color: #000;
+    }
+}

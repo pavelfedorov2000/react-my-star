@@ -86,12 +86,12 @@
         @extend %vertical-align;
         cursor: pointer;
 
-        .radio-inner {
+        .radiobutton__inner {
             width: 100%;
             height: 100%;
         }
 
-        .radio-box:checked + .radio-inner {
+        .radiobutton__box:checked + .radiobutton__inner {
             border-color: #fff;
 
             &::after {
@@ -105,7 +105,7 @@
                 border: var(--offset-xxxxs) solid var(--blue);
             }
 
-            .radio-style {
+            .radiobutton__style {
                 border-width: var(--offset-xxxxs);
                 border-color: var(--blue);
 
@@ -150,14 +150,14 @@
     &__radio-list {
         @include row-gap(var(--offset-xs));
 
-        li {
+        dt {
             font-weight: 300;
             color: var(--dark-text);
+        }
 
-            b {
-                font-weight: 400;
-                color: var(--default);
-            }
+        dd {
+            font-weight: 400;
+            color: var(--default);
         }
     }
 
@@ -174,7 +174,7 @@
         cursor: pointer;
         min-height: 8rem;
 
-        .radio-box:checked + .radio-inner {
+        .radiobutton__input:checked + .radiobutton__inner {
             border-color: #fff;
 
             &::after {
@@ -188,7 +188,7 @@
             }
         }
 
-        .radio-inner {
+        .radiobutton__inner {
             min-height: 100%;
             padding: 1.8rem 3.5rem;
             text-align: center;
