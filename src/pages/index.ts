@@ -8,4 +8,5 @@ export { default as Shops } from './Shops';
 export { default as Delivery } from './Delivery';
 export { default as Guarantee } from './Guarantee';
 export { default as Profile } from './Profile';
+export { default as Compare } from './Compare';
 export { default as NotFound } from './NotFound';

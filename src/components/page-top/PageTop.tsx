@@ -1,7 +1,8 @@
 import { PageTop as PageTopType } from "../../interfaces/Route";
+import { Button } from "../../ui";
 import Breadcrumbs from "../breadcrumbs/Breadcrumbs";
 
-const PageTop = ({ path, title, profile, divTitle }: PageTopType) => {
+const PageTop = ({ path, title, profile, divTitle, btn }: PageTopType) => {
     return (
         <>
             <Breadcrumbs currentPage={{ href: path, title: title }} profile={profile} />
@@ -15,6 +16,7 @@ const PageTop = ({ path, title, profile, divTitle }: PageTopType) => {
                         {title}
                     </h1>
                 }
+                {btn && <Button {...btn} />}
             </div>
         </>
     );

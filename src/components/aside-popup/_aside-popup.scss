@@ -22,7 +22,7 @@
     overflow-y: auto;
     width: 50.7rem;
     padding: var(--offset-xxxxl) 8rem 10rem;
-    background-color: #fff;
+    background-color: var(--white);
     transition: $transition all;
 
     &.active {

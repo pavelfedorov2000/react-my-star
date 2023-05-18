@@ -2,7 +2,7 @@ import { PaymentOption } from "./PaymentOption";
 
 export interface PaymentItem {
     name: string;
-    title: string;
+    label: string;
     content?: {
         items: PaymentOption[];
     };

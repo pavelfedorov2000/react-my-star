@@ -3,11 +3,12 @@ import { FieldType } from "../enums/FieldType";
 import { SelectOption } from "./SelectOption";
 
 export interface Field {
-    fieldType?: FieldType.Tel | FieldType.Email | FieldType.Password | FieldType.Number | FieldType.Checkbox | FieldType.Radio | FieldType.Textarea;
-    placeholder?: string;
+    fieldType?: FieldType.Tel | FieldType.Email | FieldType.Password | FieldType.Number | FieldType.Checkbox | FieldType.Radio | FieldType.Textarea | FieldType.Select;
     label?: string | ReactNode;
+    placeholder?: string;
     name?: string;
-    required?: boolean;
     value?: string | number;
     options?: SelectOption[];
+    checked?: boolean;
+    required?: boolean;
 }

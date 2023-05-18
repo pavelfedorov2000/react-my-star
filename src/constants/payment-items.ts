@@ -2,10 +2,10 @@ import { PaymentItem } from "../interfaces/PaymentItem";
 
 export const PAYMENT_ITEMS: PaymentItem[] = [{
     name: 'ORDER_PAYMENT',
-    title: 'Оплата при получении',
+    label: 'Оплата при получении',
 }, {
     name: 'ORDER_PAYMENT',
-    title: 'Картой онлайн',
+    label: 'Картой онлайн',
     content: {
         items: [{
             label: 'Онлайн оплата',

@@ -1,3 +1,4 @@
+import { FieldType } from "../enums/FieldType";
 import { PersonalData } from "../enums/PersonalData";
 import { Field } from "../interfaces/Field";
 
@@ -13,7 +14,8 @@ export const PERSONAL_DATA: Field[] = [{
     name: PersonalData.ORDER_PATRONYMIC,
     placeholder: "Отчетсво",
     label: "Отчетсво",
-}, {
+    }, {
+    fieldType: FieldType.Select,
     name: PersonalData.ORDER_OWNERSHIP,
     options: [{
         selected: true,

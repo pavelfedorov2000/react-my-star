@@ -11,6 +11,7 @@ enum Page {
     Guarantee = 'Guarantee',
     Delivery = 'Delivery',
     Sale = 'Sale',
+    Compare = 'Compare',
     NotFound = 'NotFound',
 }
 
@@ -88,6 +89,13 @@ export const Pages = {
         title: 'Гарантия',
         path: '/guarantee',
         inHeader: true,
+    },
+    [Page.Compare]: {
+        title: 'Сравнение товаров',
+        path: '/compare',
+        emptyBlock: {
+            text: 'Список сравнения пока пуст'
+        }
     },
     [Page.NotFound]: {
         title: 'Похоже, мы не можем найти нужную вам страницу',

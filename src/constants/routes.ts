@@ -1,5 +1,5 @@
 import { Route } from '../interfaces/Route';
-import { Home, Shops, Delivery, Guarantee, NotFound, Sale, Catalog, About, Profile, Checkout, Cart } from '../pages';
+import { Home, Shops, Delivery, Guarantee, NotFound, Sale, Catalog, About, Profile, Checkout, Cart, Compare } from '../pages';
 import { Pages, SubPages } from '../enums/Page';
 import { Discounts, Orders, Personal, Subscribes } from '../modules';
 
@@ -78,6 +78,10 @@ export const ROUTES: Route[] = [{
     component: Checkout,
 }, {
     id: 14,
+    ...Pages.Compare,
+    component: Compare,
+}, {
+    id: 15,
     ...Pages.NotFound,
     component: NotFound
 }];

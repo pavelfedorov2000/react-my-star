@@ -2,7 +2,7 @@
     $this: &;
 
     overflow: hidden;
-    color: #fff;
+    color: var(--white);
     position: relative;
     display: block;
     height: 100%;
@@ -51,7 +51,7 @@
     @media (any-hover: hover) {
         &:hover {
             @media(min-width: 1025px) {
-                color: #fff;
+                color: var(--white);
 
                 &::after {
                     opacity: 1;

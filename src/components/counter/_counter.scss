@@ -19,14 +19,14 @@
                 background-color: var(--accent);
 
                 svg {
-                    stroke: #fff;
+                    stroke: var(--white);
                 }
             }
         }
 
         &:focus {
             svg {
-                stroke: #fff;
+                stroke: var(--white);
             }
         }
 

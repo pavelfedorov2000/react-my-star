@@ -3,7 +3,7 @@
     background-position: 0 0;
     background-size: cover;
     background-repeat: no-repeat;
-    color: #fff;
+    color: var(--white);
 
     // .installment__content
 
@@ -22,7 +22,7 @@
 
         @media (any-hover: hover) {
             &:hover {
-                color: #fff;
+                color: var(--white);
             }
         }
     }

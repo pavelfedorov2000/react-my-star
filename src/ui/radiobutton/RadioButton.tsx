@@ -23,8 +23,8 @@ const RadioButton = ({ className, contentClassName, name, label, style, list, bt
     return (
         <label className={classNames('radiobutton', className)}>
             <Field className="radiobutton" name={name} fieldType={FieldType.Radio} checked={checked} />
-            {style !== RadioButtonStyle.Box && <span className="radiobutton__style"></span>}
-            {label && !style && <span className="radiobutton__text">{label}</span>}
+            {!style && <span className="radiobutton__style"></span>}
+            {label && !style && <span className="radiobutton__title">{label}</span>}
             {style === RadioButtonStyle.Box &&
                 <div className={classNames('radiobutton__inner', contentClassName)}>
                     <div className="checkout-form__radio-top">

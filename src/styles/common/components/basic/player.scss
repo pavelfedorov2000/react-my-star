@@ -14,14 +14,14 @@
 		left: calc(50% - 2.1rem / 2);
 		width: 2.1rem;
 		height: var(--icon-size);
-		background-color: #fff;
+		background-color: var(--white);
 		clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
 		transition: $transition background-color;
 	}
 
 	@media (any-hover: hover) {
 		&:hover {
-			background-color: #fff;
+			background-color: var(--white);
 
 			&::before {
 				background-color: var(--default);

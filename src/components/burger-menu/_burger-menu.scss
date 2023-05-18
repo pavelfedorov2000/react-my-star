@@ -7,7 +7,7 @@
     height: 100vh;
     padding: 6.5rem 8rem 10rem;
     @extend %flex-col;
-    background-color: #fff;
+    background-color: var(--white);
     color: var(--default);
     transition: 0.5s left;
     overflow-y: auto;
@@ -187,7 +187,7 @@
             bottom: 0;
             left: 0;
             z-index: 101;
-            background-color: #fff;
+            background-color: var(--white);
             padding: 0 var(--offset-s) 10rem;
             overflow-y: auto;
             transform: translateX(100%);

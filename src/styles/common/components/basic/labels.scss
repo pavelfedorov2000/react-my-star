@@ -9,7 +9,7 @@
     display: inline-block;
     border-radius: $brs;
     padding: var(--offset-xxxxs) var(--offset-xxxs);
-    color: #fff;
+    color: var(--white);
     text-transform: uppercase;
 
     &--style {

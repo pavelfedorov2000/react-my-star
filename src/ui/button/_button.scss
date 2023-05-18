@@ -7,7 +7,7 @@
     align-items: center;
     font-family: var(--main-font);
     background-color: var(--default);
-    color: #fff;
+    color: var(--white);
     border-radius: 5rem;
     transition: $transition all;
 
@@ -19,7 +19,7 @@
     @media (any-hover: hover) {
         &:hover {
             background-color: var(--accent-hover);
-            color: #fff;
+            color: var(--white);
         }
     }
 
@@ -31,7 +31,7 @@
 
         @media (any-hover: hover) {
             &:hover {
-                color: #fff;
+                color: var(--white);
             }
         }
     }
@@ -72,7 +72,7 @@
             }
 
             &-white {
-                background-color: #fff;
+                background-color: var(--white);
                 color: var(--default);
 
                 #{$this} {
@@ -83,11 +83,11 @@
 
                 @media (any-hover: hover) {
                     &:hover {
-                        color: #fff;
+                        color: var(--white);
 
                         #{$this} {
                             &__icon {
-                                stroke: #fff;
+                                stroke: var(--white);
                             }
                         }
                     }
@@ -140,7 +140,7 @@
         }
 
         &_border {
-            background-color: #fff;
+            background-color: var(--white);
             border-color: var(--accent);
             color: var(--accent);
 
@@ -609,7 +609,7 @@ span {
 
                 #{$this} {
                     &__icon {
-                        fill: #fff;
+                        fill: var(--white);
                     }
                 }
             }
@@ -644,7 +644,7 @@ span {
                 background-repeat: no-repeat;
 
                 svg {
-                    //fill: #fff;
+                    //fill: var(--white);
                     display: none;
                 }
 
@@ -661,7 +661,7 @@ span {
         &_cart {
             #{$this} {
                 &__icon {
-                    fill: #fff;
+                    fill: var(--white);
                 }
             }
 

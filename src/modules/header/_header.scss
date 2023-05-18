@@ -1,6 +1,6 @@
 .header {
     $this: &;
-    background-color: #fff;
+    background-color: var(--white);
     transition: $transition all;
 
     &.fixed {
@@ -17,7 +17,7 @@
 
     &__top {
         background-color: var(--default);
-        color: #fff;
+        color: var(--white);
 
         @media (min-width: 1025px) {
             display: flex;
@@ -288,7 +288,7 @@
             right: calc(var(--offset-xxxs) * (-1));
             border-radius: $brs-3;
             background-color: var(--accent);
-            color: #fff;
+            color: var(--white);
             @include padding-x(var(--offset-xxxs));
         }
     }

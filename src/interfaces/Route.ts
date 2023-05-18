@@ -20,4 +20,5 @@ type PageTopType = Pick<Page, "path" | "title" | "profile">;
 
 export interface PageTop extends PageTopType {
     divTitle?: boolean;
+    btn?: any;
 }

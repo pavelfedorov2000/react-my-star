@@ -92,7 +92,7 @@
         }
 
         .radiobutton__box:checked + .radiobutton__inner {
-            border-color: #fff;
+            border-color: var(--white);
 
             &::after {
                 content: '';
@@ -175,7 +175,7 @@
         min-height: 8rem;
 
         .radiobutton__input:checked + .radiobutton__inner {
-            border-color: #fff;
+            border-color: var(--white);
 
             &::after {
                 content: '';

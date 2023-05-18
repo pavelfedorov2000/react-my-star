@@ -6,4 +6,5 @@ export enum FieldType {
     Checkbox = 'checkbox',
     Radio = 'radio',
     Textarea = 'textarea',
+    Select = 'select',
 }

@@ -6,7 +6,7 @@
 
     &__inner {
         position: relative;
-        color: #fff;
+        color: var(--white);
 
         &::after {
             content: '';
@@ -59,7 +59,7 @@
             @media(min-width: 1025px) {
                 #{$this} {
                     &__inner {
-                        color: #fff;
+                        color: var(--white);
 
                         &::after {
                             opacity: 1;
