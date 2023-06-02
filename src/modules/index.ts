@@ -20,3 +20,5 @@ export { default as CartLayout } from './cart-layout/CartLayout';
 export { default as CartTable } from './cart-table/CartTable';
 export { default as CheckoutTotal } from './checkout-total/CheckoutTotal';
 export { default as CheckoutForm } from './checkout-form/CheckoutForm';
+
+export { default as CompareTable } from './compare-table/CompareTable';
