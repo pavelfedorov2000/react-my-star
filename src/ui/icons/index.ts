@@ -11,6 +11,7 @@ export { default as CreditCardIcon } from './CreditCard';
 export { default as MinusIcon } from './Minus';
 export { default as PlusIcon } from './Plus';
 export { default as PinIcon } from './Pin';
+export { default as ToggleArrowIcon } from './ToggleArrow';
 
 export { default as BurgerIcon } from './Burger';
 export { default as CartIcon } from './Cart';

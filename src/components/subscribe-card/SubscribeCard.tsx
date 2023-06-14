@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { Button } from "../../ui";
 import { Subscribe } from "../../interfaces/Subscribe";
-import subscribeDecor from "../../assets/images/subscribe-decor.svg";
+import subscribeDecor from "../../assets/images/icons/color.png";
 
 const SubscribeCard = ({ title, isSubscribed, email, sms }: Subscribe) => {
     return (

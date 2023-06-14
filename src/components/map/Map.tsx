@@ -1,7 +1,7 @@
 import { Map, Placemark } from "@pbe/react-yandex-maps";
-import pinIcon from "../../assets/images/icons/pin.svg";
 import { useAppSelector } from "../../app/hooks";
 import classNames from "classnames";
+import pinIcon from "../../assets/images/icons/color.png";
 
 interface Props {
     className?: string;

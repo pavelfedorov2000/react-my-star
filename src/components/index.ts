@@ -39,3 +39,6 @@ export { default as CheckoutFieldset } from './checkout-fieldset/CheckoutFieldse
 export { default as CheckoutPersonal } from './checkout-personal/CheckoutPersonal';
 export { default as CheckoutDelivery } from './checkout-delivery/CheckoutDelivery';
 export { default as CheckoutPayment } from './checkout-payment/CheckoutPayment';
+
+export { default as CatalogFilter } from './catalog-filter/CatalogFilter';
+export { default as DropFilter } from './drop-filter/DropFilter';

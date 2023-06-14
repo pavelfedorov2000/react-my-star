@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Pages } from "../../enums/Page";
-import crumbArrow from "../../assets/images/icons/crumb-arrow.svg";
+import crumbArrow from "../../assets/images/icons/color.png";
 
 interface Props {
     profile?: boolean;

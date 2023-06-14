@@ -1,7 +1,7 @@
 import { useState } from "react";
-import dropArrow from "../../assets/images/icons/drop-arrow.svg";
 import classNames from "classnames";
 import { Field } from "../../interfaces/Field";
+import dropArrow from "../../assets/images/icons/color.png";
 
 interface Props extends Field {
     className?: string;

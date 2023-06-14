@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { Link } from "react-router-dom";
-import logo from '../../assets/images/logo/logo.svg';
+import logo from '../../assets/images/icons/color.png';
 import { Img } from "../../ui";
 
 interface Props {

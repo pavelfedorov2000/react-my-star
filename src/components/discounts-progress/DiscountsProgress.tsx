@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import discountBorder from "../../assets/images/discount-border.svg";
+import discountBorder from "../../assets/images/icons/color.png";
 
 const discounts = [0, 3, 5, 7, 10, 13, 15, 17, 20];
 
