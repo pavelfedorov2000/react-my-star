@@ -5,6 +5,7 @@ import modalsReducer from './reducers/ModalsSlice';
 import profileReducer from './reducers/ProfileSlice';
 import ordersReducer from './reducers/OrdersSlice';
 import cartReducer from './reducers/CartSlice';
+import catalogFiltersReducer from './reducers/CatalogFiltersSlice';
 
 const rootReducer = combineReducers({
     contactsReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
     profileReducer,
     ordersReducer,
     cartReducer,
+    catalogFiltersReducer
 });
 
 export const setupStore = () => {

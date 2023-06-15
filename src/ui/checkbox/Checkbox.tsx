@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { FieldType } from "../../enums/FieldType";
 import { Field as IField } from "../../interfaces/Field";
 import Field from "../field/Field";
-import checkIcon from "../../assets/images/icons/color.png";
+import checkIcon from "../../assets/images/icons/check.svg";
 
 interface Props extends IField {
     className?: string;
