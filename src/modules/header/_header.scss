@@ -1,7 +1,8 @@
 .header {
     $this: &;
+
     background-color: var(--white);
-    transition: $transition all;
+    transition: var(--transition) all;
 
     &.fixed {
         @media (min-width: 1025px) {
@@ -240,7 +241,7 @@
         svg {
             width: var(--icon-size);
             height: var(--icon-size);
-            transition: $transition fill;
+            transition: var(--transition) fill;
         }
 
         @media (any-hover: hover) {
@@ -269,7 +270,7 @@
             }
 
             svg {
-                transition: $transition stroke;
+                transition: var(--transition) stroke;
             }
 
             @media (any-hover: hover) {
@@ -286,7 +287,7 @@
             position: absolute;
             top: calc(var(--offset-xxs) * (-1));
             right: calc(var(--offset-xxxs) * (-1));
-            border-radius: $brs-3;
+            border-radius: var(--brs-3);
             background-color: var(--accent);
             color: var(--white);
             @include padding-x(var(--offset-xxxs));

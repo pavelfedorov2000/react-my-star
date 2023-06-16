@@ -55,7 +55,7 @@
         background-size: contain;
         background-position: 100% 50%;
         background-repeat: no-repeat;
-        transition: $transition transform;
+        transition: var(--transition) transform;
 
         @media (max-width: 767px) {
             width: var(--icon-size-s);
@@ -77,7 +77,7 @@
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transition: $transition all;
+        transition: var(--transition) all;
     }
 
     &__input {
@@ -89,7 +89,7 @@
         position: relative;
         font-weight: 300;
         cursor: pointer;
-        transition: $transition color;
+        transition: var(--transition) color;
 
         @media (any-hover: hover) {
             &:hover {

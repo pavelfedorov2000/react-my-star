@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { DropFilter as DropFilterType } from "../../interfaces/CatalogFilter";
 import { FieldType } from "../../enums/FieldType";
 import RangeSlider from "../range-slider/RangeSlider";
-import { Field } from "../../ui";
+import { Checkbox, RadioButton } from "../../ui";
 
 const DropFilter = ({ name, items, ranges, fieldType }: DropFilterType) => {
     return (
@@ -18,7 +18,9 @@ const DropFilter = ({ name, items, ranges, fieldType }: DropFilterType) => {
                 :
                 <div className="drop-filter__items">
                     {items?.map((item, index) => (
-                        <Field key={index} {...item} className="drop-filter__item" />
+                        fieldType === FieldType.Radio
+                            ? <RadioButton key={index} {...item} className="drop-filter__item" style="link" />
+                            : <Checkbox key={index} {...item} className="drop-filter__item" />
                     ))}
                 </div>
             }

@@ -31,12 +31,12 @@ const initialState: CatalogFiltersState = {
 };
 
 export const catalogFiltersSlice = createSlice({
-    name: 'contacts',
+    name: 'catalogFilters',
     initialState,
     reducers: {
-        setSort(state, action: PayloadAction<string>) {
+        /* setSort(state, action: PayloadAction<string>) {
 
-        }
+        } */
     }
 });
 

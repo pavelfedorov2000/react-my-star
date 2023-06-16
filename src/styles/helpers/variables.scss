@@ -31,7 +31,6 @@
     --header-top-height: 4rem;
     --header-main-height: 7.3rem;
     --header-bottom-height: 8.9rem;
-
     --header-height: calc(var(--header-top-height) + var(--header-main-height) + var(--header-bottom-height));
 
     --icon-size-s: 1.6rem;
@@ -63,27 +62,16 @@
     --main-font: 'Inter', sans-serif;
 
     --brs: 0.2rem;
-    --brs-2: 0.4rem;
-    --brs-3: 0.6rem;
-    --brs-4: 0.8rem;
+    --brs-2: calc(var(--brs) * 2);
+    --brs-3: calc(var(--brs) * 3);
+    --brs-4: calc(var(--brs) * 4);
 
     --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
     --duration: 0.3s;
     --duration--long: 1s;
     --delay: $duration;
-    --transition: $duration $transition-timing;
+    --transition: var(--duration) var(--transition-timing);
 }
-
-$brs: 0.2rem;
-$brs-2: 0.4rem;
-$brs-3: 0.6rem;
-$brs-4: 0.8rem;
-
-$transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
-$duration: 0.3s; // указывать только в секундах!
-$duration--long: 1s; // указывать только в секундах!
-$delay: $duration;
-$transition: $duration $transition-timing;
 
 // Typography
 

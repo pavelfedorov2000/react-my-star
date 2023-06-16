@@ -17,7 +17,7 @@ body {
     color: var(--default);
     font-size: 1.4rem;
     line-height: calc(22 / 14 * 100%);
-    transition: $transition padding-top;
+    transition: var(--transition) padding-top;
 
     @media(max-width: 1024px) {
         overflow-x: hidden;
@@ -70,7 +70,7 @@ img {
 }
 
 a {
-    transition: $transition color;
+    transition: var(--transition) color;
 
     @media (any-hover: hover) {
         &:hover {
@@ -96,7 +96,7 @@ a {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: $transition opacity;
+    transition: var(--transition) opacity;
 
     &.active {
         opacity: 1;

@@ -5,7 +5,7 @@
 	height: 8rem;
 	border-radius: 50%;
 	border: 0.1rem solid rgba(#fff, 0.7);
-	transition: $transition background-color;
+	transition: var(--transition) background-color;
 
 	&::before {
 		@extend %pos-center-y;
@@ -16,7 +16,7 @@
 		height: var(--icon-size);
 		background-color: var(--white);
 		clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
-		transition: $transition background-color;
+		transition: var(--transition) background-color;
 	}
 
 	@media (any-hover: hover) {

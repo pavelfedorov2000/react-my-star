@@ -1,0 +1,119 @@
+.range-filter {
+	@media (min-width: 1025px) {
+		width: 27.7rem;
+	}
+
+	&__labels {
+		@extend %flex-row;
+		margin-bottom: var(--offset-x);
+	}
+
+	&__label {
+		@extend %text-12;
+		color: var(--gray-c2);
+	}
+
+	// .range-filter__range
+
+	&__range {
+		margin-bottom: var(--offset-x);
+	}
+
+	&__title {
+		margin-bottom: 2.3rem;
+	}
+
+	&__items {
+		display: grid;
+		gap: var(--offset-ms);
+
+		@media (min-width: 768px) and (max-width: 1024px) {
+			column-gap: 3rem;
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}
+
+.range-inputs {
+	display: flex;
+	border: 0.1rem solid var(--gray-ed);
+	border-radius: var(--brs-4);
+	// .range-values__item
+
+	&__item {
+		@extend %flex-row-center;
+		width: 50%;
+		padding: var(--offset-x) 1.5rem var(--offset-x) var(--offset-xxs);
+
+		span {
+			@extend %text-12;
+			color: var(--gray-c2);
+		}
+	}
+
+	&__item+&__item {
+		border-left: 0.1rem solid var(--gray-ed);
+	}
+
+	&__input {
+		width: 6.4rem;
+		text-align: center;
+		font-size: 1.4rem;
+		line-height: 2.2rem;
+		color: var(--default);
+	}
+}
+
+// jquery ui range slider
+.ui {
+    $this: &;
+
+    &-widget {
+        &-content {
+            background: var(--gray-ed) !important;
+            border-radius: var(--brs-2) !important;
+            height: 0.3rem;
+        }
+
+        &#{$this}-widget-content {
+            border: none !important;
+        }
+    }
+
+    &-corner-all {
+        border-radius: var(--brs-2) !important;
+    }
+
+    &-slider {
+        &-range {
+            background: var(--blue) !important;
+        }
+
+        &-horizontal {
+            height: 0.4rem !important;
+
+            &#{$this}-slider-handle {
+                top: -0.55rem !important;
+            }
+        }
+    }
+
+    &-state-default,
+    &-widget-content #{$this}-state-default {
+        width: var(--offset-s) !important;
+        height: var(--offset-s) !important;
+        border-radius: 50% !important;
+        background: var(--white) !important;
+        border: 0.1rem solid var(--gray-ed) !important;
+
+        &::before {
+            content: '';
+            position: absolute;
+            @extend %pos-center-xy;
+            width: var(--offset-xxs);
+            height: var(--offset-xxs);
+            border-radius: 50%;
+            background-color: var(--blue);
+        }
+    }   
+}

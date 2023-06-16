@@ -3,12 +3,12 @@
 
     &::-webkit-scrollbar {
         width: 0.5rem;
-        border-radius: $brs-2;
+        border-radius: var(--brs-2);
     }
 
     &::-webkit-scrollbar-thumb {
         background: #C0C0C0;
-        border-radius: $brs-2;
+        border-radius: var(--brs-2);
     }
 }
 

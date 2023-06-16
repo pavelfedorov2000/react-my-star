@@ -1,7 +1,7 @@
 .label-box {
     @extend %text-12;
     padding: var(--offset-ms);
-    border-radius: $brs;
+    border-radius: var(--brs);
 
     > * {
         &:not(:last-child) {

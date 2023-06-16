@@ -44,7 +44,7 @@
         width: var(--icon-size);
         height: var(--icon-size);
         stroke: var(--gray-9e);
-        transition: $transition transform;
+        transition: var(--transition) transform;
     }
 
     // .checkout-total__item-name

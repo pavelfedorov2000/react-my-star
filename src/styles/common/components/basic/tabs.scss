@@ -22,7 +22,7 @@
 		width: 0%;
 		height: 0.1rem;
 		background-color: var(--default);
-		transition: $transition width;
+		transition: var(--transition) width;
 	}
 
 	&.active {
@@ -59,7 +59,7 @@
 	&__link {
 		@extend %text-16;
 		font-weight: 300;
-		transition: $transition color;
+		transition: var(--transition) color;
 
 		@media (any-hover: hover) {
 			&:hover {

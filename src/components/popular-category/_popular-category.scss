@@ -43,7 +43,7 @@
 
         @media(min-width: 1025px) {
             opacity: 0;
-            transition: $transition all;
+            transition: var(--transition) all;
             transform: translateY(1.5rem);
         }
     }

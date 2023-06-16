@@ -9,7 +9,7 @@
     background-color: var(--default);
     color: var(--white);
     border-radius: 5rem;
-    transition: $transition all;
+    transition: var(--transition) all;
 
     @media (max-width: 767px) {
         font-size: 1.4rem;
@@ -41,12 +41,12 @@
         width: 0.7rem;
         height: var(--offset-sm);
         margin-right: var(--offset-sm);
-        transition: $transition;
+        transition: var(--transition);
         transition-property: stroke, fill;
     }
 
     &__text {
-        transition: $transition border-bottom-color;
+        transition: var(--transition) border-bottom-color;
     }
 
     &__text + &__icon {
@@ -234,7 +234,7 @@
                     &__icon {
                         fill: none;
                         stroke: var(--default);
-                        transition: $transition stroke;
+                        transition: var(--transition) stroke;
                     }
                 }
             }
@@ -430,7 +430,7 @@
                 width: 2.8rem;
                 height: 2.8rem;
                 stroke: var(--default);
-                transition: $transition stroke;
+                transition: var(--transition) stroke;
             }
 
             @media (any-hover: hover) {
@@ -681,7 +681,7 @@ span {
         width: var(--icon-size-ls);
         height: var(--icon-size-ls);
         fill: var(--gray-9e);
-        transition: $transition fill;
+        transition: var(--transition) fill;
 
         @media (max-width: 767px) {
             width: 2.5rem;

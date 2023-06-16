@@ -1,7 +1,7 @@
 .badge {
     @extend %text-10;
     display: inline-block;
-    border-radius: $brs;
+    border-radius: var(--brs);
     padding: var(--offset-xxxxs) var(--offset-xxxs);
     color: var(--white);
     text-transform: uppercase;

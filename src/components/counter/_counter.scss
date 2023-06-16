@@ -11,7 +11,7 @@
         stroke: var(--default);
 
         svg {
-            transition: $transition stroke;
+            transition: var(--transition) stroke;
         }
 
         @media (any-hover: hover) {

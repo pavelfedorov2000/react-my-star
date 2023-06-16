@@ -3,7 +3,7 @@ import { ToggleArrowIcon } from "../../ui/icons";
 import DropFilter from "../drop-filter/DropFilter";
 
 const CatalogFilter = ({ name, title, items, fieldType }: CatalogFilterType) => {
-    const props = {
+    const childrenProps = {
         name,
         items,
         fieldType
@@ -21,7 +21,7 @@ const CatalogFilter = ({ name, title, items, fieldType }: CatalogFilterType) => 
                     <ToggleArrowIcon />
                 </button>
             </legend>
-            <DropFilter {...props} />
+            <DropFilter {...childrenProps} />
         </fieldset>
     );
 };

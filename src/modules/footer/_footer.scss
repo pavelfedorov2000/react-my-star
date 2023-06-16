@@ -327,7 +327,7 @@
     &__developer-logo {
         width: 7.2rem;
         height: var(--icon-size);
-        transition: $transition fill;
+        transition: var(--transition) fill;
 
         @media (min-width: 501px) {
             margin-left: var(--offset-s);

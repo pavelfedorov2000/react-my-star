@@ -128,7 +128,7 @@
                 width: var(--icon-size);
                 height: var(--icon-size);
                 fill: var(--gray-c2);
-                transition: $transition fill;
+                transition: var(--transition) fill;
             }
 
             @media (any-hover: hover) {
@@ -146,7 +146,7 @@
         height: var(--icon-size);
         @extend %flex-center;
         margin-left: var(--offset-xxs);
-        transition: $transition transform;
+        transition: var(--transition) transform;
 
         @media (max-width: 1024px) {
             margin-left: auto;
@@ -163,7 +163,7 @@
             width: var(--icon-size);
             height: var(--icon-size);
             stroke: var(--default);
-            transition: $transition stroke;
+            transition: var(--transition) stroke;
         }
 
         @media (any-hover: hover) {
@@ -194,7 +194,7 @@
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
-            transition: $transition all;
+            transition: var(--transition) all;
         }
 
         &.active {

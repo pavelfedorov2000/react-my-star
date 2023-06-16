@@ -16,7 +16,7 @@ const CatalogFilters = () => {
                 <div className="catalog-filters__row">
                     <div className="catalog-filters__inner">
                         {CATALOG_FILTERS.map((filter) => (
-                            <CatalogFilter key={filter.name.toString()} {...filter} />
+                            <CatalogFilter {...filter} />
                         ))}
                     </div>
                     <div className="catalog-filters__buttons">

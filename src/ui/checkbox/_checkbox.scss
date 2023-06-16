@@ -28,7 +28,7 @@
         height: 2rem;
         flex-shrink: 0;
         border: 0.1rem solid var(--gray-c2);
-        border-radius: $brs;
+        border-radius: var(--brs);
     }
 
     &__text {

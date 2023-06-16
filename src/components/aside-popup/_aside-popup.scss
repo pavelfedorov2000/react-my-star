@@ -23,7 +23,7 @@
     width: 50.7rem;
     padding: var(--offset-xxxxl) 8rem 10rem;
     background-color: var(--white);
-    transition: $transition all;
+    transition: var(--transition) all;
 
     &.active {
         right: 0;
@@ -53,7 +53,7 @@
 
         svg {
             fill: #505661;
-            transition: $transition fill;
+            transition: var(--transition) fill;
         }
 
         @media (any-hover: hover) {
@@ -88,13 +88,13 @@
         @extend %vertical-align;
         font-weight: 300;
         color: var(--gray-75);
-        transition: $transition color;
+        transition: var(--transition) color;
 
         svg {
             width: var(--icon-size);
             height: var(--icon-size);
             margin-right: var(--offset-xxs);
-            transition: $transition stroke;
+            transition: var(--transition) stroke;
         }
 
         &:not(:last-child) {

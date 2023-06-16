@@ -31,7 +31,7 @@
         border: 0.1rem solid var(--gray-e0);
 
         &:after {
-            transition: $transition all;
+            transition: var(--transition) all;
         }
     }
 
@@ -48,6 +48,20 @@
         height: 2rem;
         flex-shrink: 0;
         border: 0.1rem solid var(--gray-c2);
-        transition: $transition all;
+        transition: var(--transition) all;
+    }
+
+    &--style {
+        &_link {
+            #{$this} {
+                &__input:checked + #{$this}__text {
+                    color: var(--blue);
+                }
+
+                &__style {
+                    display: none;
+                }
+            }
+        }
     }
 }

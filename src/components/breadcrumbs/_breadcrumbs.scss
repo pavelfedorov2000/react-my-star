@@ -23,7 +23,7 @@
         background-size: 0.5rem 0.7rem;
         background-repeat: no-repeat;
         font-weight: 300;
-        transition: $transition color;
+        transition: var(--transition) color;
 
         @media (any-hover: hover) {
             &:hover {

@@ -45,13 +45,13 @@ const Guarantee = () => {
 
                                             return (
                                                 item.list.type === ListType.Ol ?
-                                                <ol key={index}>
-                                                    {listMap}
-                                                </ol>
-                                                :
-                                                <ul key={index}>
-                                                    {listMap}
-                                                </ul>
+                                                    <ol key={index}>
+                                                        {listMap}
+                                                    </ol>
+                                                    :
+                                                    <ul key={index}>
+                                                        {listMap}
+                                                    </ul>
                                             )
                                         }
                                     })}

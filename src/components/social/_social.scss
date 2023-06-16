@@ -13,7 +13,7 @@
 
         svg {
             fill: var(--default);
-            transition: $transition fill;
+            transition: var(--transition) fill;
         }
 
         @media (any-hover: hover) {
