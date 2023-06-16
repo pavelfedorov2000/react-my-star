@@ -2,20 +2,26 @@ import { CatalogFilter as CatalogFilterType } from "../../interfaces/CatalogFilt
 import { ToggleArrowIcon } from "../../ui/icons";
 import DropFilter from "../drop-filter/DropFilter";
 
-const CatalogFilter = ({ name, toggleText, items }: CatalogFilterType) => {
+const CatalogFilter = ({ name, title, items, fieldType }: CatalogFilterType) => {
+    const props = {
+        name,
+        items,
+        fieldType
+    };
+
     return (
         <fieldset className="catalog-filter">
             <legend className="catalog-filter__title">
                 <button className="catalog-filter__toggle"
-                        type="button"
-                        aria-expanded="false"
-                        aria-controls={`${name}_dropdown`}
-                        id={`${name}_heading`}>
-                    <span className="catalog-filter__toggle-text">{toggleText}</span>
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls={`${name}_filter_dropdown`}
+                    id={`${name}_filter_heading`}>
+                    <span className="catalog-filter__toggle-text">{title}</span>
                     <ToggleArrowIcon />
                 </button>
             </legend>
-            <DropFilter name={name} items={items} />
+            <DropFilter {...props} />
         </fieldset>
     );
 };

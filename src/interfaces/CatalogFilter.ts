@@ -1,8 +1,14 @@
+import { FieldType } from "../enums/FieldType";
+import { Field } from "./Field";
+import { RangeSlider } from "./RangeSlider";
+
 export interface DropFilter {
     name: string;
-    items: any[];
+    fieldType: FieldType;
+    items?: Field[];
+    ranges?: RangeSlider[];
 }
 
 export interface CatalogFilter extends DropFilter {
-    toggleText: string;
+    title: string;
 }

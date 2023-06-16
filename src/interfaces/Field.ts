@@ -10,5 +10,10 @@ export interface Field {
     value?: string | number;
     options?: SelectOption[];
     checked?: boolean;
+    /* prefix?: string;
+    min?: number;
+    max?: number;
+    from?: number;
+    to?: number; */
     required?: boolean;
 }

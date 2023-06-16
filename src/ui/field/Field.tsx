@@ -2,22 +2,46 @@ import classNames from "classnames";
 import { Field as FieldType } from "../../interfaces/Field";
 import { FieldType as FieldTypeEnum } from "../../enums/FieldType";
 import Select from "../select/Select";
+import Checkbox from "../checkbox/Checkbox";
+import RadioButton from "../radiobutton/RadioButton";
 
 interface Props extends FieldType {
     className?: string;
 }
 
-const Field = ({ className, name, fieldType, placeholder, value, checked, options }: Props) => {
+const Field = ({ className, name, label, fieldType, placeholder, value, checked, options }: Props) => {
+    const baseProps = {
+        className,
+        name,
+    };
+
+    const inputProps = {
+        ...baseProps,
+        placeholder,
+        label,
+    }
+
+    const checkProps = {
+        ...baseProps,
+        checked,
+    };
+
+    const selectProps = {
+        ...baseProps,
+        options,
+    };
+
     return (
         <>
-            {fieldType === FieldTypeEnum.Textarea && <textarea className="input" name={name} placeholder={placeholder}></textarea>}
-            {fieldType === FieldTypeEnum.Select && <Select className={className} name={name} options={options} />}
+            {fieldType === FieldTypeEnum.Checkbox && <Checkbox {...checkProps} />}
+            {fieldType === FieldTypeEnum.Radio && <RadioButton {...checkProps} />}
+            {fieldType === FieldTypeEnum.Select && <Select {...selectProps} />}
+            {fieldType === FieldTypeEnum.Textarea && <textarea {...inputProps} className="input"></textarea>}
             {!fieldType &&
-                <input className={classNames('input', className && `${className}__input`)}
-                    name={name}
+                <input {...inputProps}
+                    className={classNames('input', className && `${className}__input`)}
                     type={fieldType || 'text'}
-                    placeholder={placeholder}
-                    value={!checked && value ? value : undefined}
+                    value={value ?? undefined}
                     checked={checked ?? undefined}
                 />
             }
@@ -26,3 +50,5 @@ const Field = ({ className, name, fieldType, placeholder, value, checked, option
 };
 
 export default Field;
+
+//value={!checked && value ? value : undefined}

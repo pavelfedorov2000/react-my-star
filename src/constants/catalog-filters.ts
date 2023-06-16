@@ -1,77 +1,127 @@
+import { CatalogFilter, SizesFilter } from "../enums/CatalogFilter";
+import { CatalogFilter as CatalogFilterType } from "../interfaces/CatalogFilter";
 import { FieldType } from "../enums/FieldType";
 
-export const CATALOG_FILTERS = [{
+export const CATALOG_FILTERS: CatalogFilterType[] = [{
+    name: CatalogFilter.Sort,
     title: 'Сортировка',
-    type: FieldType.Radio,
+    fieldType: FieldType.Radio,
     items: [{
-        text: 'Сначала дешевые'
+        label: 'Сначала дешевые'
     }, {
-        text: 'Сначала дорогие'
+        label: 'Сначала дорогие'
     }, {
-        text: 'По популярности'
+        label: 'По популярности'
     }, {
-        text: 'По новизне'
+        label: 'По новизне'
     }]
 }, {
+    name: CatalogFilter.Category,
     title: 'Категория',
-    type: FieldType.Checkbox,
+    fieldType: FieldType.Checkbox,
     items: [{
-        text: 'Шкафы'
+        label: 'Шкафы'
     }, {
-        text: 'Кровати'
+        label: 'Кровати'
     }, {
-        text: 'Столы и стулья'
+        label: 'Столы и стулья'
     }, {
-        text: 'Стеллажи'
+        label: 'Стеллажи'
     }, {
-        text: 'Комоды'
+        label: 'Комоды'
     }, {
-        text: 'Тумбы'
+        label: 'Тумбы'
     }, {
-        text: 'Полки'
+        label: 'Полки'
     }, {
-        text: 'Матрасы'
+        label: 'Матрасы'
     }, {
-        text: 'Зеркала'
+        label: 'Зеркала'
     }, {
-        text: 'Другое'
+        label: 'Другое'
     }]
 }, {
+    name: CatalogFilter.Price,
+    title: 'Цена',
+    fieldType: FieldType.Range,
+    ranges: [{
+        name: 'price',
+        prefix: 'руб.',
+        min: 33,
+        max: 897
+    }]
+}, {
+    name: CatalogFilter.Room,
     title: 'Комната',
-    type: FieldType.Checkbox,
+    fieldType: FieldType.Checkbox,
     items: [{
-        text: 'Гостиная'
+        label: 'Гостиная'
     }, {
-        text: 'Спальня'
+        label: 'Спальня'
     }, {
-        text: 'Прихожая'
+        label: 'Прихожая'
     }, {
-        text: 'Подростковая'
+        label: 'Подростковая'
     }, {
-        text: 'Офис'
+        label: 'Офис'
     }, {
-        text: 'Кухня'
+        label: 'Кухня'
     }]
 }, {
+    name: CatalogFilter.Collection,
     title: 'Коллекции',
-    type: FieldType.Checkbox,
+    fieldType: FieldType.Checkbox,
     items: [{
-        text: 'Вирджиния'
+        label: 'Вирджиния'
     }, {
-        text: 'Сноули'
+        label: 'Сноули'
     }, {
-        text: 'Хинтон'
+        label: 'Хинтон'
     }, {
-        text: 'Инсар'
+        label: 'Инсар'
     }, {
-        text: 'Техас'
+        label: 'Техас'
     }, {
-        text: 'Кухня'
+        label: 'Кухня'
     }, {
-        text: 'Анника'
+        label: 'Анника'
     }, {
-        text: 'Мелтон'
+        label: 'Мелтон'
     }, {
-        text: 'Юта'
+        label: 'Юта'
+    }]
+}, {
+    name: CatalogFilter.Sizes,
+    title: 'Цена',
+    fieldType: FieldType.Range,
+    ranges: [{
+        name: SizesFilter.Width,
+        title: 'Ширина',
+        prefix: 'см',
+        min: 37,
+        max: 1292
+    }, {
+        name: SizesFilter.Height,
+        title: 'Высота',
+        prefix: 'см',
+        min: 18,
+        max: 220
+    }, {
+        name: SizesFilter.Depth,
+        title: 'Глубина',
+        prefix: 'см',
+        min: 2,
+        max: 2076
+    }]
+}, {
+    name: CatalogFilter.Sale,
+    title: 'Акция',
+    fieldType: FieldType.Checkbox,
+    items: [{
+        label: 'Акция и скидки'
+    }, {
+        label: 'Распродажа'
+    }, {
+        label: 'Ликвидация'
     }]
 }];

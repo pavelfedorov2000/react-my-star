@@ -1,33 +1,33 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { CatalogFilter } from "../../enums/CatalogFilter";
 
 interface CatalogFiltersState {
-    sort: string;
-    category: string[];
-    color: string[];
-    price: [number, number];
-    room: string[];
-    collection: string[];
-    sizes: {
+    [CatalogFilter.Sort]: string;
+    [CatalogFilter.Category]: string[];
+    //color: string[];
+    [CatalogFilter.Price]: [number, number];
+    [CatalogFilter.Room]: string[];
+    [CatalogFilter.Collection]: string[];
+    [CatalogFilter.Sizes]: {
         width: [number, number];
         height: [number, number];
         depth: [number, number];
     };
-    promotion: string[];
+    [CatalogFilter.Sale]: string[];
 }
 
 const initialState: CatalogFiltersState = {
-    sort: '',
-    category: [],
-    color: [],
-    price: [33, 897],
-    room: [],
-    collection: [],
-    sizes: {
+    [CatalogFilter.Sort]: '',
+    [CatalogFilter.Category]: [],
+    [CatalogFilter.Price]: [33, 897],
+    [CatalogFilter.Room]: [],
+    [CatalogFilter.Collection]: [],
+    [CatalogFilter.Sizes]: {
         width: [37, 1292],
         height: [18, 220],
         depth: [2, 2076],
     },
-    promotion: [],
+    [CatalogFilter.Sale]: [],
 };
 
 export const catalogFiltersSlice = createSlice({

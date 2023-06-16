@@ -1,9 +1,27 @@
+import classNames from "classnames";
 import { DropFilter as DropFilterType } from "../../interfaces/CatalogFilter";
+import { FieldType } from "../../enums/FieldType";
+import RangeSlider from "../range-slider/RangeSlider";
+import { Field } from "../../ui";
 
-const DropFilter = ({ name, items }: DropFilterType) => {
+const DropFilter = ({ name, items, ranges, fieldType }: DropFilterType) => {
     return (
-        <div className="catalog-filter__drop drop-filter" id={`${name}_dropdown`} aria-labelledby={`${name}_heading`}>
-            
+        <div className={classNames('catalog-filter__drop drop-filter', {
+            'range-filter': fieldType === FieldType.Range
+        })} id={`${name}_filter_dropdown`} aria-labelledby={`${name}_filter_heading`}>
+            {fieldType === FieldType.Range ?
+                <div className="range-filter__items">
+                    {ranges?.map((range, index) => (
+                        <RangeSlider key={index} {...range} />
+                    ))}
+                </div>
+                :
+                <div className="drop-filter__items">
+                    {items?.map((item, index) => (
+                        <Field key={index} {...item} className="drop-filter__item" />
+                    ))}
+                </div>
+            }
         </div>
     );
 };

@@ -1,5 +1,7 @@
 //import closeIcon from 'assets/images/icons/close-filters.svg';
 
+import { CatalogFilter } from "../../components";
+import { CATALOG_FILTERS } from "../../constants/catalog-filters";
 import { ButtonType } from "../../enums/ButtonType";
 import { Button } from "../../ui";
 
@@ -13,14 +15,9 @@ const CatalogFilters = () => {
                 <div className="catalog-filters__title">Фильтры</div>
                 <div className="catalog-filters__row">
                     <div className="catalog-filters__inner">
-                        @@include('blocks/catalog-filters/sort.html')
-                        @@include('blocks/catalog-filters/category.html')
-                        @@include('blocks/color-filter/color-filter.html')
-                        @@include('blocks/price-filter/price-filter.html')
-                        @@include('blocks/catalog-filters/room.html')
-                        @@include('blocks/catalog-filters/collection.html')
-                        @@include('blocks/catalog-filters/sizes.html')
-                        @@include('blocks/catalog-filters/sale.html')
+                        {CATALOG_FILTERS.map((filter) => (
+                            <CatalogFilter key={filter.name.toString()} {...filter} />
+                        ))}
                     </div>
                     <div className="catalog-filters__buttons">
                         <Button className="catalog-filters__btn" style="bg-gray" text="Очистить все" type={ButtonType.Reset} />
