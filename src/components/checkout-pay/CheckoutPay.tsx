@@ -5,12 +5,14 @@ import { Text } from "../../interfaces/Text";
     className?: string;
 } */
 
+const mainClass = 'checkout-pay';
+
 const CheckoutPay = ({ title, subtitle, items }: CheckoutPayType) => {
     return (
-        <div className="checkout-form__hidden checkout-form__pay checkout-pay">
-            <div className="checkout-pay__title">{title}</div>
-            <div className="checkout-pay__subtitle">{subtitle}</div>
-            <div className="checkout-pay__content">
+        <div className="checkout-form__hidden checkout-form__pay ">
+            <div className={`${mainClass}__title`}>{title}</div>
+            <div className={`${mainClass}__subtitle`}>{subtitle}</div>
+            <div className={`${mainClass}__content`}>
                 {items.map((item, index) => {
                     if (item.text) {
                         return <p key={index}>{item.text}</p>
@@ -20,7 +22,7 @@ const CheckoutPay = ({ title, subtitle, items }: CheckoutPayType) => {
                         return (
                             <ul>
                                 {item.list.items.map((li: Text, j: number) => (
-                                    <li key={j}>{li.text}</li>   
+                                    <li key={j}>{li.text}</li>
                                 ))}
                             </ul>
                         )

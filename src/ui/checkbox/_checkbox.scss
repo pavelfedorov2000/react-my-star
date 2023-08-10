@@ -23,17 +23,16 @@
 
     &__style {
         position: relative;
-        display: inline-block;
+        margin-right: var(--offset-xs);
+        flex-shrink: 0;
         width: 2rem;
         height: 2rem;
-        flex-shrink: 0;
         border: 0.1rem solid var(--gray-c2);
         border-radius: var(--brs);
     }
 
     &__text {
         @extend %text-12;
-        margin-left: var(--offset-xs);
 
         a {
             text-decoration: underline;

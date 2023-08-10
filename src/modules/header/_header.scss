@@ -1,4 +1,6 @@
-.header {
+$name: 'header';
+
+.#{$name} {
     $this: &;
 
     background-color: var(--white);

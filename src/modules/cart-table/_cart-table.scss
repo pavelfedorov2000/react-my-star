@@ -1,4 +1,6 @@
-.cart-table {
+$name: 'cart-table';
+
+.#{$name} {
     &__item {
         &:not(:last-child) {
             padding-bottom: var(--offset-xl);

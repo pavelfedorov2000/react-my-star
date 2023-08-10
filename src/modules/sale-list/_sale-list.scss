@@ -1,4 +1,6 @@
-.sale-list {
+$name: 'sale-list';
+
+.#{$name} {
 	@include row-gap(10rem);
 
 	@media (max-width: 767px) {

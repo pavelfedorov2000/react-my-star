@@ -1,10 +1,5 @@
-import { CheckoutFieldType } from "../enums/CheckoutFieldType";
-import { DeliveryOption } from "./DeliveryOption";
-import { Field } from "./Field";
-import { PaymentItem } from "./PaymentItem";
+import { WithChildren } from "../types/types";
 
-export interface CheckoutFieldset {
+export interface CheckoutFieldset extends WithChildren {
     title: string;
-    type: CheckoutFieldType.Inputs | CheckoutFieldType.GridRadios | CheckoutFieldType.RowRadios;
-    //items: Field[] | DeliveryOption[] | PaymentItem[];
 }

@@ -1,4 +1,6 @@
-.discounts-progress {
+$name: 'discounts-progress';
+
+.#{$name} {
     display: flex;
     flex-wrap: wrap;
     gap: var(--offset-ms);

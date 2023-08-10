@@ -8,16 +8,16 @@ const PageNav = () => {
 
     return (
         <nav className="page-nav profile-page__nav">
-			<ul className="page-nav__list">
-                {Object.values(SubPages).map((page) => (
-                    <li key={page.path.toString()} className="page-nav__item">
+            <ul className="page-nav__list">
+                {Object.values(SubPages).map((page, index) => (
+                    <li key={index} className="page-nav__item">
                         <Button href={page.path} className={classNames('page-nav__link', {
                             'active': page.path === url
                         })} text={page.title} transparent />
                     </li>
                 ))}
-			</ul>
-		</nav>
+            </ul>
+        </nav>
     );
 };
 

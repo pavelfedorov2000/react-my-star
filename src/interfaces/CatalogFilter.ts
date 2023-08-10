@@ -7,6 +7,7 @@ export interface DropFilter {
     fieldType: FieldType;
     items?: Field[];
     ranges?: RangeSlider[];
+    isActive?: boolean;
 }
 
 export interface CatalogFilter extends DropFilter {

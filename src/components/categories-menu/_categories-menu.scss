@@ -1,4 +1,6 @@
-.categories-menu {
+$name: 'categories-menu';
+
+.#{$name} {
 	$this: &;
 
 	padding-left: 0;

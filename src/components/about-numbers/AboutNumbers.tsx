@@ -1,19 +1,22 @@
 import classNames from "classnames";
 import { LeaderItem } from "../../interfaces/Leader";
+import { WithClassName } from "../../types/types";
 
-interface Props {
-    className?: string;
+const mainClass = 'about-numbers';
+const itemClass = `${mainClass}__item`;
+
+interface Props extends WithClassName {
     items?: LeaderItem[];
 }
 
 const AboutNumbers = ({ className, items }: Props) => {
     return (
-        <dl className={classNames('about-numbers', className)}>
+        <dl className={classNames(mainClass, className)}>
             {items?.map((item, index) => (
-                <div key={index} className="about-numbers__item">
-                    <div className="about-numbers__item-inner">
-                        <dt className="about-numbers__item-property">{item.property}</dt>
-                        <dd className="about-numbers__item-value">{item.value}</dd>
+                <div key={index} className={`${itemClass}`}>
+                    <div className={`${itemClass}-inner`}>
+                        <dt className={`${itemClass}-property`}>{item.property}</dt>
+                        <dd className={`${itemClass}-value`}>{item.value}</dd>
                     </div>
                 </div>
             ))}

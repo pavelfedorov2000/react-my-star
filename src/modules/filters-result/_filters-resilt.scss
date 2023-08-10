@@ -1,0 +1,23 @@
+$name: 'filters-result';
+
+.#{$name} {
+	// .filters-result__value
+	display: flex;
+	flex-direction: column;
+
+	@media (min-width: 501px) {
+		align-items: flex-end;
+	}
+
+	>* {
+		&:not(:last-child) {
+			margin-bottom: var(--offset-xxxxs);
+		}
+	}
+
+	// .filters-result__value
+
+	&__value {
+		color: var(--gray-9e);
+	}
+}

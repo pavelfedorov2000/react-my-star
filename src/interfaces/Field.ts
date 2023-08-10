@@ -3,6 +3,7 @@ import { FieldType } from "../enums/FieldType";
 import { SelectOption } from "./SelectOption";
 
 export interface Field {
+    className?: string;
     fieldType?: FieldType.Tel | FieldType.Email | FieldType.Password | FieldType.Number | FieldType.Checkbox | FieldType.Radio | FieldType.Textarea | FieldType.Select;
     label?: string | ReactNode;
     placeholder?: string;
@@ -10,10 +11,5 @@ export interface Field {
     value?: string | number;
     options?: SelectOption[];
     checked?: boolean;
-    /* prefix?: string;
-    min?: number;
-    max?: number;
-    from?: number;
-    to?: number; */
     required?: boolean;
 }

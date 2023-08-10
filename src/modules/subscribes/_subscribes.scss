@@ -1,4 +1,6 @@
-.subscribes {
+$name: 'subscribes';
+
+.#{$name} {
     display: grid;
     gap: var(--offset-ms);
 

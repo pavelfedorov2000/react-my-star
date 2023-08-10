@@ -1,17 +1,20 @@
-import { ReactNode } from "react";
 import CheckoutTotal from "../checkout-total/CheckoutTotal";
+import { WithChildren } from "../../types/types";
+import { useMemo } from "react";
+import { ClassName } from "../../enums/ClassName";
+import { generateRowClassName } from "../../utils/generateRowClassName";
 
-interface Props {
-    content: ReactNode;
-}
+const CartLayout = ({ page, children }: { page: string } & WithChildren) => {
+    const mainClass = useMemo(() => {
+        return `${page}-${ClassName.Page}`;
+    }, [page]);
 
-const CartLayout = ({ content }: Props) => {
     return (
-        <div className="row cart-page__row">
-            <div className="cart-page__content">
-                {content}
+        <div className={generateRowClassName(mainClass)}>
+            <div className={`${mainClass}__content`}>
+                {children}
             </div>
-            <div className="cart-page__aside">
+            <div className={`${mainClass}__aside`}>
                 <CheckoutTotal />
             </div>
         </div>

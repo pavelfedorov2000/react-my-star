@@ -24,15 +24,13 @@ const Field = ({ className, name, label, fieldType, placeholder, value, checked,
         options,
     };
 
-    console.log(fieldType === FieldTypeEnum.Checkbox);
-
     return (
         <>
             {fieldType === FieldTypeEnum.Select && <Select {...selectProps} />}
             {fieldType === FieldTypeEnum.Textarea && <textarea {...inputProps} className="input"></textarea>}
-            {(!fieldType || fieldType === FieldTypeEnum.Checkbox || fieldType === FieldTypeEnum.Radio) &&
+            {fieldType !== FieldTypeEnum.Select && fieldType !== FieldTypeEnum.Textarea &&
                 <input {...inputProps}
-                    className={classNames(!fieldType && 'input', className && `${className}__input`)}
+                    className={classNames(fieldType !== FieldTypeEnum.Checkbox && fieldType !== FieldTypeEnum.Radio && 'input', className && `${className}__input`)}
                     type={fieldType || 'text'}
                     value={!checked && value ? value : undefined}
                     checked={checked ?? undefined}

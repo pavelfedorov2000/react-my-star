@@ -1,6 +1,8 @@
 export { default as Header } from './header/Header';
 export { default as Footer } from './footer/Footer';
 
+export { default as CatalogList } from './catalog-list/CatalogList';
+
 export { default as PopularCategories } from './popular-categories/PopularCategories';
 export { default as Collections } from './collections/Collections';
 export { default as News } from './news/News';
@@ -24,3 +26,4 @@ export { default as CheckoutForm } from './checkout-form/CheckoutForm';
 export { default as CompareTable } from './compare-table/CompareTable';
 
 export { default as CatalogFilters } from './catalog-filters/CatalogFilters';
+export { default as FiltersResult } from './filters-result/FiltersResult';

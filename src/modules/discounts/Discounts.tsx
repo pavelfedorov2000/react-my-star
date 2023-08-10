@@ -1,11 +1,13 @@
 import { DiscountsProgress } from "../../components";
 
+const mainClass = 'discounts';
+
 const Discounts = () => {
     return (
-        <div className="discounts">
-            <div className="discounts__personal">Ваша персональная скидка - 3%</div>
+        <div className={mainClass}>
+            <div className={`${mainClass}__personal`}>Ваша персональная скидка - 3%</div>
             <DiscountsProgress />
-            <ol className="discounts-progress__list">
+            <ol className={`${mainClass}__list`}>
                 <li>Скидка распространяется на все товары, кроме товаров с предельными скидками.</li>
                 <li>Размер скидки зависит от количества доставленных Вам товаров за последние 12 месяцев от
                     сегодняшнего числа.

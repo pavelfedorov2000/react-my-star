@@ -43,3 +43,6 @@ export { default as CheckoutPayment } from './checkout-payment/CheckoutPayment';
 export { default as CatalogFilter } from './catalog-filter/CatalogFilter';
 export { default as DropFilter } from './drop-filter/DropFilter';
 export { default as RangeSlider } from './range-slider/RangeSlider';
+
+export { default as Colors } from './colors/Colors';
+export { default as SizesList } from './sizes-list/SizesList';

@@ -1,7 +1,9 @@
-.sale-points {
+$name: 'sale-points';
+
+.#{$name} {
     // .sale-points__grid
 
-    &__grid {
+    &__row {
         @media (min-width: 1025px) {
             row-gap: 0;
             grid-template-rows: max-content var(--offset-xl) max-content 8rem max-content var(--offset-l) auto;

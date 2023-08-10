@@ -1,4 +1,6 @@
-.breadcrumbs {
+$name: 'breadcrumbs';
+
+.#{$name} {
     padding: 3rem 0 3.8rem;
 
     @media (max-width: 500px) {
@@ -34,6 +36,6 @@
 }
 
 .catalog,
-.product-card .breadcrumbs {
+.product-card .#{$name} {
     padding-bottom: var(--offset-ms);
 }

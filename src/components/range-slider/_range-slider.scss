@@ -5,7 +5,7 @@
 
 	&__labels {
 		@extend %flex-row;
-		margin-bottom: var(--offset-x);
+		@include margin-y(var(--offset-x));
 	}
 
 	&__label {
@@ -64,56 +64,50 @@
 	}
 }
 
-// jquery ui range slider
-.ui {
+.noUi {
     $this: &;
 
-    &-widget {
-        &-content {
-            background: var(--gray-ed) !important;
-            border-radius: var(--brs-2) !important;
-            height: 0.3rem;
-        }
-
-        &#{$this}-widget-content {
-            border: none !important;
-        }
+    &-target {
+        border: none !important;
+        background: var(--gray-ed) !important;
     }
 
-    &-corner-all {
+    &-connects {
         border-radius: var(--brs-2) !important;
     }
 
-    &-slider {
-        &-range {
-            background: var(--blue) !important;
-        }
+    &-connect {
+        background: var(--blue) !important;
+    }
 
-        &-horizontal {
-            height: 0.4rem !important;
+    &-horizontal {
+        height: 0.4rem !important;
 
-            &#{$this}-slider-handle {
+        #{$this} {
+            &-handle {
                 top: -0.55rem !important;
+                right: -1rem;
+                width: var(--offset-s) !important;
+                height: var(--offset-s) !important;
+                border-radius: 50% !important;
+                background: var(--white) !important;
+                border: 0.1rem solid var(--gray-ed) !important;
+                box-shadow: none !important;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    @extend %pos-center-xy;
+                    width: var(--offset-xxs);
+                    height: var(--offset-xxs);
+                    border-radius: 50%;
+                    background-color: var(--blue);
+                }
+
+                &:after {
+                    display: none !important;
+                }
             }
         }
     }
-
-    &-state-default,
-    &-widget-content #{$this}-state-default {
-        width: var(--offset-s) !important;
-        height: var(--offset-s) !important;
-        border-radius: 50% !important;
-        background: var(--white) !important;
-        border: 0.1rem solid var(--gray-ed) !important;
-
-        &::before {
-            content: '';
-            position: absolute;
-            @extend %pos-center-xy;
-            width: var(--offset-xxs);
-            height: var(--offset-xxs);
-            border-radius: 50%;
-            background-color: var(--blue);
-        }
-    }   
 }

@@ -5,21 +5,26 @@ import bannerSecond from "../../assets/images/banners/02.jpg";
 import { ButtonStyle } from "../../enums/ButtonStyle";
 import { Pages } from "../../enums/Page";
 import { Link } from "react-router-dom";
+import { BannerVariant } from "../../enums/BannerVariant";
+
+const mainClass = 'banner';
 
 interface Props {
-    variant: 'first' | 'second';
+    variant: BannerVariant.WithoutButton | BannerVariant.WithButton;
 }
 
 const Banner = ({ variant }: Props) => {
     return (
-        <aside className="banner" style={{ backgroundImage: `url(${variant === 'first' ? bannerFirst : bannerSecond})` }}>
-            <div className="row banner__row row--2">
-                <div className="banner__content">
-                    <h2 className="section-title banner__title">
+        <aside className={`${mainClass}`} style={{ backgroundImage: `url(${variant === BannerVariant.WithoutButton ? bannerFirst : bannerSecond})` }}>
+            <div className={`row ${mainClass}__row row--2`}>
+                <div className={`${mainClass}__content`}>
+                    <h2 className={`section-title ${mainClass}__title`}>
                         <Link to={Pages.Catalog.path} className="full-link">Рассрочка</Link>
                     </h2>
-                    <div className="banner__subtitle">Покупайте сейчас, платите потом</div>
-                    {variant === 'second' && <Button href={Pages.Catalog.path} className="banner__btn" text="Подробнее" style={ButtonStyle.BgWhite} icon={<MoreIcon />} icon_position_right />}
+                    <div className={`${mainClass}__subtitle`}>Покупайте сейчас, платите потом</div>
+                    {variant === BannerVariant.WithButton &&
+                        <Button href={Pages.Catalog.path} className={`${mainClass}__btn`} text="Подробнее" style={ButtonStyle.BgWhite} icon={<MoreIcon />} icon_position_right />
+                    }
                 </div>
             </div>
         </aside>

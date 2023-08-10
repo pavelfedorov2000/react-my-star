@@ -9,6 +9,9 @@ import { Review } from '../../interfaces/Review';
 import { getCollectionItems } from '../../utils/getCollectionItems';
 import { Collection } from '../../enums/Collection';
 
+const SECTION_ID = 'client-reviews';
+const sliderClass = 'reviews-slider';
+
 const ClientReviews = () => {
     const [reviews, setReviews] = useState<Review[]>([]);
 
@@ -17,20 +20,20 @@ const ClientReviews = () => {
     }, []);
 
     return (
-        <section id="client-reviews">
+        <section id={SECTION_ID}>
             <div className="row">
                 <div className="col-4">
                     <h2>Отзывы клиентов</h2>
                 </div>
                 <div className="col-8">
                     <div className="slider-wrapper">
-                       <Swiper className="slider reviews-slider"
+                        <Swiper className={`slider ${sliderClass}`}
                             modules={[Navigation, Pagination]}
                             spaceBetween={20}
                             slidesPerView={1}
                             navigation={{
-                                nextEl: "#client-reviews .swiper-button-next",
-                                prevEl: "#client-reviews .swiper-button-prev",
+                                nextEl: `#${SECTION_ID} .swiper-button-next`,
+                                prevEl: `#${SECTION_ID} .swiper-button-prev`,
                             }}
                             pagination={{ type: "progressbar" }}
                         >

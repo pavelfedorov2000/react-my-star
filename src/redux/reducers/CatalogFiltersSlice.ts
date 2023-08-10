@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CatalogFilter } from "../../enums/CatalogFilter";
+import { CatalogFilter, SizesFilter } from "../../enums/CatalogFilter";
+import { CATALOG_FILTERS } from "../../constants/catalog-filters";
 
 interface CatalogFiltersState {
     [CatalogFilter.Sort]: string;
@@ -9,23 +10,39 @@ interface CatalogFiltersState {
     [CatalogFilter.Room]: string[];
     [CatalogFilter.Collection]: string[];
     [CatalogFilter.Sizes]: {
-        width: [number, number];
-        height: [number, number];
-        depth: [number, number];
+        width?: [number, number];
+        height?: [number, number];
+        depth?: [number, number];
     };
     [CatalogFilter.Sale]: string[];
 }
 
+const priceRange = CATALOG_FILTERS.find((filter) => filter.name === CatalogFilter.Price)?.ranges?.at(-1);
+
+type sizesRangeItem = {
+    name: string;
+    range: [number, number];
+};
+
+type sizesRangeType = sizesRangeItem[] | undefined;
+
+const sizesRange: sizesRangeType = CATALOG_FILTERS.find((filter) => filter.name === CatalogFilter.Sizes)?.ranges?.map((range) => {
+    return {
+        name: range.name,
+        range: [range.min, range.max]
+    }
+});
+
 const initialState: CatalogFiltersState = {
     [CatalogFilter.Sort]: '',
     [CatalogFilter.Category]: [],
-    [CatalogFilter.Price]: [33, 897],
+    [CatalogFilter.Price]: [priceRange?.min ?? 0, priceRange?.max ?? 1000],
     [CatalogFilter.Room]: [],
     [CatalogFilter.Collection]: [],
     [CatalogFilter.Sizes]: {
-        width: [37, 1292],
-        height: [18, 220],
-        depth: [2, 2076],
+        width: sizesRange?.find((item) => item.name === SizesFilter.Width)?.range,
+        height: sizesRange?.find((item) => item.name === SizesFilter.Height)?.range,
+        depth: sizesRange?.find((item) => item.name === SizesFilter.Depth)?.range,
     },
     [CatalogFilter.Sale]: [],
 };

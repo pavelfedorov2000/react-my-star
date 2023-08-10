@@ -1,4 +1,6 @@
-.banner {
+$name: 'banner';
+
+.#{$name} {
     position: relative;
     background-position: 0 0;
     background-size: cover;

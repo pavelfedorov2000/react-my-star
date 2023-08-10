@@ -1,4 +1,6 @@
-.banner-news {
+$name: 'banner-news';
+
+.#{$name} {
     min-height: 60rem;
     display: grid;
 

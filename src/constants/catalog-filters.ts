@@ -92,25 +92,25 @@ export const CATALOG_FILTERS: CatalogFilterType[] = [{
     }]
 }, {
     name: CatalogFilter.Sizes,
-    title: 'Цена',
+    title: 'Размеры',
     fieldType: FieldType.Range,
     ranges: [{
         name: SizesFilter.Width,
         title: 'Ширина',
         prefix: 'см',
-        min: 37,
+        min: 0,
         max: 1292
     }, {
         name: SizesFilter.Height,
         title: 'Высота',
         prefix: 'см',
-        min: 18,
+        min: 0,
         max: 220
     }, {
         name: SizesFilter.Depth,
         title: 'Глубина',
         prefix: 'см',
-        min: 2,
+        min: 0,
         max: 2076
     }]
 }, {

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Good } from "../../interfaces/Good";
 import { Button, Checkbox, Img } from "../../ui";
 import goodOne from "../../assets/images/compare/01.png";
@@ -10,7 +11,16 @@ import { CloseIcon } from "../../ui/icons";
 
 const comparedGoods: Good[] = [{
     id: '1',
-    src: goodOne,
+    gallery: {
+        variants: [{
+            color: {
+                src: ''
+            },
+            items: [{
+                src: goodOne
+            }]
+        }]
+    },
     title: 'Шкаф для одежды Инсар',
     price: 387,
     country: 'Беларусь',
@@ -19,7 +29,16 @@ const comparedGoods: Good[] = [{
     delivery: true
 }, {
     id: '2',
-    src: goodTwo,
+    gallery: {
+        variants: [{
+            color: {
+                src: ''
+            },
+            items: [{
+                src: goodTwo
+            }]
+        }]
+    },
     title: 'Шкаф для одежды Монтана',
     price: 570,
     country: 'Беларусь',
@@ -28,7 +47,16 @@ const comparedGoods: Good[] = [{
     delivery: true
 }, {
     id: '3',
-    src: goodThree,
+    gallery: {
+        variants: [{
+            color: {
+                src: ''
+            },
+            items: [{
+                src: goodThree
+            }]
+        }]
+    },
     title: 'Шкаф для одежды Вирджиния',
     price: 414,
     country: 'Беларусь',
@@ -51,31 +79,39 @@ const rows = [{
 }, {
     name: GoodProp.Country,
     text: 'Производитель'
-    }, {
+}, {
     name: GoodProp.Color,
-    text: 'Цвет'    
-    }, {
+    text: 'Цвет'
+}, {
     name: GoodProp.Installment,
     text: 'Рассрочка'
-    }, {
+}, {
     name: GoodProp.Delivery,
     text: 'Доставка'
 }];
 
+const mainClass = 'compare-table';
+
 const CompareTable = () => {
+    const [goods, setGoods] = useState(comparedGoods);
+
+    const handleRemoveGood = (id: string) => {
+        setGoods(goods.filter((good) => good.id !== id));
+    }
+
     return (
-        <div className="compare-table">
+        <div className={mainClass}>
             <table>
                 <thead>
                     <tr>
                         <td>
-                            <Checkbox className="compare-table__check" label="Скрыть одинаковые параметры" />
+                            <Checkbox className={`${mainClass}__check`} label="Скрыть одинаковые параметры" />
                         </td>
-                        {comparedGoods.map((good, index) => (
+                        {goods.map((good, index) => (
                             <td key={index}>
-                                <Button className="close-btn compare-table__remove-btn" icon={<CloseIcon />} ariaLabel="Удалить из списка для сравнения" />
-                                <Img className="compare-table__img" src={good.src} width={328} height={255} />
-                                <Link to={Pages.Catalog.path} className="compare-table__title">{good.title}</Link>
+                                <Button onClick={() => handleRemoveGood(good.id)} className={`close-btn ${mainClass}__remove-btn`} icon={<CloseIcon />} ariaLabel="Удалить из списка для сравнения" />
+                                <Img className={`${mainClass}__img`} src={good.gallery.variants[0].items[0].src} width={328} height={255} />
+                                <Link to={Pages.Catalog.path} className={`${mainClass}__title`}>{good.title}</Link>
                             </td>
                         ))}
                     </tr>
@@ -84,7 +120,7 @@ const CompareTable = () => {
                     {rows.map((row) => (
                         <tr>
                             <td>{row.text}</td>
-                            {comparedGoods.map((good) => {
+                            {goods.map((good) => {
                                 const prop = good[row.name];
                                 const isBooleanProp = typeof prop === 'boolean';
                                 const isPositive = prop === true ? 'Есть' : 'Нет';
@@ -92,7 +128,7 @@ const CompareTable = () => {
 
                                 return (
                                     <td className={classNames({
-                                        'marked': isBooleanProp && prop || row.name === GoodProp.Price && lowestPriceGood.price === prop 
+                                        'marked': isBooleanProp && prop || row.name === GoodProp.Price && lowestPriceGood.price === prop
                                     })}>
                                         {isBooleanProp ? isPositive : prop}
                                     </td>
@@ -102,7 +138,7 @@ const CompareTable = () => {
                     ))}
                     <tr>
                         <td></td>
-                        {comparedGoods.map((good) => (
+                        {goods.map((good) => (
                             <td key={good.id}>
                                 <Button style="link" text="Добавить в корзину" />
                             </td>

@@ -8,6 +8,8 @@ import { NewsItem as NewsItemType } from '../../interfaces/NewsItem';
 import { getCollectionItems } from '../../utils/getCollectionItems';
 import { Collection } from '../../enums/Collection';
 
+const SECTION_ID = 'news';
+
 const News = () => {
     const [news, setNews] = useState<NewsItemType[]>([]);
 
@@ -16,7 +18,7 @@ const News = () => {
     }, []);
 
     return (
-        <section id="news">
+        <section id={SECTION_ID}>
             <h2>Новости компании</h2>
             <div className="slider-wrapper">
                 <Swiper className="slider"
@@ -24,8 +26,8 @@ const News = () => {
                     spaceBetween={20}
                     slidesPerView={3}
                     navigation={{
-                        nextEl: "#news .swiper-button-next",
-                        prevEl: "#news .swiper-button-prev",
+                        nextEl: `#${SECTION_ID} .swiper-button-next`,
+                        prevEl: `#${SECTION_ID} .swiper-button-prev`,
                     }}
                     pagination={{ type: "progressbar" }}
                     breakpoints={{

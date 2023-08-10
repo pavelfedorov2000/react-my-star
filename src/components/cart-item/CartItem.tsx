@@ -5,24 +5,26 @@ import Counter from "../counter/Counter";
 import { CompareIcon, FavoriteIcon, TrashIcon } from "../../ui/icons";
 import cartItemImg from "../../assets/images/delivery-promo.jpg";
 
+const mainClass = 'cart-item';
+
 const CartItem = () => {
     return (
-        <article className="cart-item">
-            <Link to="/" className="cart-item__img-wrap">
-                <Img className="cart-item__img" src={cartItemImg} width={200} height={200} />
+        <article className={mainClass}>
+            <Link to="/" className={`${mainClass}__img-wrap`}>
+                <Img className={`${mainClass}__img`} src={cartItemImg} width={200} height={200} />
             </Link>
-            <Link to="/" className="cart-item__title">Шкаф для книг</Link>
-            <div className="prices cart-item__prices">
-                <div className="new-price cart-item__new-price">350 руб.</div>
+            <Link to="/" className={`${mainClass}__title`}>Шкаф для книг</Link>
+            <div className={`prices ${mainClass}__prices`}>
+                <div className={`new-price ${mainClass}__new-price`}>350 руб.</div>
                 <div className="old-price">388 руб.</div>
             </div>
-            <div className="cart-item__articul articul">ИВ-116.02.00 Анника</div>
-            <ProductList className="cart-item__list" />
-            <Counter className="cart-item__counter" />
-            <div className="cart-item__actions">
-                <Button className="action-btn cart-item__action-btn" icon={<CompareIcon />} />
-                <Button className="action-btn cart-item__action-btn" icon={<FavoriteIcon />} />
-                <Button className="action-btn cart-item__action-btn" icon={<TrashIcon />} />
+            <div className={`articul ${mainClass}__articul`}>ИВ-116.02.00 Анника</div>
+            <ProductList className={`${mainClass}__list`} />
+            <Counter className={`${mainClass}__counter`} />
+            <div className={`${mainClass}__actions`}>
+                <Button className={`action-btn ${mainClass}__action-btn`} icon={<CompareIcon />} />
+                <Button className={`action-btn ${mainClass}__action-btn`} icon={<FavoriteIcon />} />
+                <Button className={`action-btn ${mainClass}__action-btn`} icon={<TrashIcon />} />
             </div>
         </article>
     );

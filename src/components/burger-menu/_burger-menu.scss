@@ -1,4 +1,7 @@
-.burger-menu {
+$name: 'burger-menu';
+
+.#{$name} {
+    @extend %flex-col;
     position: fixed;
     top: 0;
     left: -100%;
@@ -6,7 +9,6 @@
     width: 56rem;
     height: 100vh;
     padding: 6.5rem 8rem 10rem;
-    @extend %flex-col;
     background-color: var(--white);
     color: var(--default);
     transition: 0.5s left;

@@ -4,7 +4,7 @@ const ToggleArrow = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true">
-            <path fillRule="evenodd" clipRule="evenodd" d="M13 1L7 7L1 1" stroke-linecap="round" />
+            <path fillRule="evenodd" clipRule="evenodd" d="M13 1L7 7L1 1" strokeLinecap="round" />
         </svg>
     );
 };

@@ -1,4 +1,6 @@
-.about-numbers {
+$name: 'about-numbers';
+
+.#{$name} {
     display: grid;
 
     @media (min-width: 501px) {

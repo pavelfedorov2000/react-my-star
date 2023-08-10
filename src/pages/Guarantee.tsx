@@ -6,6 +6,11 @@ import { ListType } from "../enums/ListType";
 import { getCollectionItems } from "../utils/getCollectionItems";
 import { Section } from "../interfaces/Section";
 import { Text } from "../interfaces/Text";
+import { generatePageClassName } from "../utils/generatePageClassName";
+import { ClassName } from "../enums/ClassName";
+
+const pageName = 'text';
+const mainClass = `${pageName}-${ClassName.Page}`;
 
 const Guarantee = () => {
     const [guaranteeSections, setGuaranteeSections] = useState<Section[]>([]);
@@ -15,20 +20,20 @@ const Guarantee = () => {
     }, []);
 
     return (
-        <main className="page text-page">
-            <div className="container">
-                <div className="text-page__body">
-                    <div className="text-page__promo-img">
+        <main className={generatePageClassName(pageName)}>
+            <div className={ClassName.Container}>
+                <div className={`${mainClass}__body`}>
+                    <div className={`${mainClass}__promo-img`}>
                         <Img src={picture} width={1372} height={400} cover />
                     </div>
 
                     {guaranteeSections.sort((a, b) => a.order - b.order).map((section) => (
                         <section key={section.id}>
-                            <div className="row">
-                                <div className="col-3">
+                            <div className={ClassName.Row}>
+                                <div className={`${ClassName.Col}-3`}>
                                     <h2>{section.title}</h2>
                                 </div>
-                                <div className="col-6">
+                                <div className={`${ClassName.Col}-6`}>
                                     {section.content.items.map((item, index) => {
                                         if (item.text) {
                                             return (

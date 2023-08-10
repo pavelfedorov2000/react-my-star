@@ -1,4 +1,6 @@
-.checkout-total {
+$name: 'checkout-total';
+
+.#{$name} {
     position: sticky;
     top: 2rem;
     height: fit-content;

@@ -1,4 +1,6 @@
-.checkout-pay {
+$name: 'checkout-pay';
+
+.#{$name} {
     > * {
         &:not(:last-child) {
             margin-bottom: 3rem;

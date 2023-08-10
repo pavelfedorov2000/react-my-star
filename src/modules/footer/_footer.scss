@@ -1,4 +1,6 @@
-.footer {
+$name: 'footer';
+
+.#{$name} {
     $this: &;
     // .footer__top
 

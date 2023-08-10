@@ -1,6 +1,6 @@
-.collections {
+$name: 'collections';
 
-    // .collections__grid
+.#{$name} {
     &__grid {
         grid-auto-rows: 44.7rem;
 

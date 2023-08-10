@@ -8,6 +8,7 @@ import { formatPhone } from "../../utils/formatPhone";
 import { generateEmailHref } from "../../utils/generateEmailHref";
 import { MENU_LIST } from "../../constants/menu-list";
 import { Pages } from "../../enums/Page";
+import { ADDRESS, COPYRIGHT, DEVELOPER_LINK, EVIDENCE, POLITICS_LINK } from "../../constants/other";
 
 const footerMenu = [{
     title: 'Каталог',
@@ -41,72 +42,71 @@ const footerMenu = [{
     }
 }];
 
+const mainClass = 'footer';
+
 const Footer = () => {
     const { email, phones } = useAppSelector((state) => state.contactsReducer.data);
+    const { index, country, region, city, street, home } = ADDRESS;
 
     return (
-        <footer className="footer">
-            <div className="footer__top">
+        <footer className={mainClass}>
+            <div className={`${mainClass}__top`}>
                 <div className="container">
-                    <div className="row footer__top-inner">
-                        <div className="footer__logo">
+                    <div className={`row ${mainClass}__top-inner`}>
+                        <div className={`${mainClass}__logo`}>
                             <Logo />
                         </div>
-                        <div className="footer__contacts">
+                        <div className={`${mainClass}__contacts`}>
                             {phones.map((phone, index) => (
-                                <Button key={index} className="footer__phone" href={`tel:${formatPhone(phone)}`} text={phone} contact transparent />
+                                <Button key={index} className={`${mainClass}__phone`} href={`tel:${formatPhone(phone)}`} text={phone} contact transparent />
                             ))}
-                            <Button className="footer__email" href={generateEmailHref(email)} text={email} contact transparent />
-                            <Button className="footer__callback" style="link-accent" text="Заказать звонок" transparent />
+                            <Button className={`${mainClass}__email`} href={generateEmailHref(email)} text={email} contact transparent />
+                            <Button className={`${mainClass}__callback`} style="link-accent" text="Заказать звонок" transparent />
                         </div>
-                        <Social className="footer" filterParam={FilterParam.Auth} />
+                        <Social className={mainClass} filterParam={FilterParam.Auth} />
                     </div>
                 </div>
             </div>
-            <div className="footer__main">
+            <div className={`${mainClass}__main`}>
                 <div className="container">
-                    <div className="row footer__main-inner">
-                        <div className="footer__menu">
+                    <div className={`row ${mainClass}__main-inner`}>
+                        <div className={`${mainClass}__menu`}>
                             {footerMenu.map((col, index) => (
-                                <div key={index} className="footer__menu-col">
-                                    <div className="footer__menu-title">{col.title}</div>
-                                    <ul className="footer__menu-list">
-                                        {col.list.items.map((item) => (
-                                            <li key={item.href.toString()}>
-                                                <Button href={item.href} className="footer__menu-link" text={item.title} transparent />
+                                <div key={index} className={`${mainClass}__menu-col`}>
+                                    <div className={`${mainClass}__menu-title`}>{col.title}</div>
+                                    <ul className={`${mainClass}__menu-list`}>
+                                        {col.list.items.map((item, j) => (
+                                            <li key={j}>
+                                                <Button href={item.href} className={`${mainClass}__menu-link`} text={item.title} transparent />
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
                             ))}
                         </div>
-                        <div className="footer__info">
-                            <div className="footer__copy">©2022 ОАО «Ивацевичдрев»</div>
-                            <address className="footer__address">225 295, Беларусь, Брестская&nbsp;обл., г.&nbsp;Ивацевичи,
-                                ул.&nbsp;Загородная,&nbsp;2
+                        <div className={`${mainClass}__info`}>
+                            <div className={`${mainClass}__copy`}>{COPYRIGHT}</div>
+                            <address className={`${mainClass}__address`}>
+                                {index}, {country}, {region}&nbsp;обл., г.&nbsp;{city}, ул.&nbsp;{street},&nbsp;{home}
                             </address>
-                            <a href="https://mystar.by/politika-konfidencialnosti/" target="_blank" className="footer__politics">Политика конфеденциальности</a>
+                            <a href={POLITICS_LINK} target="_blank" className={`${mainClass}__politics`}>Политика конфеденциальности</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="footer__bottom">
+            <div className={`${mainClass}__bottom`}>
                 <div className="container">
-                    <div className="row footer__bottom-inner">
-                        <div className="footer__payment">
+                    <div className={`row ${mainClass}__bottom-inner`}>
+                        <div className={`${mainClass}__payment`}>
                             <Img src={payment} alt="платежные системы" width={296} height={20} />
                         </div>
-                        <div className="footer__evidence">
-                            Свидетельство о государственной регистрации организации №&nbsp;200100328, выдано Брестским областным
-                            исполнительным
-                            комитетом 07.07.2000г." и "Интернет магазин включен в торговый реестр Министерства торговли
-                            Республики
-                            Беларусь за №424020 от 17.08.2018г
+                        <div className={`${mainClass}__evidence`}>
+                            {EVIDENCE}
                         </div>
-                        <div className="footer__developer">
+                        <div className={`${mainClass}__developer`}>
                             <span>Дизайн и разработка:</span>
-                            <a href="https://www.imedia.by/" target="_blank" className="footer__developer-link">
-                                <svg className="footer__developer-logo" viewBox="0 0 72 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <a href={DEVELOPER_LINK} target="_blank" className={`${mainClass}__developer-link`}>
+                                <svg className={`${mainClass}__developer-logo`} viewBox="0 0 72 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M4.00453 0V13.9211H0V0H4.00453Z" fill="#616161" />
                                     <path
                                         d="M23.1 0V13.9211H19.0954V6.23983L16.3781 13.9211H13.0273L10.2895 6.18059V13.9211H6.28502V0H11.1272L14.7436 9.0438L18.2782 0H23.1Z"

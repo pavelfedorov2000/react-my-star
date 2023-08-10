@@ -1,8 +1,7 @@
-.popular-categories {
+$name: 'popular-categories';
 
-    // .popular-categories__grid
-
-    &__grid {
+.#{$name} {
+    &__row {
         grid-auto-rows: 40rem;
 
         @media(max-width: 1024px) {

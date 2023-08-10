@@ -1,4 +1,6 @@
-.cart-item {
+$name: 'cart-item';
+
+.#{$name} {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: max-content var(--offset-xxxs) max-content var(--offset-ms) 1fr var(--offset-ms) auto;

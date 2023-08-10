@@ -1,0 +1,17 @@
+export enum ClassName {
+    Lock = '_lock',
+    Page = 'page',
+    Container = 'container',
+    Row = 'row',
+    Col = 'col',
+    Overlay = 'overlay',
+    AsidePopup = 'aside-popup',
+    TabsContent = 'tabs-content',
+    Tabs = 'tabs',
+    Tab = 'tab',
+    Button = 'btn',
+    List = 'list',
+    Title = 'title',
+    Form = 'form',
+    Hidden = 'visually-hidden',
+}

@@ -1,9 +1,11 @@
 import { CartItem } from "../../components";
 
+const mainClass = 'cart-table';
+
 const CartTable = () => {
     return (
-        <ul className="cart-table">
-            <li className="cart-table__item">
+        <ul className={mainClass}>
+            <li className={`${mainClass}__item`}>
                 <CartItem />
             </li>
         </ul>

@@ -1,13 +1,26 @@
-import { CheckoutFieldset, FormItem } from "../../components";
-import { CheckoutFieldType } from "../../enums/CheckoutFieldType";
+import { CheckoutDelivery, CheckoutFieldset, CheckoutPayment, CheckoutPersonal, FormItem } from "../../components";
+import { CheckoutFieldset as CheckoutFieldsetType } from "../../interfaces/CheckoutFieldset";
+
+const mainClass = 'checkout-form"';
+
+const CHECKOUT_FIELDS: CheckoutFieldsetType[] = [{
+    title: 'Персональные данные',
+    children: <CheckoutPersonal />
+}, {
+    title: 'Условия доставки',
+    children: <CheckoutDelivery />
+}, {
+    title: 'Способы оплаты',
+    children: <CheckoutPayment />
+}];
 
 const CheckoutForm = () => {
     return (
-        <div className="checkout__form checkout-form">
-            <CheckoutFieldset title="Персональные данные" type={CheckoutFieldType.Inputs} />
-            <CheckoutFieldset title="Условия доставки" type={CheckoutFieldType.GridRadios} />
-            <CheckoutFieldset title="Способы оплаты" type={CheckoutFieldType.RowRadios} />
-            <FormItem className="checkout-form__textarea" name="ORDER_COMMENT" placeholder="Комментарий к заказу" label="Комментарий к заказу" />
+        <div className={`${mainClass} checkout__form`}>
+            {CHECKOUT_FIELDS.map((fieldset, index) => (
+                <CheckoutFieldset key={index} {...fieldset} />
+            ))}
+            <FormItem className={`${mainClass}__textarea`} name="ORDER_COMMENT" placeholder="Комментарий к заказу" label="Комментарий к заказу" />
         </div>
     );
 };

@@ -2,11 +2,7 @@ import classNames from "classnames";
 import { Field as FieldType } from "../../interfaces/Field";
 import { Field } from "../../ui";
 
-interface Props extends FieldType {
-    className?: string;
-}
-
-const FormItem = ({ className, name, fieldType, label, placeholder, required }: Props) => {
+const FormItem = ({ className, name, fieldType, label, placeholder, required }: FieldType) => {
     return (
         <label className={classNames('form-item', className)}>
             <Field name={name} fieldType={fieldType} placeholder={placeholder} />

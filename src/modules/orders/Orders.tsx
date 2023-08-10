@@ -4,8 +4,6 @@ import { Route } from "../../interfaces/Route";
 
 const Orders = ({ emptyBlock }: Route) => {
     const { items } = useAppSelector((state) => state.ordersReducer);
-    console.log(items);
-    
 
     return (
         <>

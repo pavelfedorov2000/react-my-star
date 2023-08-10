@@ -1,22 +1,24 @@
 import { useAppSelector } from "../../app/hooks";
 import { Button } from "../../ui";
 
+const mainClass = 'profile-personal';
+
 const Personal = () => {
     const { data } = useAppSelector((state) => state.profileReducer);
 
     return (
-        <div className="profile-personal">
-            <div className="profile-personal__row">
+        <div className={mainClass}>
+            <div className={`${mainClass}__row`}>
                 {Object.values(data).map((item, index) => (
-                    <section key={index} className={`profile-personal__item profile-personal__item--${item.name}`}>
-                        <h3 className="profile-personal__title">{item.title}</h3>
-                        <ul className="profile-personal__data-list">
+                    <section key={index} className={`${mainClass}__item ${mainClass}__item--${item.name}`}>
+                        <h3 className={`${mainClass}__title`}>{item.title}</h3>
+                        <ul className={`${mainClass}__data-list`}>
                             {Object.values(item.fields).map((field, j) => (
-                                <li key={j} className="profile-personal__data-item">{field}</li>
+                                <li key={j} className={`${mainClass}__data-item`}>{field}</li>
                             ))}
                         </ul>
                         <Button style="link" text={`Изменить ${index === 2 ? 'пароль' : ''}`} />
-                    </section> 
+                    </section>
                 ))}
             </div>
         </div>

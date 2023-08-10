@@ -1,4 +1,6 @@
-.about-company {
+$name: 'about-company';
+
+.#{$name} {
     &__top {
         @media (max-width: 500px) {
             justify-content: center;

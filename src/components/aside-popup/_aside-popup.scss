@@ -10,7 +10,9 @@
     }
 }
 
-.aside-popup {
+$name: 'aside-popup';
+
+.#{$name} {
     position: absolute;
     top: 0;
     right: -100%;

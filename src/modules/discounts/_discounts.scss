@@ -1,4 +1,6 @@
-.discounts {
+$name: 'discounts';
+
+.#{$name} {
     &:not(:last-child) {
         padding-bottom: 5rem;
     }

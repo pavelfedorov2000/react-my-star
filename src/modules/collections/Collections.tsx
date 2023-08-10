@@ -5,9 +5,11 @@ import { Collection } from "../../enums/Collection";
 import { CollectionPreview } from "../../components";
 import { Button } from "../../ui";
 
+const visibleCollectionsCount = 6;
+const mainClass = 'collections';
+
 const Collections = () => {
     const [allCollections, setAllCollections] = useState<CatalogCategory[]>([]);
-    const visibleCollectionsCount = 6;
     const [visibleCollections, setVisibleCollections] = useState<CatalogCategory[]>([]);
 
     const handleLoadMore = () => {
@@ -23,18 +25,18 @@ const Collections = () => {
     }, []);
 
     return (
-        <section className="section collections">
+        <section className={`section ${mainClass}`}>
             <div className="section__top">
                 <h2 className="section-title">Наши коллекции</h2>
             </div>
-            <ul className="row collections__grid row--2">
+            <ul className={`row ${mainClass}__grid row--2`}>
                 {visibleCollections.map((collection, index) => (
                     <li key={collection.id}>
                         <CollectionPreview {...collection} index={index + 1} count={6} />
                     </li>
                 ))}
             </ul>
-            {visibleCollections.length < allCollections.length && <Button onClick={handleLoadMore} className="collections__more" text="Показать еще" style="more" />}
+            {visibleCollections.length < allCollections.length && <Button onClick={handleLoadMore} className={`${mainClass}__more`} text="Показать еще" style="more" />}
         </section>
     );
 };

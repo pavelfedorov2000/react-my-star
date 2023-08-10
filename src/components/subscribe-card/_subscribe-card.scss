@@ -1,4 +1,6 @@
-.subscribe-card {
+$name: 'subscribe-card';
+
+.#{$name} {
     @extend %flex-col;
     padding: 3rem;
     position: relative;

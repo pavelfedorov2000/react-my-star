@@ -1,27 +1,39 @@
+import { useState, useRef } from "react";
 import { CatalogFilter as CatalogFilterType } from "../../interfaces/CatalogFilter";
 import { ToggleArrowIcon } from "../../ui/icons";
 import DropFilter from "../drop-filter/DropFilter";
+import useHandleOutsideClick from "../../hooks/useHandleOutsideClick";
 
-const CatalogFilter = ({ name, title, items, fieldType }: CatalogFilterType) => {
+const mainClass = 'catalog-filter';
+
+const CatalogFilter = ({ name, title, items, ranges, fieldType }: CatalogFilterType) => {
+    const filterRef = useRef<HTMLFieldSetElement>(null);
+    const [visible, setVisible] = useState(false);
+
     const childrenProps = {
         name,
         items,
-        fieldType
+        ranges,
+        fieldType,
+        visible: visible
     };
 
+    useHandleOutsideClick(filterRef, setVisible);
+
     return (
-        <fieldset className="catalog-filter">
-            <legend className="catalog-filter__title">
-                <button className="catalog-filter__toggle"
-                    type="button"
-                    aria-expanded="false"
+        <fieldset ref={filterRef} className={`${mainClass}`}>
+            <legend className={`${mainClass}__title`}>
+                <button className={`${mainClass}__toggle`}
+                    onClick={() => setVisible((v) => !v)}
+                    id={`${name}_filter_heading`}
+                    aria-expanded={visible}
                     aria-controls={`${name}_filter_dropdown`}
-                    id={`${name}_filter_heading`}>
-                    <span className="catalog-filter__toggle-text">{title}</span>
+                    type="button">
+                    <span className={`${mainClass}__toggle-text`}>{title}</span>
                     <ToggleArrowIcon />
                 </button>
             </legend>
-            <DropFilter {...childrenProps} />
+            <DropFilter {...childrenProps} isActive={visible} />
         </fieldset>
     );
 };

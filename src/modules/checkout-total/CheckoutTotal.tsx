@@ -3,6 +3,8 @@ import { LabelBox as LabelBoxType, LabelBoxBgColor } from "../../interfaces/Labe
 import { Button } from "../../ui";
 import { CreditCardIcon } from "../../ui/icons";
 
+const mainClass = 'checkout-total';
+
 const labelBoxes: LabelBoxType[] = [{
     bg: LabelBoxBgColor.Red,
     button: {
@@ -23,13 +25,13 @@ const labelBoxes: LabelBoxType[] = [{
 
 const CheckoutTotal = () => {
     return (
-        <div className="checkout-total">
-            <div className="checkout-total__inner">
-                <div className="checkout-total__title">Сумма заказа</div>
+        <div className={mainClass}>
+            <div className={`${mainClass}__inner`}>
+                <div className={`${mainClass}__title`}>Сумма заказа</div>
                 <CheckoutTable />
-                <Button href="/" className="checkout-total__btn" text="Перейти к оформлению" />
+                <Button href="/" className={`${mainClass}__btn`} text="Перейти к оформлению" />
                 <Button text="Можно купить в рассрочку" style="link-3" icon={<CreditCardIcon />} />
-                <div className="checkout-total__boxes">
+                <div className={`${mainClass}__boxes`}>
                     {labelBoxes.map((box, index) => (
                         <LabelBox key={index} {...box} />
                     ))}

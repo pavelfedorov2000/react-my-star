@@ -1,9 +1,6 @@
-.remove-compare {
-	padding: var(--offset-x) 1.8rem;
-	color: var(--default);
-}
+$name: 'compare-table';
 
-.compare-table {
+.#{$name} {
 	width: 100%;
 	overflow-x: auto;
 	padding-bottom: 3rem;
@@ -112,4 +109,9 @@
 		display: block;
 		font-weight: 500;
 	}
+}
+
+.remove-compare {
+	padding: var(--offset-x) 1.8rem;
+	color: var(--default);
 }

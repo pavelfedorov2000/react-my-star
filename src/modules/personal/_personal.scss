@@ -1,4 +1,6 @@
-.profile-personal {
+$name: 'profile-personal';
+
+.#{$name} {
     // .profile-personal__row
 
     &__row {

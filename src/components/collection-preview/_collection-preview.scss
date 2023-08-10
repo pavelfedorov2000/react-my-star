@@ -1,4 +1,6 @@
-.collection-preview {
+$name: 'collection-preview';
+
+.#{$name} {
     $this: &;
 
     overflow: hidden;

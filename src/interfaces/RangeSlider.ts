@@ -6,4 +6,5 @@ export interface RangeSlider {
     max: number;
     from?: number;
     to?: number;
+    onChange?: (from: number, to: number) => void;
 }

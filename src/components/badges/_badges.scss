@@ -1,4 +1,6 @@
-.badges {
+$name: 'badges';
+
+.#{$name} {
     display: flex;
     flex-wrap: wrap;
     gap: var(--offset-xxxs);

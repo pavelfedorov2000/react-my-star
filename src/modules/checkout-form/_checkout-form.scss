@@ -1,4 +1,6 @@
-.checkout-form {
+$name: 'checkout-form';
+
+.#{$name} {
     display: grid;
     row-gap: 6rem;
 
